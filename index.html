@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mannan Rudia | Creative Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Playfair+Display:ital,wght@0,400;1,400&family=Rubik+Mono+One&family=Outfit:wght@300;600;800&family=Caveat:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="lenis-wrapper">
+
+        <!-- Pillar Navbar Top Layouts -->
+        <nav class="navbar-pill">
+            <div class="pill-btn pill-logo">mr</div>
+            <div class="nav-links top-right-links">
+                <a href="#work" class="pill-btn">visual works</a>
+                <a href="#hero" class="pill-btn">know me</a>
+                <a href="#" class="pill-btn">resume</a>
+            </div>
+        </nav>
+
+        <div class="audio-toggle-wrapper">
+            <div class="audio-toggle-pill" id="audio-toggle">
+                <span class="icon" style="margin-right:8px;">🎵</span> Tap to Play Music
+            </div>
+            <audio id="bg-audio" loop src="https://cdn.pixabay.com/audio/2022/05/27/audio_1808fbf07a.mp3"></audio>
+        </div>
+
+        <section class="pre-hero" id="pre-hero">
+            <div class="pre-hero-content">
+                <div class="hero-title-box">
+                    <span class="font-mannan absolute-top-left">mannan's</span>
+                    <h1 class="font-canvas">CANVAS</h1>
+                    <!-- Removed elegant-subtext and placed inside floating clouds below -->
+                </div>
+            </div>
+
+            <!-- New Floating Text Clouds -->
+            <div class="text-cloud t-cloud-1">Directing human emotion.</div>
+            <div class="text-cloud t-cloud-2">Cinematic story flow.</div>
+            <div class="text-cloud t-cloud-3">Strategic content lead.</div>
+            </div>
+
+            <div class="cloud-layer realistic-cloud cloud-1"></div>
+            <div class="cloud-layer realistic-cloud cloud-2"></div>
+            <div class="cloud-layer realistic-cloud cloud-3"></div>
+            <div class="cloud-layer realistic-cloud cloud-4"></div>
+        </section>
+
+        <section class="split-bio-container" id="hero">
+            <div class="cloud-gradient-merge"></div>
+            <div class="split-overlay"></div>
+            <div class="split-bio-flex">
+
+                <!-- Left: Condensed Bio text -->
+                <div class="split-bio-text reveal-on-scroll">
+                    <h2 class="bio-header">HEYY, I AM<br>MANNAN 🧃</h2>
+                    <div class="bio-body" style="flex: 1.5; min-width: 300px; font-family: 'Times New Roman', Times, serif;">
+                        <p>I <span style="font-weight: 600;">ran away from home</span> to be an <span style="font-weight: 600;">entertainer</span>, building in front of the camera, produce <span style="font-weight: 600;">authentic storytelling</span> that moves people and bringing that <span style="font-weight: 600;">filmmaking vision</span> of mine to life.</p>
+                        <p>If I can sell my <span style="font-weight: 600;">orthodox business parents</span> on content, I can sell anything. <span style="font-weight: 600;">Storytelling</span> has been my <span style="font-weight: 600;">superpower</span> since family dinners.</p>
+                    </div>
+                </div>
+
+                <!-- Right: The Scrapbook Grid -->
+                <div class="split-bio-grid reveal-on-scroll"
+                    style="transition-delay: 0.2s; display: flex; flex-direction: column; gap: 4rem;">
+                    <div class="collage-grid">
+                        <!-- ... rest of collage grid nodes ... -->
+
+                        <!-- Top Left: Board Game Box -->
+                        <div class="collage-item board-game-box"
+                            style="grid-column: 1; grid-row: 1; display:flex; aspect-ratio: 1;">
+                            <div class="box-back"></div>
+                            <div class="games-inside" style="pointer-events: none;">
+                                <div class="game-card game-1"></div>
+                                <div class="game-card game-2"></div>
+                                <div class="game-card game-3"></div>
+                            </div>
+                            <div class="box-front">
+                                <div class="box-label">Mannan's Board Games</div>
+                            </div>
+                        </div>
+
+                        <!-- Top Right: User's Image Rectangular Profile -->
+                        <div class="collage-item item-feature"
+                            style="grid-column: 2; grid-row: 1; aspect-ratio: 1;">
+                            
+                            <img src="https://pzulcxyfxmteybyosrtn.supabase.co/storage/v1/object/public/Portfolio/assets/main.JPG"
+                                alt="Mannan Profile" class="collage-img" id="profile-img"
+                                style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.3));">
+                        </div>
+
+                        <!-- Bottom Left: Spotify Playlist Card -->
+                        <div class="collage-item"
+                            style="grid-column: 1; grid-row: 2; background: #0f0f0f; color: #fff; display:flex; flex-direction: column; border-radius: 12px; aspect-ratio: 1; overflow: hidden; position: relative;">
+                            <!-- Artwork fills the top half -->
+                            <div style="flex: 1; overflow: hidden; position: relative;">
+                                <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=800&auto=format&fit=crop"
+                                    style="width:100%; height:100%; object-fit:cover; display:block; opacity:0.85;">
+                                <!-- Spotify green badge -->
+                                <div
+                                    style="position:absolute; top:0.8rem; right:0.8rem; background:#1db954; border-radius:50%; width:2.2rem; height:2.2rem; display:flex; align-items:center; justify-content:center; font-size:1.2rem; box-shadow:0 4px 12px rgba(29,185,84,0.5);">
+                                    ▶</div>
+                            </div>
+                            <!-- Info bar -->
+                            <a href="https://open.spotify.com/playlist/38oLPK8FwkmqWC4L91VKqp" target="_blank"
+                                style="text-decoration:none; padding:1rem 1.2rem 1.2rem; display:flex; flex-direction:column; gap:0.2rem;">
+                                <div style="display:flex; align-items:center; gap:0.5rem;">
+                                    <span style="font-size:1.2rem;">🎵</span>
+                                    <span
+                                        style="font-family:'Outfit',sans-serif; font-size:0.7rem; font-weight:700; color:#1db954; letter-spacing:2px; text-transform:uppercase;">Spotify
+                                        Playlist</span>
+                                </div>
+                                <h4
+                                    style="font-family:'Outfit',sans-serif; font-size:0.95rem; font-weight:800; color:#fff; line-height:1.3; margin:0;">
+                                    Playlist to unwind to<br>after a tough day</h4>
+                            </a>
+                        </div>
+
+                        <!-- Bottom Right: Interactive Toolbox Square -->
+                        <div class="collage-item"
+                            style="grid-column: 2; grid-row: 2; background: #eef2f5; overflow: visible; aspect-ratio: 1; border-radius: 12px;">
+                            <div class="interactive-toolbox">
+                                <!-- The Popping Icons -->
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg"
+                                    class="popped-icon icon-pr" alt="Premiere Pro">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
+                                    class="popped-icon icon-ig" alt="Instagram">
+                                <img src="https://pzulcxyfxmteybyosrtn.supabase.co/storage/v1/object/public/Portfolio/assets/LS.jpeg" class="popped-icon icon-yellow" alt="Creative Tool">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_After_Effects_CC_icon.svg"
+                                    class="popped-icon icon-ae" alt="After Effects">
+
+                                <!-- The Base Toolbox emoji -->
+                                <div class="toolbox-base"
+                                    style="font-size: 6rem; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));">🛠️</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Metrics Box (Moved to Right Most Side) -->
+                    <div class="metrics-box"
+                        style="align-self: flex-end; display: flex; gap: 1.5rem; flex-wrap: nowrap; justify-content: flex-end;">
+                        <div class="metric-item"
+                            style="background: #fff; border: 2.3px solid #111; padding: 1.2rem 1.8rem; transform: rotate(-1deg); box-shadow: 8px 8px 0 rgba(0,0,0,0.05); position: relative;">
+                            <div class="tape-deco"
+                                style="top: -10px; left: 50%; width: 60px; height: 20px; background: rgba(0,0,0,0.1); margin-left: -30px;">
+                            </div>
+                            <div style="font-family: 'Rubik Mono One'; font-size: 1.8rem; color: var(--accent);">10M+
+                            </div>
+                            <div
+                                style="font-family: 'Outfit'; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: #666;">
+                                Views Generated</div>
+                        </div>
+                        <div class="metric-item"
+                            style="background: #fff; border: 2.3px solid #111; padding: 1.2rem 1.8rem; transform: rotate(2deg); box-shadow: 8px 8px 0 rgba(0,0,0,0.05); position: relative;">
+                            <div class="tape-deco"
+                                style="top: -10px; right: -10px; width: 40px; height: 20px; background: rgba(255,100,100,0.2); transform: rotate(45deg);">
+                            </div>
+                            <div style="font-family: 'Rubik Mono One'; font-size: 1.8rem; color: #111;">50+</div>
+                            <div
+                                style="font-family: 'Outfit'; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: #666;">
+                                Videos Made</div>
+                        </div>
+                        <div class="metric-item"
+                            style="background: var(--accent); border: 2.3px solid #111; padding: 1.2rem 1.8rem; transform: rotate(-2deg); box-shadow: 8px 8px 0 #111; position: relative; color: #fff;">
+                            <div style="font-family: 'Rubik Mono One'; font-size: 1.8rem; color: #fff;">3.8M+</div>
+                            <div
+                                style="font-family: 'Outfit'; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: rgba(255,255,255,0.8);">
+                                Viral Retention</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="work-section" id="work">
+            <div class="work-header">
+                <h2>Work Experience.</h2>
+                <p>Scaling brands, directing films, and engineering human attention.</p>
+            </div>
+            <div class="projects-grid">
+
+                <!-- 01: Short Films -->
+                <a href="short-film.html" class="project-card">
+                    <div class="zine-tape top-right"></div>
+                    <div class="card-sticker" style="bottom: 80px; left: -10px; font-size: 3rem;">🎬</div>
+                    <div class="card-image-wrapper">
+                        <img src="file:///Users/mannanrudia/.gemini/antigravity/brain/d4bbecd1-4854-44a7-85d1-3ff9a1e6eacd/short_film_hero_1775057856674.png"
+                            class="card-image" alt="Short Films">
+                    </div>
+                    <div class="card-info">
+                        <h3>Short Film Project ↗</h3>
+                    </div>
+                </a>
+
+                <!-- 02: Content Producer -->
+                <a href="content-producer.html" class="project-card">
+                    <div class="zine-tape top-left"></div>
+                    <div class="card-sticker" style="top: 10px; right: 10px; font-size: 2.5rem;">🔥</div>
+                    <div class="card-sticker stkr-views">3.8Mil+ VIEWS</div>
+                    <div class="card-image-wrapper">
+                        <img src="file:///Users/mannanrudia/.gemini/antigravity/brain/d4bbecd1-4854-44a7-85d1-3ff9a1e6eacd/content_producer_final_shortfilm_style_1775058724595.png"
+                            class="card-image" alt="Content Producer">
+                    </div>
+                    <div class="card-info">
+                        <h3>Content Producer ↗</h3>
+                    </div>
+                </a>
+
+                <!-- 03: Creative Strategies -->
+                <a href="content-strategies.html" class="project-card strategy-card" id="strategy-trigger">
+                    <div class="zine-tape top-left"></div>
+                    <div class="card-sticker" style="top: -20px; left: 50%; margin-left: -20px; font-size: 2.5rem;">🧠
+                    </div>
+                    <div class="card-image-wrapper">
+                        <img src="file:///Users/mannanrudia/.gemini/antigravity/brain/d4bbecd1-4854-44a7-85d1-3ff9a1e6eacd/creative_strategy_final_shortfilm_style_1775059599589.png"
+                            class="card-image" alt="Creative Strategies">
+                    </div>
+                    <div class="card-info">
+                        <h3>Creative Strategies ↗</h3>
+                    </div>
+                </a>
+
+            </div>
+
+
+        </section>
+
+        <section class="logo-marquee-section">
+            <div class="marquee-heading">Some cool brands I've worked with ✦</div>
+            <div class="marquee-container logo-container">
+                <div class="marquee-track logo-track">
+                    <!-- UV -->
+                    <div class="brand-logo brand-logo-text" style="color:#000; font-weight:900; font-size:2rem;">UV
+                    </div>
+                    <!-- Rapido -->
+                    <div class="brand-logo brand-logo-text" style="color:#F5C115; font-weight:900; font-size:1.5rem;">
+                        RAPIDO</div>
+                    <!-- Travenza -->
+                    <div class="brand-logo brand-logo-text"
+                        style="color:#111; font-family:'Playfair Display'; font-style:italic; font-weight:900; font-size:1.6rem;">
+                        Travenza</div>
+                    <!-- Agilitas -->
+                    <div class="brand-logo brand-logo-text"
+                        style="color:#222; font-weight:800; letter-spacing:2px; font-size:1.2rem;">AGILITAS</div>
+                    <!-- Oben Electric -->
+                    <div class="brand-logo brand-logo-text" style="color:#000; font-weight:900; font-size:1.4rem;">OBEN
+                        <span style="color:red;">⚡</span></div>
+                    <!-- Pronto -->
+                    <div class="brand-logo brand-logo-text" style="color:#ff4500; font-weight:900; font-size:1.6rem;">
+                        PRONTO</div>
+                    <!-- LIT School -->
+                    <div class="brand-logo brand-logo-text" style="color:#111;"><span
+                            style="font-size:2rem; font-weight:900; letter-spacing:-1px;">LIT</span><span
+                            style="font-size:1rem; display:block; letter-spacing:4px; opacity:0.6;">SCHOOL</span></div>
+                    <!-- Metashot -->
+                    <div class="brand-logo brand-logo-text"
+                        style="background:#000; color:#fff; padding: 0.8rem 2rem; border-radius: 8px;">META<span
+                            style="color:#E040FB;">▲</span>SHOT</div>
+                    <!-- NGL Hydration -->
+                    <div class="brand-logo brand-logo-text"
+                        style="color:#F5C115; font-size:1.8rem; font-weight:900; letter-spacing:2px;">NGL<span
+                            style="color:#111; font-size:1rem; display:block; letter-spacing:3px; font-weight:600;">HYDRATION</span>
+                    </div>
+                    <!-- Aniglow -->
+                    <div class="brand-logo brand-logo-text"
+                        style="color:#111; font-size:1.4rem; font-weight:800; letter-spacing:2px;">ANIGLOW<span
+                            style="color:#ccc; font-size:0.75rem; display:block; letter-spacing:3px;">PROFESSIONAL</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials" id="testimonials">
+            <div class="testi-header">
+                <h2>Voices of Trust</h2>
+                <p>Kind words from those I've collaborated, challenged, and created with.</p>
+            </div>
+            <div class="testi-layout">
+                <!-- Left: stacked photo grid -->
+                <div class="testi-photo-grid">
+                    <div class="testi-photo-cell active" style="background: linear-gradient(135deg,#f4f3ee,#e8e5dc);">
+                        <span style="font-size:3rem;">🎬</span></div>
+                    <div class="testi-photo-cell" style="background: linear-gradient(135deg,#111,#333);"><span
+                            style="font-size:3rem;">🧠</span></div>
+                    <div class="testi-photo-cell" style="background: linear-gradient(135deg,#f4f3ee,#e8e5dc);"><span
+                            style="font-size:3rem;">🚀</span></div>
+                    <div class="testi-photo-cell" style="background: linear-gradient(135deg,#111,#333);"><span
+                            style="font-size:3rem;">🎤</span></div>
+                </div>
+                <!-- Right: Quote + controls -->
+                <div class="testi-quote-side">
+                    <div class="testi-bigquote">““</div>
+                    <div class="testi-slides">
+                        <div class="testi-slide active">
+                            <p class="testi-text">A rare hybrid of creative vision and business execution. Mannan brings
+                                the energy of a filmmaker and the precision of a strategist — every project is dialled
+                                in.</p>
+                            <div class="testi-name">Brand Partner, Bangalore</div>
+                        </div>
+                        <div class="testi-slide">
+                            <p class="testi-text">He built our entire content engine from the ground up — strategy,
+                                scripts, shoots, edits. Delivered results that 3 agencies couldn't.</p>
+                            <div class="testi-name">Startup Founder, Bangalore</div>
+                        </div>
+                        <div class="testi-slide">
+                            <p class="testi-text">Understands algorithms better than most senior marketers I know. But
+                                the difference is — his content actually feels human.</p>
+                            <div class="testi-name">Creator &amp; Collaborator</div>
+                        </div>
+                        <div class="testi-slide">
+                            <p class="testi-text">Worked with Mannan on a live brand campaign — his ability to read the
+                                room, pivot the creative, and still deliver on time is unlike anyone I've seen at his
+                                age.</p>
+                            <div class="testi-name">Event Organiser, LIT School</div>
+                        </div>
+                    </div>
+                    <!-- Arrow controls -->
+                    <div class="testi-controls">
+                        <button class="testi-btn" id="prev-testi">←</button>
+                        <button class="testi-btn" id="next-testi">→</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hobbies-section" id="hobbies">
+            <div class="hobbies-header">
+                <h2>I don't sit at a desk all day.</h2>
+                <p>Inspired by real-life passions.</p>
+            </div>
+            <div class="hobbies-scatter">
+                <div class="hobby-polaroid">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop"
+                        alt="Trekking">
+                    <span class="caption">Trekking</span>
+                </div>
+                <div class="hobby-polaroid">
+                    <img src="/Users/mannanrudia/Downloads/IMG_5230.jpg" alt="Sports Victory">
+                    <span class="caption">Sports (Winners)</span>
+                </div>
+                <div class="hobby-polaroid">
+                    <img src="https://pzulcxyfxmteybyosrtn.supabase.co/storage/v1/object/public/Portfolio/assets/sports.PNG"
+                        alt="Travel Sunset">
+                    <span class="caption">Travel</span>
+                </div>
+                <div class="hobby-polaroid">
+                    <img src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?q=80&w=800&auto=format&fit=crop"
+                        alt="Chess">
+                    <span class="caption">Chess</span>
+                </div>
+                <div class="hobby-polaroid">
+                    <img src="https://pzulcxyfxmteybyosrtn.supabase.co/storage/v1/object/public/Portfolio/assets/IMG_5366.jpg"
+                        alt="Museum Hopping">
+                    <span class="caption">Museum Hopping</span>
+                </div>
+                <div class="hobby-polaroid">
+                    <img src="file:///Users/mannanrudia/.gemini/antigravity/brain/2fa44b66-3210-475b-be6e-387558324def/hobby_psychology_1775222244187.png"
+                        alt="Psychology">
+                    <span class="caption">Psychology</span>
+                </div>
+                <div class="hobby-polaroid playlist">
+                    <img src="file:///Users/mannanrudia/.gemini/antigravity/brain/2fa44b66-3210-475b-be6e-387558324def/hobby_snapchat_filters_1775222262005.png"
+                        alt="Snapchat Filters">
+                    <span class="caption">Making Snapchat Filters</span>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- INTERACTIVE CATCH-ME SECTION -->
+        <section class="catch-me-section" id="sticky-board">
+            <div class="catch-me-container reveal-on-scroll">
+
+                <!-- Left: The Interactive Playground -->
+                <div class="sticky-playground" id="playground">
+                    <div class="dotted-grid"></div>
+                    <!-- The Jumping Note -->
+                    <div class="jumping-note" id="escape-note">
+                        <div class="sticky-note-curl"></div>
+                        <p class="sticky-note-text" id="note-text">Catch this note<br>if you can! 🎬</p>
+                    </div>
+                </div>
+
+                <!-- Right: The Contact Hub -->
+                <div class="contact-hub">
+                    <h2 class="hub-heading">STILL CAN'T<br>CATCH ME?</h2>
+                    <p class="hub-sub">Reach out to me here ✦—</p>
+
+                    <div class="hub-links">
+                        <a href="https://www.instagram.com/mannan_rudia?igsh=MTltaWV1eHZwdXFjeQ%3D%3D&utm_source=qr"
+                            target="_blank" class="hub-btn">
+                            <span class="hub-btn-icon">📸</span> Instagram
+                        </a>
+                        <a href="https://www.linkedin.com/in/mannan-rudia-business" target="_blank" class="hub-btn">
+                            <span class="hub-btn-icon">💼</span> LinkedIn
+                        </a>
+                        <a href="mailto:mannanrudiabusiness@gmail.com" class="hub-btn">
+                            <span class="hub-btn-icon">✉️</span> Email Me
+                        </a>
+                    </div>
+
+                    <!-- Hand-drawn arrow decoration (SVG) -->
+                    <div class="hand-drawn-arrow">
+                        <svg viewBox="0 0 100 50" fill="none" stroke="currentColor">
+                            <path d="M10,25 Q40,10 90,25 M85,15 L90,25 L80,30" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <footer class="footer">
+            <!-- Sand Cloud Blending Layer — Blends the section above (#f4f3ee) into the beach footer -->
+
+
+            <div class="beach-graphic">
+                <div class="footer-content">
+                    <h2>Let's make something viral.</h2>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

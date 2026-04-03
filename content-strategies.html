@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Strategies | Mannan Rudia</title>
+    <meta name="description" content="Brand content strategies crafted by Mannan Rudia — offline activations, AR campaigns, and 360° social media rollouts that actually move product.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=DotGothic16&family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&family=Rubik+Mono+One&family=Outfit:wght@300;600;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #f4f3ee; overflow-x: hidden; }
+
+        /* ── HERO ── */
+        .strat-hero {
+            position: relative; width: 100%; min-height: 85vh;
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden; padding-top: 6rem; padding-bottom: 4rem;
+            background: linear-gradient(135deg, #f4f3ee 0%, #ebe8df 100%);
+        }
+        .strat-hero-text { position: relative; text-align: center; max-width: 1000px; padding: 0 2rem; z-index: 10; }
+
+        /* ── CARDS GRID ── */
+        .brand-cards-section { max-width: 1400px; margin: 0 auto; padding: 4rem 3rem 2rem; }
+        .brand-cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+
+        /* Individual brand card — now an anchor */
+        a.brand-card {
+            background: #fff; border-radius: 20px; overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                        box-shadow 0.45s ease, border-color 0.3s ease;
+            position: relative; display: block; text-decoration: none;
+            border: 2px solid transparent;
+            transform-style: preserve-3d;
+            will-change: transform;
+            cursor: pointer;
+        }
+        a.brand-card::after {
+            content: 'VIEW CASE STUDY →';
+            position: absolute; bottom: 1.6rem; right: 2rem;
+            font-family: 'Rubik Mono One', sans-serif; font-size: 0.7rem;
+            color: var(--accent); opacity: 0; letter-spacing: 2px;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform: translateY(4px);
+        }
+        a.brand-card:hover::after { opacity: 1; transform: translateY(0); }
+        a.brand-card:hover {
+            box-shadow: 0 45px 90px rgba(0,0,0,0.22);
+            border-color: rgba(252,128,25,0.25);
+        }
+
+        .brand-card-img-wrapper {
+            width: 100%; height: 380px; overflow: hidden; position: relative; background: #111;
+        }
+        .brand-card-img-wrapper img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        a.brand-card:hover .brand-card-img-wrapper img { transform: scale(1.08); }
+
+        /* Brand tag pill */
+        .brand-tag {
+            position: absolute; top: 1.5rem; left: 1.5rem; z-index: 5;
+            background: var(--accent); color: #fff;
+            font-family: 'Rubik Mono One', sans-serif; font-size: 0.85rem;
+            padding: 0.4rem 1rem; border-radius: 30px;
+            letter-spacing: 1px; text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(252,128,25,0.4);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        a.brand-card:hover .brand-tag { transform: scale(1.08) translateY(-2px); }
+
+        /* Card number */
+        .card-num {
+            position: absolute; top: 1.5rem; right: 1.5rem; z-index: 5;
+            font-family: 'Rubik Mono One', sans-serif; font-size: 1rem;
+            color: rgba(255,255,255,0.85); text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+        }
+
+        .brand-card-body { padding: 2.5rem 2.5rem 3.5rem; position: relative; }
+        .brand-card-body h3 {
+            font-family: 'Times New Roman', Times, serif; font-weight: 800; font-style: italic;
+            font-size: 2.4rem; color: #111; margin-bottom: 0.8rem; line-height: 1.1;
+        }
+        .brand-card-body .brand-sub {
+            font-family: 'Outfit', sans-serif; font-size: 1rem;
+            color: var(--accent); font-weight: 700;
+            text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.2rem;
+        }
+        .brand-card-body p {
+            font-family: 'Outfit', sans-serif; font-size: 1.1rem;
+            color: #444; line-height: 1.65; margin-bottom: 1.5rem;
+        }
+
+        /* Strategy tags — animated in on hover */
+        .strategy-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .stag {
+            padding: 0.4rem 1rem; border-radius: 20px;
+            font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 700;
+            border: 1.5px solid rgba(0,0,0,0.12); color: #555; background: #f8f8f5;
+            transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: translateY(0);
+        }
+        .stag:nth-child(1) { transition-delay: 0s; }
+        .stag:nth-child(2) { transition-delay: 0.04s; }
+        .stag:nth-child(3) { transition-delay: 0.08s; }
+        .stag:nth-child(4) { transition-delay: 0.12s; }
+        a.brand-card:hover .stag {
+            border-color: var(--accent); color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(252,128,25,0.15);
+        }
+
+        /* Tape decorations */
+        .tape-deco {
+            position: absolute; width: 80px; height: 28px;
+            background: rgba(255,230,100,0.55); backdrop-filter: blur(2px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+        a.brand-card:hover .tape-deco { transform: rotate(0deg) scale(1.1) !important; }
+
+        /* ── QUOTE STRIP ── */
+        .strat-quote-strip {
+            background: #111; color: #fff;
+            padding: 5rem 4rem; text-align: center; position: relative; overflow: hidden;
+        }
+        .strat-quote-strip::before {
+            content: '✦'; font-size: 20rem; position: absolute;
+            top: 50%; left: 50%; transform: translate(-50%,-50%);
+            color: rgba(255,255,255,0.03); pointer-events: none;
+        }
+        .strat-quote-strip h2 {
+            font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.5rem);
+            font-style: italic; font-weight: 400; color: #fff;
+            max-width: 900px; margin: 0 auto 1.5rem; line-height: 1.35;
+        }
+        .strat-quote-strip p {
+            font-family: 'Outfit', sans-serif; font-size: 1.2rem;
+            color: var(--accent); font-weight: 600; letter-spacing: 1px;
+        }
+
+        /* ── WIN STAT BANNER ── */
+        .win-banner {
+            background: var(--accent); padding: 3rem 4rem;
+            display: flex; align-items: center; justify-content: center;
+            gap: 5rem; flex-wrap: wrap; text-align: center;
+        }
+        .win-stat { color: #fff; }
+        .win-stat .num {
+            font-family: 'Rubik Mono One', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            display: block; line-height: 1;
+        }
+        .win-stat .label {
+            font-family: 'Outfit', sans-serif; font-size: 1rem;
+            font-weight: 600; opacity: 0.85; text-transform: uppercase;
+            letter-spacing: 1px; margin-top: 0.4rem; display: block;
+        }
+
+        /* ── FLOATING DECORATIVE ELEMENTS ── */
+        .fl-sticker {
+            position: absolute; z-index: 30;
+            filter: drop-shadow(0 10px 10px rgba(0,0,0,0.25));
+            pointer-events: none; animation: float-sticker 6s ease-in-out infinite;
+        }
+        .fl-sticker:hover { pointer-events: auto; }
+
+        /* ── PAGINATION ── */
+        .strat-pagination {
+            display: flex; justify-content: space-between; align-items: center;
+            max-width: 1400px; margin: 4rem auto 0; padding: 0 3rem 5rem;
+            border-top: 2px dashed #ccc; padding-top: 3rem;
+        }
+
+        /* ── RIPPLE EFFECT on click ── */
+        @keyframes ripple {
+            0% { transform: translate(-50%,-50%) scale(0); opacity: 0.6; }
+            100% { transform: translate(-50%,-50%) scale(4); opacity: 0; }
+        }
+        .ripple-dot {
+            position: absolute; width: 80px; height: 80px; border-radius: 50%;
+            background: rgba(252,128,25,0.25); pointer-events: none;
+            animation: ripple 0.6s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar-pill">
+        <a href="index.html" class="pill-btn pill-logo" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">mr</a>
+        <div class="top-right-links">
+            <a href="creator-campaign.html" class="pill-btn" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">← Creator Campaign</a>
+            <a href="index.html" class="pill-btn" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">Home</a>
+        </div>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <header class="strat-hero soft-bg-vibrant">
+        <div class="fl-sticker" style="top: 18%; left: 8%; font-size: 7rem; transform: rotate(-12deg);">🧠</div>
+        <div class="fl-sticker" style="bottom: 12%; right: 10%; font-size: 8rem; animation-duration: 4s;">📣</div>
+        <div class="fl-sticker" style="top: 25%; right: 8%; font-size: 5rem; animation-delay: 2s;">⚡</div>
+
+        <div class="zine-floating-card reveal-on-scroll" style="position: absolute; top: 12%; right: 4%; transform: rotate(10deg) scale(0.9); z-index: 10;">
+            <div class="tape"></div>
+            <strong style="color:var(--accent); text-transform: uppercase; font-size: 1.2rem; display:block; margin-bottom: 0.5rem; font-family: 'Rubik Mono One';">STRATEGY VAULT</strong>
+            <p style="font-family: var(--font-body); font-size: 1rem; color: #666;">Level: Brand Warfare<br>Mode: FULL STACK</p>
+        </div>
+
+        <div class="strat-hero-text reveal-on-scroll">
+            <h2 style="font-family: 'DotGothic16', monospace; font-size: clamp(1.2rem, 2.5vw, 2rem); color: #666; letter-spacing: 5px; margin-bottom: 1rem;">CAMPAIGN ARCHITECTURE</h2>
+            <h1 class="zine-massive-text" style="color: #111; text-shadow: 0 5px 15px rgba(255,255,255,0.8); font-size: clamp(3.5rem, 8vw, 8rem); line-height: 0.95;">
+                Content<br><span class="zine-accent-highlight" style="font-family: 'Times New Roman', Times, serif; font-style: italic; font-size: clamp(4rem, 9vw, 10rem);">Strategies</span>
+            </h1>
+            <p style="font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 2.2vw, 2rem); font-style: italic; color: #444; margin-top: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                "Turn a brand insight into a movement. Turn a movement into obsession."
+            </p>
+        </div>
+    </header>
+
+    <!-- ── QUOTE STRIP ── -->
+    <div class="strat-quote-strip">
+        <h2>"Not just content. <em>Campaigns that sell, spread, and stick.</em>"</h2>
+        <p>4 brands. 4 strategies. Zero conventional thinking. ✦</p>
+    </div>
+
+    <main>
+        <!-- ── 4 BRAND CARDS ── -->
+        <section class="brand-cards-section">
+            <div class="brand-cards-grid">
+
+                <!-- 01 — NGL Hydration -->
+                <a href="ngl-strategy.html" class="brand-card reveal-on-scroll">
+                    <div class="brand-card-img-wrapper">
+                        <div class="tape-deco" style="top: -8px; left: 60px; transform: rotate(-3deg);"></div>
+                        <span class="brand-tag">Hydration Beverage</span>
+                        <span class="card-num">01</span>
+                        <img src="file:///Users/mannanrudia/.gemini/antigravity/brain/79cbb53e-6318-4bd6-879e-ef8f66b9dc38/media__1774904321470.png" alt="NGL Hydration Offline Activation">
+                    </div>
+                    <div class="brand-card-body">
+                        <h3>NGL Hydration</h3>
+                        <p class="brand-sub">Fuel Without<br>the Crash.</p>
+                        <p>Designed an aggressive offline activation playbook — pop-up booths at gyms, marathons, and college fests with a "Free Trial" entry mechanic. Turned product sampling into a viral moment by putting <em>people first, feed second.</em></p>
+                        <div class="strategy-tags">
+                            <span class="stag">Offline Activation</span>
+                            <span class="stag">Experiential Marketing</span>
+                            <span class="stag">Gym Partnerships</span>
+                            <span class="stag">Free Trial Funnel</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 02 — SportsYard -->
+                <a href="sportsyard-strategy.html" class="brand-card reveal-on-scroll" style="transition-delay: 0.15s;">
+                    <div class="brand-card-img-wrapper">
+                        <div class="tape-deco" style="top: -8px; right: 80px; transform: rotate(5deg);"></div>
+                        <span class="brand-tag">Sports Platform</span>
+                        <span class="card-num">02</span>
+                        <img src="file:///Users/mannanrudia/.gemini/antigravity/brain/79cbb53e-6318-4bd6-879e-ef8f66b9dc38/media__1774904321514.png" alt="SportsYard AR Campaign">
+                    </div>
+                    <div class="brand-card-body">
+                        <h3>SportsYard</h3>
+                        <p class="brand-sub">Unleash the<br>Barrier. In AR.</p>
+                        <p>Built an A-to-Z campaign spanning offline sports events to regional digital rollouts. AR-powered brand experiences that let fans literally <em>play inside the campaign.</em> Layered with MOM-fluencer targeting for grassroots reach.</p>
+                        <div class="strategy-tags">
+                            <span class="stag">Augmented Reality</span>
+                            <span class="stag">360° Campaign</span>
+                            <span class="stag">MOM-fluencer Targeting</span>
+                            <span class="stag">Regional Rollout</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 03 — Poptein (FIXED: was using wrong image) -->
+                <a href="poptein-strategy.html" class="brand-card reveal-on-scroll" style="transition-delay: 0.25s;">
+                    <div class="brand-card-img-wrapper">
+                        <div class="tape-deco" style="top: -8px; left: 40px; transform: rotate(-6deg);"></div>
+                        <span class="brand-tag">India's First Protein Popcorn</span>
+                        <span class="card-num">03</span>
+                        <img src="file:///Users/mannanrudia/.gemini/antigravity/brain/79cbb53e-6318-4bd6-879e-ef8f66b9dc38/media__1774904321583.png" alt="Poptein Challenge — LIT School">
+                    </div>
+                    <div class="brand-card-body">
+                        <h3>Poptein × LIT School</h3>
+                        <p class="brand-sub">Sold 20 Packs.<br>Won the Challenge. 🏆</p>
+                        <p>Took India's first protein popcorn brand into a live brand challenge hosted by LIT School — and <em>won it.</em> Sold 20 packs at ₹360 avg vs ₹80 MRP, generating ₹7,000 on-ground. Pure hustle meets sharp positioning.</p>
+                        <div class="strategy-tags">
+                            <span class="stag">Offline Activation</span>
+                            <span class="stag">LIT School Challenge 🥇</span>
+                            <span class="stag">₹7K Revenue</span>
+                            <span class="stag">4.5× Price Premium</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 04 — Ownly × Rapido (FIXED: was using wrong image) -->
+                <a href="ownly-strategy.html" class="brand-card reveal-on-scroll" style="transition-delay: 0.35s;">
+                    <div class="brand-card-img-wrapper">
+                        <div class="tape-deco" style="top: -8px; right: 50px; transform: rotate(3deg);"></div>
+                        <span class="brand-tag">Food Delivery · No Commission</span>
+                        <span class="card-num">04</span>
+                        <img src="file:///Users/mannanrudia/.gemini/antigravity/brain/79cbb53e-6318-4bd6-879e-ef8f66b9dc38/media__1774904321641.jpg" alt="Ownly — Rapido's Food Platform">
+                    </div>
+                    <div class="brand-card-body">
+                        <h3>Ownly × Rapido</h3>
+                        <p class="brand-sub">Nothing to Hide.<br>Ownly to Enter.</p>
+                        <p>Strategised the launch narrative for Rapido's zero-commission food app — <em>radical transparency as the campaign hook.</em> Built a full content playbook turning an honest brand promise into a challenger battle cry against Swiggy and Zomato.</p>
+                        <div class="strategy-tags">
+                            <span class="stag">Transparency Positioning</span>
+                            <span class="stag">Challenger Brand</span>
+                            <span class="stag">Content Playbook</span>
+                            <span class="stag">Rapido × Ownly</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 05 — Namma Creator Carnival -->
+                <a href="namma-carnival.html" class="brand-card reveal-on-scroll" style="grid-column: span 2; transition-delay: 0.4s;">
+                    <div class="brand-card-img-wrapper" style="height: 460px;">
+                        <div class="tape-deco" style="top: -8px; left: 50%; transform: translateX(-50%) rotate(-2deg);"></div>
+                        <span class="brand-tag" style="background: #111; box-shadow: none; border: 2px solid var(--accent);">Event Hosting · Creator Community</span>
+                        <span class="card-num">05</span>
+                        <img src="file:///Users/mannanrudia/.gemini/antigravity/brain/79cbb53e-6318-4bd6-879e-ef8f66b9dc38/namma_carnival_scrape_1774906872990.webp" alt="Namma Creator Carnival — Mannan Hosting Rida Tharrana" style="object-position: center 20%;">
+                    </div>
+                    <div class="brand-card-body">
+                        <h3>Namma Creator Carnival × LIT School</h3>
+                        <p class="brand-sub">Hosted Bangalore's<br>10 Biggest Creators. 🎤</p>
+                        <p>Built and hosted an exclusive creator conclave — raised <strong>₹1.5 Lakhs</strong> to bring it to life. Brought Bangalore's most influential voices under one roof. Rida Tharana, Arpit Sharma, Aneri Thakker, Varun Anandani, Vaibhav Kothari and more. <em>Mannan took the stage as the official host.</em> Powered by Aniglow Professional × LIT School.</p>
+                        <div class="strategy-tags">
+                            <span class="stag">Event Hosting</span>
+                            <span class="stag">₹1.5L Raised</span>
+                            <span class="stag">10 Top Influencers</span>
+                            <span class="stag">Aniglow × LIT School</span>
+                            <span class="stag">Bangalore</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- ── WIN STAT BANNER ── -->
+        <div class="win-banner reveal-on-scroll">
+            <div class="win-stat"><span class="num" data-target="4">4</span><span class="label">Brands Strategised</span></div>
+            <div class="win-stat"><span class="num">₹7K</span><span class="label">On-Ground Revenue</span></div>
+            <div class="win-stat"><span class="num">1st</span><span class="label">LIT School Challenge Won</span></div>
+            <div class="win-stat"><span class="num">360°</span><span class="label">Online + Offline Campaigns</span></div>
+        </div>
+
+        <!-- ── CLOSING QUOTE ── -->
+        <div class="zine-split-container" style="min-height: auto; padding: 6rem 4rem; z-index: 5; background: #f4f3ee;">
+            <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <div class="zine-floating-card reveal-on-scroll" style="display: inline-block; transform: rotate(-1deg); max-width: 800px;">
+                    <div class="tape" style="left: 50%; margin-left: -60px;"></div>
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.5rem); font-style: italic; color: #111; line-height: 1.4; margin-bottom: 1rem;">
+                        "I don't pitch ideas that look good on slides.<br>I build ones that <span style="color: var(--accent);">actually move product."</span>
+                    </h3>
+                    <p style="font-family: 'Caveat', cursive; font-size: 1.4rem; color: #888;">— Mannan, somewhere between a whiteboard and a stadium</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── PAGINATION ── -->
+        <div class="strat-pagination">
+            <a href="content-producer.html" class="page-btn">← Content Producer</a>
+            <a href="index.html" class="page-btn">Home Wall →</a>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+    // ── 3D CARD TILT ON MOUSE MOVE ──
+    document.querySelectorAll('a.brand-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const cx = rect.width / 2;
+            const cy = rect.height / 2;
+            const rotX = ((y - cy) / cy) * -8;
+            const rotY = ((x - cx) / cx) * 10;
+            card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-10px)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+            card.style.transition = 'transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.45s ease, border-color 0.3s ease';
+        });
+        card.addEventListener('mouseenter', () => {
+            card.style.transition = 'box-shadow 0.45s ease, border-color 0.3s ease';
+        });
+
+        // Ripple on click
+        card.addEventListener('click', e => {
+            const rect = card.getBoundingClientRect();
+            const dot = document.createElement('div');
+            dot.className = 'ripple-dot';
+            dot.style.left = (e.clientX - rect.left) + 'px';
+            dot.style.top  = (e.clientY - rect.top)  + 'px';
+            card.appendChild(dot);
+            setTimeout(() => dot.remove(), 700);
+        });
+    });
+
+    // ── STAGGERED TAG ANIMATION on hover ──
+    document.querySelectorAll('a.brand-card').forEach(card => {
+        const tags = card.querySelectorAll('.stag');
+        card.addEventListener('mouseenter', () => {
+            tags.forEach((t, i) => {
+                setTimeout(() => {
+                    t.style.transform = 'translateY(-3px) scale(1.05)';
+                }, i * 50);
+            });
+        });
+        card.addEventListener('mouseleave', () => {
+            tags.forEach(t => { t.style.transform = ''; });
+        });
+    });
+
+    // ── GSAP ENTRANCE FOR CARDS ──
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('a.brand-card').forEach((card, i) => {
+        gsap.from(card, {
+            scrollTrigger: { trigger: card, start: 'top 88%' },
+            y: 80, opacity: 0, duration: 0.9,
+            delay: i * 0.1,
+            ease: 'back.out(1.5)'
+        });
+    });
+
+    // ── WIN BANNER PULSE ──
+    gsap.from('.win-stat', {
+        scrollTrigger: { trigger: '.win-banner', start: 'top 80%' },
+        scale: 0.7, opacity: 0, duration: 0.6, stagger: 0.12, ease: 'back.out(1.7)'
+    });
+    </script>
+</body>
+</html>

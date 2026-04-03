@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poptein × LIT School — Case Study | Mannan Rudia</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=DotGothic16&family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&family=Rubik+Mono+One&family=Outfit:wght@300;600;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root { --brand: #E94A2F; --brand-dark: #b83520; }
+        body { background: #f4f3ee; overflow-x: hidden; }
+
+        .cs-hero {
+            position: relative; min-height: 90vh; display: flex;
+            flex-direction: column; justify-content: flex-end; overflow: hidden;
+        }
+        .cs-hero-img {
+            position: absolute; inset: 0; width: 100%; height: 100%;
+            object-fit: cover; object-position: center top;
+        }
+        .cs-hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(233,74,47,0.2) 60%, transparent 100%);
+        }
+        .cs-hero-content { position: relative; z-index: 10; padding: 4rem; max-width: 900px; }
+        .cs-brand-label {
+            font-family: 'Rubik Mono One', sans-serif; font-size: 0.9rem;
+            color: var(--brand); letter-spacing: 4px; text-transform: uppercase;
+            margin-bottom: 1rem; display: block;
+        }
+        .cs-title {
+            font-family: 'Outfit', sans-serif; font-weight: 900;
+            font-size: clamp(3rem, 7vw, 7rem); color: #fff; line-height: 0.9;
+            letter-spacing: -3px; margin-bottom: 1.5rem;
+        }
+        .cs-title span { color: var(--brand); }
+        .cs-tagline {
+            font-family: 'Playfair Display', serif; font-style: italic;
+            font-size: clamp(1.2rem, 2.5vw, 2rem); color: rgba(255,255,255,0.8);
+        }
+
+        .cs-body { max-width: 1100px; margin: 0 auto; padding: 6rem 3rem; }
+        .cs-section { margin-bottom: 6rem; }
+        .cs-section-label {
+            font-family: 'Rubik Mono One', sans-serif; font-size: 0.8rem;
+            letter-spacing: 4px; color: var(--brand); text-transform: uppercase;
+            margin-bottom: 0.8rem; display: block;
+        }
+        .cs-section h2 {
+            font-family: 'Outfit', sans-serif; font-weight: 900;
+            font-size: clamp(2rem, 4vw, 3.5rem); color: #111;
+            line-height: 1; margin-bottom: 2rem; letter-spacing: -1px;
+        }
+        .cs-section p {
+            font-family: 'Outfit', sans-serif; font-size: 1.15rem;
+            color: #444; line-height: 1.75; margin-bottom: 1.5rem;
+        }
+        .cs-problem-quote {
+            background: #111; color: #fff; padding: 3rem 4rem;
+            border-radius: 20px; border-left: 6px solid var(--brand);
+            margin: 3rem 0; position: relative; overflow: hidden;
+        }
+        .cs-problem-quote::before {
+            content: '"'; font-size: 15rem; font-family: 'Playfair Display', serif;
+            color: rgba(255,255,255,0.04); position: absolute;
+            top: -3rem; left: 2rem; line-height: 1; pointer-events: none;
+        }
+        .cs-problem-quote p {
+            font-family: 'Playfair Display', serif; font-style: italic;
+            font-size: clamp(1.4rem, 2.5vw, 2rem); color: #fff;
+            line-height: 1.4; position: relative; z-index: 1; margin: 0;
+        }
+
+        /* Win banner */
+        .cs-win-banner {
+            background: var(--brand); border-radius: 24px;
+            padding: 4rem; display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 2rem; text-align: center; margin: 3rem 0;
+        }
+        .cs-stat-num {
+            font-family: 'Rubik Mono One', sans-serif;
+            font-size: clamp(2rem, 4vw, 3.5rem); color: #fff; display: block; line-height: 1;
+        }
+        .cs-stat-label {
+            font-family: 'Outfit', sans-serif; font-size: 0.9rem;
+            font-weight: 700; color: rgba(255,255,255,0.75);
+            text-transform: uppercase; letter-spacing: 1px; margin-top: 0.5rem; display: block;
+        }
+
+        .cs-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 3rem 0; }
+        .cs-pillar {
+            background: #fff; border-radius: 16px; padding: 2.5rem 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.07); border-top: 4px solid var(--brand);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cs-pillar:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.14); }
+        .cs-pillar .icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+        .cs-pillar h3 { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.3rem; color: #111; margin-bottom: 0.8rem; }
+        .cs-pillar p { font-size: 1rem; color: #555; line-height: 1.6; margin: 0; }
+
+        .cs-timeline { margin: 3rem 0; }
+        .cs-timeline-item { display: flex; gap: 2rem; margin-bottom: 2.5rem; align-items: flex-start; }
+        .cs-timeline-num { font-family: 'Rubik Mono One', sans-serif; font-size: 1.5rem; color: var(--brand); opacity: 0.8; flex-shrink: 0; width: 3rem; }
+        .cs-timeline-item h4 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.3rem; color: #111; margin-bottom: 0.5rem; }
+        .cs-timeline-item p { font-size: 1.05rem; color: #555; margin: 0; line-height: 1.6; }
+
+        /* Trophy moment */
+        .cs-trophy-block {
+            background: #111; border-radius: 24px; padding: 4rem;
+            text-align: center; position: relative; overflow: hidden;
+        }
+        .cs-trophy-block::before {
+            content: '🏆'; font-size: 15rem; position: absolute; top: -2rem; right: -2rem; opacity: 0.06; pointer-events: none;
+        }
+        .cs-trophy-block h3 {
+            font-family: 'Rubik Mono One', sans-serif; font-size: clamp(2rem, 5vw, 4rem);
+            color: var(--brand); margin-bottom: 1rem;
+        }
+        .cs-trophy-block p {
+            font-family: 'Outfit', sans-serif; font-size: 1.2rem; color: rgba(255,255,255,0.75); max-width: 600px; margin: 0 auto;
+        }
+
+        .cs-nav {
+            display: flex; justify-content: space-between; align-items: center;
+            border-top: 2px dashed #ccc; padding: 3rem 3rem 5rem;
+            max-width: 1100px; margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar-pill">
+        <a href="index.html" class="pill-btn pill-logo" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">mr</a>
+        <div class="top-right-links">
+            <a href="content-strategies.html" class="pill-btn" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">← All Strategies</a>
+        </div>
+    </nav>
+
+    <header class="cs-hero">
+        <img class="cs-hero-img" src="file:///Users/mannanrudia/.gemini/antigravity/brain/79cbb53e-6318-4bd6-879e-ef8f66b9dc38/media__1774904321583.png" alt="Poptein × LIT School">
+        <div class="cs-hero-overlay"></div>
+        <div class="cs-hero-content reveal-on-scroll">
+            <span class="cs-brand-label">03 — India's First Protein Popcorn · LIT School Challenge</span>
+            <h1 class="cs-title">Poptein.<br><span>We Won. 🏆</span></h1>
+            <p class="cs-tagline">"Buy from us and make us do whatever."</p>
+        </div>
+    </header>
+
+    <div class="cs-body">
+
+        <!-- IMAGE FIRST: Live Activation split at top of page -->
+        <div style="display: flex; gap: 4rem; align-items: center; margin-bottom: 5rem; position: relative;">
+            <div style="flex: 1; min-width: 0;">
+                <span class="cs-section-label">The Activation</span>
+                <h2 style="font-family: 'Outfit',sans-serif; font-weight: 900; font-size: clamp(2rem,4vw,3.5rem); color: #111; line-height: 1; margin-bottom: 1.5rem; letter-spacing: -1px;">The Moment<br><span class="quirky-highlight">People Talked About.</span></h2>
+                <p style="font-size: 1.15rem; color: #444; line-height: 1.75;" class="reveal-on-scroll">We gave the audience actual control. Buy a pack and we'd do anything — push-ups, sing, roast ourselves. It wasn't a pitch. It was a <span class="quirky-highlight-alt">live performance</span>, and it sold out.</p>
+                <p style="font-family: 'Shadows Into Light', cursive; font-size: 1.6rem; color: var(--brand); margin-top: 1.5rem;">"We didn't just sell popcorn. We sold a performance."</p>
+            </div>
+            <div style="flex: 1; min-width: 0; display: flex; justify-content: center; position: relative; padding: 3rem 1rem;">
+                <div class="zine-element-card reveal-on-scroll" style="transform: rotate(-4deg); max-width: 480px; width: 100%;">
+                    <div class="tape-deco"></div>
+                    <img src="file:///Users/mannanrudia/.gemini/antigravity/brain/79cbb53e-6318-4bd6-879e-ef8f66b9dc38/media__1774904321583.png" alt="Poptein Branding" class="zine-card-image">
+                    <span class="zine-card-caption">The 'Do Whatever' Moment</span>
+                    <span class="sticker-float" style="top: -30px; right: -30px;">🍿</span>
+                    <span class="sticker-float" style="bottom: -20px; left: -20px; animation-delay: 1s;">🥇</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- THE PROBLEM -->
+        <div class="cs-section reveal-on-scroll">
+            <span class="cs-section-label">The Problem</span>
+            <h2>A Category That<br>Didn't Exist Yet.</h2>
+            <p>Poptein — India's first protein popcorn — walked into the LIT School live brand challenge with one massive disadvantage: nobody knew what protein popcorn was. The category didn't exist in the Indian consumer's mental map. You couldn't sell something people had never imagined needing.</p>
+            <div class="cs-problem-quote">
+                <p>"When you're creating a new category, your first job isn't marketing. It's education. And the fastest way to educate is to make people curious."</p>
+            </div>
+            <p>The LIT School challenge added another layer of pressure: this wasn't a slide deck presentation. It was a live sell — pitch, activate, and sell product in real-time, in front of judges and competitors. With an ₹80 MRP product that had to compete for attention against established snack brands.</p>
+        </div>
+
+        <!-- THE STRATEGY -->
+        <div class="cs-section reveal-on-scroll" style="position: relative;">
+            <div class="sticker-float" style="top: 0; right: 10%; font-size: 4rem;">🔥</div>
+            <span class="cs-section-label">The Strategy</span>
+            <h2>Don't Sell. <mark class="quirky-highlight">Create<br>a Scene.</mark></h2>
+            <p>The insight: in a crowded space, the loudest thing you can do is be completely honest and slightly absurd. We didn't build a polished booth. <span class="quirky-highlight-alt">We built a moment.</span></p>
+
+            <div class="cs-full-img reveal-on-scroll">
+                <img src="file:///Users/mannanrudia/.gemini/antigravity/brain/79cbb53e-6318-4bd6-879e-ef8f66b9dc38/media__1774904321583.png" alt="Poptein Live Activation Sign">
+            </div>
+
+            <div class="cs-pillars">
+                <div class="cs-pillar">
+                    <span class="icon">🎭</span>
+                    <h3>Costume Guerrilla</h3>
+                    <p>Dressed in a full black costume and hit the floor holding a handmade sign: "Buy from Us and MAKE US Do WHATEVER." Instant crowd stopper. Zero ad spend.</p>
+                </div>
+                <div class="cs-pillar">
+                    <span class="icon">🍿</span>
+                    <h3>Product as Proof</h3>
+                    <p>The pitch was simple: "Protein popcorn sounds weird. Taste it and tell us it doesn't work." Let the product handle the conversion. No jargon, no feature lists.</p>
+                </div>
+                <div class="cs-pillar">
+                    <span class="icon">💰</span>
+                    <h3>Premium Positioning</h3>
+                    <p>Priced at ₹360 avg despite ₹80 MRP. Justified via experience, curiosity, and the novelty premium — charged for the discovery, not just the product.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- THE EXECUTION -->
+        <div class="cs-section reveal-on-scroll">
+            <span class="cs-section-label">The Execution</span>
+            <h2>Real-Time. No<br>Safety Net.</h2>
+
+            <div class="cs-timeline">
+                <div class="cs-timeline-item">
+                    <span class="cs-timeline-num">01</span>
+                    <div>
+                        <h4>The Hook</h4>
+                        <p>Walked into the challenge venue in full costume with a handwritten sign. The sheer audacity created a crowd within minutes. People stopped — not because of the product, but because of the person.</p>
+                    </div>
+                </div>
+                <div class="cs-timeline-item">
+                    <span class="cs-timeline-num">02</span>
+                    <div>
+                        <h4>The Sample Close</h4>
+                        <p>Once people stopped, they got a taste. The product's quality did the heavy lifting. Protein popcorn that actually tastes good is a genuine novelty — reactions were organic and enthusiastic.</p>
+                    </div>
+                </div>
+                <div class="cs-timeline-item">
+                    <span class="cs-timeline-num">03</span>
+                    <div>
+                        <h4>The Premium Sell</h4>
+                        <p>Made the purchase feel like being part of something first — "You're eating India's first protein popcorn right now." At ₹360, that story justified the premium effortlessly.</p>
+                    </div>
+                </div>
+                <div class="cs-timeline-item">
+                    <span class="cs-timeline-num">04</span>
+                    <div>
+                        <h4>The Win</h4>
+                        <p>Sold 20 packs. ₹7,000 total revenue. 4.5× the MRP. Won the LIT School challenge. The judges' feedback: "Most memorable activation of the day."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- THE RESULT -->
+        <div class="cs-win-banner reveal-on-scroll">
+            <div><span class="cs-stat-num">20</span><span class="cs-stat-label">Packs Sold</span></div>
+            <div><span class="cs-stat-num">₹7K</span><span class="cs-stat-label">Revenue Generated</span></div>
+            <div><span class="cs-stat-num">4.5×</span><span class="cs-stat-label">Above MRP Premium</span></div>
+            <div><span class="cs-stat-num">🥇</span><span class="cs-stat-label">Challenge Won</span></div>
+        </div>
+
+
+
+        <!-- TROPHY MOMENT -->
+        <div class="cs-trophy-block reveal-on-scroll" style="margin-top: 3rem;">
+            <h3>🏆 Challenge Winner.</h3>
+            <p>Out of all competing teams at the LIT School Brand Challenge, Poptein's activation was judged the most impactful — for audacity, execution, and real revenue generated.</p>
+        </div>
+
+    </div>
+
+    <div class="cs-nav">
+        <a href="sportsyard-strategy.html" class="page-btn">← SportsYard</a>
+        <a href="ownly-strategy.html" class="page-btn">Ownly →</a>
+    </div>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from('.cs-hero-content', { y: 60, opacity: 0, duration: 1.4, ease: 'power3.out', delay: 0.3 });
+        gsap.utils.toArray('.cs-pillar').forEach((p, i) => {
+            gsap.from(p, { scrollTrigger: { trigger: p, start: 'top 85%' }, y: 50, opacity: 0, duration: 0.7, delay: i * 0.12, ease: 'back.out(1.5)' });
+        });
+        gsap.utils.toArray('.cs-timeline-item').forEach((item, i) => {
+            gsap.from(item, { scrollTrigger: { trigger: item, start: 'top 88%' }, x: -40, opacity: 0, duration: 0.6, delay: i * 0.1, ease: 'power3.out' });
+        });
+        gsap.from('.cs-win-banner > div', {
+            scrollTrigger: { trigger: '.cs-win-banner', start: 'top 80%' },
+            scale: 0.6, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'back.out(2)'
+        });
+    </script>
+</body>
+</html>

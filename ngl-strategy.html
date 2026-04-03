@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGL Hydration — Case Study | Mannan Rudia</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=DotGothic16&family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&family=Rubik+Mono+One&family=Outfit:wght@300;600;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root { --brand: #F5C115; --brand-dark: #c9940a; }
+        body { background: #f4f3ee; overflow-x: hidden; }
+
+        .cs-hero {
+            position: relative; min-height: 90vh; display: flex;
+            flex-direction: column; justify-content: flex-end;
+            overflow: hidden;
+        }
+        .cs-hero-img {
+            position: absolute; inset: 0; width: 100%; height: 100%;
+            object-fit: cover; object-position: center top;
+        }
+        .cs-hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+        }
+        .cs-hero-content {
+            position: relative; z-index: 10; padding: 4rem;
+            max-width: 900px;
+        }
+        .cs-brand-label {
+            font-family: 'Rubik Mono One', sans-serif; font-size: 0.9rem;
+            color: var(--brand); letter-spacing: 4px; text-transform: uppercase;
+            margin-bottom: 1rem; display: block;
+        }
+        .cs-title {
+            font-family: 'Outfit', sans-serif; font-weight: 900;
+            font-size: clamp(3rem, 7vw, 7rem); color: #fff; line-height: 0.9;
+            letter-spacing: -3px; margin-bottom: 1.5rem;
+        }
+        .cs-title span { color: var(--brand); }
+        .cs-tagline {
+            font-family: 'Playfair Display', serif; font-style: italic;
+            font-size: clamp(1.2rem, 2.5vw, 2rem); color: rgba(255,255,255,0.8);
+        }
+
+        /* Main body */
+        .cs-body { max-width: 1100px; margin: 0 auto; padding: 6rem 3rem; }
+
+        /* Section blocks */
+        .cs-section { margin-bottom: 6rem; }
+        .cs-section-label {
+            font-family: 'Rubik Mono One', sans-serif; font-size: 0.8rem;
+            letter-spacing: 4px; color: var(--brand); text-transform: uppercase;
+            margin-bottom: 0.8rem; display: block;
+        }
+        .cs-section h2 {
+            font-family: 'Outfit', sans-serif; font-weight: 900;
+            font-size: clamp(2rem, 4vw, 3.5rem); color: #111; line-height: 1;
+            margin-bottom: 2rem; letter-spacing: -1px;
+        }
+        .cs-section p {
+            font-family: 'Outfit', sans-serif; font-size: 1.15rem;
+            color: #444; line-height: 1.75; margin-bottom: 1.5rem;
+        }
+
+        /* Problem quote block */
+        .cs-problem-quote {
+            background: #111; color: #fff; padding: 3rem 4rem;
+            border-radius: 20px; border-left: 6px solid var(--brand);
+            margin: 3rem 0; position: relative; overflow: hidden;
+        }
+        .cs-problem-quote::before {
+            content: '"'; font-size: 15rem; font-family: 'Playfair Display', serif;
+            color: rgba(255,255,255,0.04); position: absolute;
+            top: -3rem; left: 2rem; line-height: 1; pointer-events: none;
+        }
+        .cs-problem-quote p {
+            font-family: 'Playfair Display', serif; font-style: italic;
+            font-size: clamp(1.4rem, 2.5vw, 2rem); color: #fff; line-height: 1.4;
+            position: relative; z-index: 1; margin: 0;
+        }
+
+        /* Strategy pillars grid */
+        .cs-pillars {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+            margin: 3rem 0;
+        }
+        .cs-pillar {
+            background: #fff; border-radius: 16px; padding: 2.5rem 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+            border-top: 4px solid var(--brand);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cs-pillar:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.14); }
+        .cs-pillar .icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+        .cs-pillar h3 {
+            font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.3rem;
+            color: #111; margin-bottom: 0.8rem;
+        }
+        .cs-pillar p {
+            font-size: 1rem; color: #555; line-height: 1.6; margin: 0;
+        }
+
+        /* Results stats */
+        .cs-results {
+            background: var(--brand); border-radius: 24px; padding: 4rem;
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 2rem; text-align: center; margin: 3rem 0;
+        }
+        .cs-stat-num {
+            font-family: 'Rubik Mono One', sans-serif;
+            font-size: clamp(2rem, 4vw, 3.5rem); color: #111;
+            display: block; line-height: 1;
+        }
+        .cs-stat-label {
+            font-family: 'Outfit', sans-serif; font-size: 0.9rem;
+            font-weight: 700; color: rgba(0,0,0,0.6);
+            text-transform: uppercase; letter-spacing: 1px; margin-top: 0.5rem;
+            display: block;
+        }
+
+        /* Full-width image */
+        .cs-full-img {
+            width: 100%; border-radius: 20px; overflow: hidden;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.15); margin: 3rem 0;
+        }
+        .cs-full-img img { width: 100%; height: 500px; object-fit: cover; display: block; }
+
+        /* Timeline */
+        .cs-timeline { margin: 3rem 0; }
+        .cs-timeline-item {
+            display: flex; gap: 2rem; margin-bottom: 2.5rem; align-items: flex-start;
+        }
+        .cs-timeline-num {
+            font-family: 'Rubik Mono One', sans-serif; font-size: 1.5rem;
+            color: var(--brand); opacity: 0.8; flex-shrink: 0; width: 3rem;
+        }
+        .cs-timeline-item h4 {
+            font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.3rem;
+            color: #111; margin-bottom: 0.5rem;
+        }
+        .cs-timeline-item p { font-size: 1.05rem; color: #555; margin: 0; line-height: 1.6; }
+
+        /* Nav */
+        .cs-nav {
+            display: flex; justify-content: space-between; align-items: center;
+            border-top: 2px dashed #ccc; padding: 3rem 3rem 5rem;
+            max-width: 1100px; margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar-pill">
+        <a href="index.html" class="pill-btn pill-logo" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">mr</a>
+        <div class="top-right-links">
+            <a href="content-strategies.html" class="pill-btn" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">← All Strategies</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="cs-hero">
+        <img class="cs-hero-img" src="file:///Users/mannanrudia/.gemini/antigravity/brain/79cbb53e-6318-4bd6-879e-ef8f66b9dc38/ngl_hydration_hero_zine_1775005503823.png" alt="NGL Hydration">
+        <div class="cs-hero-overlay"></div>
+        <div class="cs-hero-content reveal-on-scroll">
+            <span class="cs-brand-label">01 — Hydration Beverage · Offline Activation</span>
+            <h1 class="cs-title">NGL<br><span>Hydration.</span></h1>
+            <p class="cs-tagline">"Fuel Without the Crash."</p>
+        </div>
+    </header>
+
+    <div class="cs-body">
+
+        <!-- IMAGE FIRST: Product visual at top -->
+        <div style="display: flex; gap: 4rem; align-items: center; margin-bottom: 5rem; position: relative;">
+            <div style="flex: 1; min-width: 0; display: flex; justify-content: center; padding: 3rem 1rem;">
+                <div class="zine-element-card reveal-on-scroll" style="transform: rotate(-4deg); width: 100%;">
+                    <div class="tape-deco"></div>
+                    <img src="file:///Users/mannanrudia/.gemini/antigravity/brain/79cbb53e-6318-4bd6-879e-ef8f66b9dc38/ngl_hydration_hero_zine_1775005503823.png" alt="NGL Hydration Sampling Station" class="hero-image">
+                    <span class="zine-card-caption">The Bold Aesthetic</span>
+                    <span class="sticker-float" style="top: -30px; right: -30px;">⚡</span>
+                </div>
+            </div>
+            <div style="flex: 1; min-width: 0;">
+                <span class="cs-section-label">The Product</span>
+                <h2 style="font-family: 'Outfit',sans-serif; font-weight: 900; font-size: clamp(2rem,4vw,3rem); color: #111; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -1px;">Yellow. Black.<br>Undeniable.</h2>
+                <p style="font-size: 1.1rem; color: #444; line-height: 1.75;">NGL's bold chromatic identity — high-voltage yellow against black — wasn't just packaging. It was a signal. A claim: "We are not like any drink you've ever had." The visual language was made to stop the scroll and disrupt the shelf.</p>
+            </div>
+        </div>
+
+        <!-- THE PROBLEM -->
+        <div class="cs-section reveal-on-scroll">
+            <span class="cs-section-label">The Problem</span>
+            <h2>A Brand <mark class="quirky-highlight">Nobody<br>Had Tasted Yet.</mark></h2>
+            <div class="cs-full-img reveal-on-scroll">
+                <img src="assets/ngl-hydration.png" alt="NGL Campaign Boards">
+            </div>
+            <p class="reveal-on-scroll">The hydration space is dominated by colossal names like Gatorade, Prime, and Liquid IV. NGL was launching from zero. They had vibrant yellow and black branding, a great formula, but no brand equity with consumers. In a market built on habit, getting someone to switch their go-to sports drink requires more than a billboard.</p>
+            <div class="cs-problem-quote">
+                <p>"You can't sell a new flavor on a poster. You have to put the bottle in their hand when they're sweating."</p>
+            </div>
+            <p>The brief was clear: create real-world moments where people discover NGL not through an ad, but through an experience they'll remember — and tell their friends about.</p>
+        </div>
+
+        <!-- THE STRATEGY -->
+        <div class="cs-section reveal-on-scroll">
+            <span class="cs-section-label">The Strategy</span>
+            <h2>Meet People Where<br>They Already Are.</h2>
+            <p>Instead of chasing audiences online, we brought NGL to spaces where its target consumer was already in a performance mindset — gyms, running tracks, college sports courts, marathons. The strategy: eliminate the barrier to trial by making the first sip free, frictionless, and shareable.</p>
+
+            <div class="cs-pillars">
+                <div class="cs-pillar">
+                    <span class="icon">🏋️</span>
+                    <h3>Gym Booth Activation</h3>
+                    <p>Branded yellow-black pop-up booths inside premium gyms. "FUEL WITHOUT THE CRASH" messaging at the point of peak thirst — post-workout.</p>
+                </div>
+                <div class="cs-pillar">
+                    <span class="icon">🚐</span>
+                    <h3>Mobile Hydration Vans</h3>
+                    <p>NGL-branded vans parked at marathons and outdoor sporting events. High-visibility, mobile, and naturally shareable — perfect UGC fodder.</p>
+                </div>
+                <div class="cs-pillar">
+                    <span class="icon">🏁</span>
+                    <h3>Free Trial Arch Gates</h3>
+                    <p>Inflatable arch-style brand gates at race finish lines. Every runner who crossed got a free NGL sample — high emotion, high recall moment.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- THE EXECUTION -->
+        <div class="cs-section reveal-on-scroll" style="position: relative;">
+            <div class="sticker-float" style="top: 0; right: 10%; font-size: 4rem;">⚡</div>
+            <span class="cs-section-label">The Execution</span>
+            <h2>Step-by-Step<br><mark class="quirky-highlight-alt">Activation Plan.</mark></h2>
+
+            <div class="cs-timeline">
+                <div class="cs-timeline-item">
+                    <span class="cs-timeline-num">01</span>
+                    <div>
+                        <h4>Location Mapping</h4>
+                        <p>Identified top 20 gyms and 5 annual marathon routes in Tier-1 cities. Negotiated booth rights with gym owners at zero cost (product-for-visibility exchange).</p>
+                    </div>
+                </div>
+                <div class="cs-timeline-item">
+                    <span class="cs-timeline-num">02</span>
+                    <div>
+                        <h4>Brand Asset Production</h4>
+                        <p>Designed modular booth graphics, vehicle wraps, arch gates, and sampling stands — all in NGL's signature yellow-black. Bold, unavoidable, instagrammable by design.</p>
+                    </div>
+                </div>
+                <div class="cs-timeline-item">
+                    <span class="cs-timeline-num">03</span>
+                    <div>
+                        <h4>Trial Mechanic</h4>
+                        <p>"Walk up, get a free can. Buy if you love it." Zero pressure. Maximum trial. Conversion happened organically through product quality, not sales scripts.</p>
+                    </div>
+                </div>
+                <div class="cs-timeline-item">
+                    <span class="cs-timeline-num">04</span>
+                    <div>
+                        <h4>UGC Loop</h4>
+                        <p>Every touchpoint was designed to be photographed. The arch gate, the van, the booth — all optimized for social sharing, turning attendees into unpaid brand ambassadors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- THE INSIGHT -->
+        <div class="cs-section reveal-on-scroll">
+            <span class="cs-section-label">The Core Insight</span>
+            <div class="cs-problem-quote" style="border-left-color: var(--brand);">
+                <p>"One sip at the right moment converts a stranger into a loyal customer. Digital impressions can't replicate the trust of a physical, in-hand experience."</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="cs-nav">
+        <a href="content-strategies.html" class="page-btn">← Back to Strategies</a>
+        <a href="sportsyard-strategy.html" class="page-btn">SportsYard →</a>
+    </div>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from('.cs-hero-content', { y: 60, opacity: 0, duration: 1.4, ease: 'power3.out', delay: 0.3 });
+        gsap.utils.toArray('.cs-pillar').forEach((p, i) => {
+            gsap.from(p, { scrollTrigger: { trigger: p, start: 'top 85%' }, y: 50, opacity: 0, duration: 0.7, delay: i * 0.12, ease: 'back.out(1.5)' });
+        });
+        gsap.utils.toArray('.cs-timeline-item').forEach((item, i) => {
+            gsap.from(item, { scrollTrigger: { trigger: item, start: 'top 88%' }, x: -40, opacity: 0, duration: 0.6, delay: i * 0.1, ease: 'power3.out' });
+        });
+    </script>
+</body>
+</html>

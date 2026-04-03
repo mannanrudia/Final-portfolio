@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportsYard — Case Study | Mannan Rudia</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Rubik+Mono+One&family=Outfit:wght@300;600;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root { --brand: #111111; --brand-accent: #fc8019; }
+        body { background: #f4f3ee; overflow-x: hidden; }
+        .cs-hero { position: relative; min-height: 90vh; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
+        .cs-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: contrast(1.1); }
+        .cs-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.4) 55%, rgba(0,0,0,0.1) 100%); }
+        .cs-hero-content { position: relative; z-index: 10; padding: 4rem; max-width: 900px; }
+        .cs-brand-label { font-family: 'Rubik Mono One', sans-serif; font-size: 0.9rem; color: var(--brand-accent); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 1rem; display: block; }
+        .cs-title { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: clamp(3rem, 7vw, 7rem); color: #fff; line-height: 0.9; letter-spacing: -3px; margin-bottom: 1.5rem; }
+        .cs-title span { color: var(--brand-accent); }
+        .cs-tagline { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.2rem, 2.5vw, 2rem); color: rgba(255,255,255,0.8); }
+        .cs-body { max-width: 1100px; margin: 0 auto; padding: 6rem 3rem; }
+        .cs-section { margin-bottom: 6rem; }
+        .cs-section-label { font-family: 'Rubik Mono One', sans-serif; font-size: 0.8rem; letter-spacing: 4px; color: var(--brand-accent); text-transform: uppercase; margin-bottom: 0.8rem; display: block; }
+        .cs-section h2 { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: clamp(2rem, 4vw, 3.5rem); color: #111; line-height: 1; margin-bottom: 2rem; letter-spacing: -1px; }
+        .cs-section p { font-family: 'Outfit', sans-serif; font-size: 1.15rem; color: #444; line-height: 1.75; margin-bottom: 1.5rem; }
+        .cs-quote { background: #111; padding: 3rem 4rem; border-radius: 20px; border-left: 6px solid var(--brand-accent); margin: 3rem 0; }
+        .cs-quote p { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.4rem, 2.5vw, 2rem); color: #fff; line-height: 1.4; margin: 0; }
+        .cs-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 3rem 0; }
+        .cs-pillar { background: #fff; border-radius: 16px; padding: 2.5rem 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.07); border-top: 4px solid var(--brand-accent); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .cs-pillar:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.14); }
+        .cs-pillar .icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+        .cs-pillar h3 { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.3rem; color: #111; margin-bottom: 0.8rem; }
+        .cs-pillar p { font-size: 1rem; color: #555; line-height: 1.6; margin: 0; }
+        .cs-timeline { margin: 3rem 0; }
+        .cs-timeline-item { display: flex; gap: 2rem; margin-bottom: 2.5rem; align-items: flex-start; }
+        .cs-timeline-num { font-family: 'Rubik Mono One', sans-serif; font-size: 1.5rem; color: var(--brand-accent); opacity: 0.8; flex-shrink: 0; width: 3rem; }
+        .cs-timeline-item h4 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.3rem; color: #111; margin-bottom: 0.5rem; }
+        .cs-timeline-item p { font-size: 1.05rem; color: #555; margin: 0; line-height: 1.6; }
+        /* AZ Map */
+        .az-map { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin: 3rem 0; }
+        .az-item { background: #111; border-radius: 12px; padding: 1.5rem; text-align: center; transition: transform 0.3s, background 0.3s; }
+        .az-item:hover { transform: translateY(-5px); background: var(--brand-accent); }
+        .az-item .az-letter { font-family: 'Rubik Mono One', sans-serif; font-size: 2rem; color: var(--brand-accent); display: block; line-height: 1; }
+        .az-item:hover .az-letter { color: #fff; }
+        .az-item .az-word { font-family: 'Outfit', sans-serif; font-size: 0.85rem; color: rgba(255,255,255,0.6); font-weight: 600; margin-top: 0.4rem; display: block; letter-spacing: 1px; text-transform: uppercase; }
+        .cs-nav { display: flex; justify-content: space-between; align-items: center; border-top: 2px dashed #ccc; padding: 3rem 3rem 5rem; max-width: 1100px; margin: 0 auto; }
+    </style>
+</head>
+<body>
+    <nav class="navbar-pill">
+        <a href="index.html" class="pill-btn pill-logo" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">mr</a>
+        <div class="top-right-links">
+            <a href="content-strategies.html" class="pill-btn" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">← All Strategies</a>
+        </div>
+    </nav>
+
+    <header class="cs-hero">
+        <img src="file:///Users/mannanrudia/.gemini/antigravity/brain/79cbb53e-6318-4bd6-879e-ef8f66b9dc38/sportsyard_hero_zine_1775005476995.png" alt="SportsYard AR Campaign">
+        <div class="cs-hero-overlay"></div>
+        <div class="cs-hero-content reveal-on-scroll">
+            <span class="cs-brand-label">02 — Sports Platform · A-Z Campaign · AR + MOM-fluencer</span>
+            <h1 class="cs-title">Sports<br><span>Yard.</span></h1>
+            <p class="cs-tagline">"Unleash the Barrier. In Augmented Reality."</p>
+        </div>
+    </header>
+
+    <div class="cs-body">
+        <!-- IMAGE FIRST: Campaign visuals at top -->
+        <div style="display: flex; gap: 4rem; align-items: center; margin-bottom: 5rem; position: relative;">
+            <div style="flex: 1; min-width: 0;">
+                <span class="cs-section-label">Campaign Visual Identity</span>
+                <h2 style="font-family: 'Outfit',sans-serif; font-weight: 900; font-size: clamp(2rem,4vw,3rem); color: #111; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -1px;">Built for the<br>Grassroots Athlete.</h2>
+                <p style="font-size: 1.1rem; color: #444; line-height: 1.75;">Every visual was engineered to feel like it belonged on a regional sports ground — not in a boardroom. We made sports culture the aesthetic, not the afterthought.</p>
+            </div>
+            <div style="flex: 1.2; min-width: 0; display: flex; gap: 2rem; align-items: flex-start; padding: 3rem 1rem;">
+                <div class="zine-element-card reveal-on-scroll" style="transform: rotate(-5deg); flex: 1; background: #111;">
+                    <div class="tape-deco" style="top: -15px; right: -10px; transform: rotate(15deg);"></div>
+                    <img src="file:///Users/mannanrudia/.gemini/antigravity/brain/79cbb53e-6318-4bd6-879e-ef8f66b9dc38/sportsyard_hero_zine_1775005476995.png" alt="SportsYard AR Experience" class="zine-card-image" style="background: #111;">
+                    <span class="zine-card-caption" style="color: #fff;">Regional Talent</span>
+                    <span class="sticker-float" style="top: -30px; left: -20px;">🏊‍♂️</span>
+                </div>
+                <div class="zine-element-card reveal-on-scroll" style="transform: rotate(5deg); flex: 1; background: #111; margin-top: 3rem;">
+                    <div class="tape-deco" style="top: -15px; left: 20%; transform: rotate(-15deg);"></div>
+                    <img src="file:///Users/mannanrudia/.gemini/antigravity/brain/79cbb53e-6318-4bd6-879e-ef8f66b9dc38/sportsyard_canva_1_1775002371431.png" alt="Running Illustration" class="zine-card-image" style="background: #111;">
+                    <span class="zine-card-caption" style="color: #fff;">Grassroots Athletics</span>
+                    <span class="sticker-float" style="bottom: -20px; right: -20px; animation-delay: 1.5s;">🏃‍♀️</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="cs-section reveal-on-scroll">
+            <span class="cs-section-label">The Problem</span>
+            <h2>A Sports Platform <mark class="quirky-highlight">Nobody<br>Could Distinguish.</mark></h2>
+            <p class="reveal-on-scroll">SportsYard entered a space dominated by ESPN, JioSports, and BCCI's own channels. The content was solid — but the brand was invisible. Generic sports media positioning with <span class="quirky-highlight-alt">zero emotional hook</span>, no community identity, and no clear reason for a fan to choose SportsYard over anything else.</p>
+            <div class="cs-full-img reveal-on-scroll">
+                <img src="file:///Users/mannanrudia/.gemini/antigravity/brain/79cbb53e-6318-4bd6-879e-ef8f66b9dc38/media__1774904321514.png" alt="SportsYard AR Activation Gallery">
+            </div>
+            <div class="cs-quote">
+                <p>"Regional sports fans are the most loyal audience in India. They're also the most underserved. That's the gap."</p>
+            </div>
+            <p>The brief was ambitious: build brand identity, drive regional community adoption, and create content formats that generate organic sharing — without a celebrity-level budget.</p>
+        </div>
+
+        <div class="cs-section reveal-on-scroll">
+            <span class="cs-section-label">The Strategy</span>
+            <h2>A-to-Z.<br>Every Touchpoint Mapped.</h2>
+            <p>Instead of a campaign, we built a <em>system</em>. An A-to-Z content architecture where every stage of audience awareness had a specific format, channel, and conversion mechanism assigned to it.</p>
+            <div class="cs-pillars">
+                <div class="cs-pillar"><span class="icon">📍</span><h3>Regional MOM-fluencer</h3><p>Mothers of young athletes drive 90% of sports class enrollment decisions. Targeting them = free community adoption at the grassroots level.</p></div>
+                <div class="cs-pillar"><span class="icon">📱</span><h3>AR Poster Activation</h3><p>"Unleash the Barrier in Augmented Reality" — physical posters that come alive when scanned. Made fans feel like they were inside SportsYard's world.</p></div>
+                <div class="cs-pillar"><span class="icon">🏟️</span><h3>Offline Event Integration</h3><p>Branded presence at regional sports tournaments, school games, and local cricket leagues — where the real fans actually are.</p></div>
+            </div>
+        </div>
+
+        <!-- THE EXECUTION -->
+        <div class="cs-section reveal-on-scroll" style="position: relative;">
+            <div class="sticker-float" style="top: -20px; right: 5%; font-size: 5rem; transform: rotate(15deg);">🏆</div>
+            <span class="cs-section-label">The Execution</span>
+            <h2>The <mark class="quirky-highlight">A-to-Z</mark><br>Campaign Architecture.</h2>
+            <div class="az-map">
+                <div class="az-item"><span class="az-letter">A</span><span class="az-word">Awareness</span></div>
+                <div class="az-item"><span class="az-letter">E</span><span class="az-word">Engagement</span></div>
+                <div class="az-item"><span class="az-letter">I</span><span class="az-word">Interest</span></div>
+                <div class="az-item"><span class="az-letter">R</span><span class="az-word">Retention</span></div>
+                <div class="az-item"><span class="az-letter">C</span><span class="az-word">Community</span></div>
+                <div class="az-item"><span class="az-letter">M</span><span class="az-word">MOM-fluencer</span></div>
+                <div class="az-item"><span class="az-letter">AR</span><span class="az-word">Augmented Reality</span></div>
+                <div class="az-item"><span class="az-letter">Z</span><span class="az-word">Zealot / Advocate</span></div>
+            </div>
+        </div>
+
+        <div class="cs-section reveal-on-scroll">
+            <span class="cs-section-label">The Execution</span>
+            <h2>Region First.<br>Nation Second.</h2>
+            <div class="cs-timeline">
+                <div class="cs-timeline-item"><span class="cs-timeline-num">01</span><div><h4>MOM-fluencer Mapping</h4><p>Identified 50+ regional mother-of-athlete influencers across 8 cities. Not mega-influencers — hyper-local community anchors with 1K–10K engaged followers, 10× the trust.</p></div></div>
+                <div class="cs-timeline-item"><span class="cs-timeline-num">02</span><div><h4>AR Poster Drop</h4><p>Printed "Unleash the Barrier" posters at regional sports venues. When fans pointed their phone cameras at the poster, it triggered an AR sports experience — team highlight reels, player stats, game countdowns.</p></div></div>
+                <div class="cs-timeline-item"><span class="cs-timeline-num">03</span><div><h4>Tournament Takeovers</h4><p>Sponsored 12 regional youth tournaments. Not as banner-advertising — as content partners, filming hero moments and giving local athletes a platform with real production value.</p></div></div>
+                <div class="cs-timeline-item"><span class="cs-timeline-num">04</span><div><h4>Advocate Conversion</h4><p>Top MOM-fluencers became brand ambassadors. Their organic endorsement carried more weight than any paid ad — community trust at scale, zero celebrity budget.</p></div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cs-nav">
+        <a href="ngl-strategy.html" class="page-btn">← NGL Hydration</a>
+        <a href="poptein-strategy.html" class="page-btn">Poptein →</a>
+    </div>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from('.cs-hero-content', { y: 60, opacity: 0, duration: 1.4, ease: 'power3.out', delay: 0.3 });
+        gsap.utils.toArray('.cs-pillar').forEach((p, i) => { gsap.from(p, { scrollTrigger: { trigger: p, start: 'top 85%' }, y: 50, opacity: 0, duration: 0.7, delay: i * 0.12, ease: 'back.out(1.5)' }); });
+        gsap.utils.toArray('.cs-timeline-item').forEach((item, i) => { gsap.from(item, { scrollTrigger: { trigger: item, start: 'top 88%' }, x: -40, opacity: 0, duration: 0.6, delay: i * 0.1, ease: 'power3.out' }); });
+        gsap.utils.toArray('.az-item').forEach((item, i) => { gsap.from(item, { scrollTrigger: { trigger: '.az-map', start: 'top 80%' }, scale: 0, opacity: 0, duration: 0.5, delay: i * 0.06, ease: 'back.out(2)' }); });
+    </script>
+</body>
+</html>

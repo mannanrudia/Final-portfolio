@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Producer | Mannan Rudia</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=DotGothic16&family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&family=Rubik+Mono+One&family=Outfit:wght@300;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #f4f3ee; overflow-x: hidden; }
+
+        .zine-hero {
+            position: relative; width: 100%; height: auto; min-height: 70vh;
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden; padding: 10rem 2rem 5rem;
+        }
+
+        .vid-frame {
+            position: relative; border: 15px solid #fff; border-bottom: 50px solid #fff; background: #fff;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5); transform: rotate(2deg); z-index: 20; 
+            width: 80%; max-width: 600px;
+        }
+        .vid-frame iframe, .vid-frame video { width: 100%; aspect-ratio: 16/9; border: none; background: #000; display: block; }
+        .vid-frame.vertical iframe { aspect-ratio: 9/16; }
+
+        .polaroid-caption { font-family: 'Shadows Into Light', cursive; font-size: 2rem; color: #111; position: absolute; bottom: -40px; left: 20px; text-transform: uppercase; font-weight: bold; }
+        .stkr { position: absolute; z-index: 30; filter: drop-shadow(0 10px 10px rgba(0,0,0,0.3)); pointer-events: none; }
+        
+        .role-tag {
+            display: inline-block;
+            background: #111;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-family: 'Outfit', sans-serif;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .play-btn-link { 
+            display: inline-block; padding: 1rem 2rem; background: #111; color: #fff; 
+            font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; 
+            text-decoration: none; border-radius: 4px; border: 2px solid #111;
+            transition: all 0.3s; margin-top: 1.5rem; z-index: 20; position: relative;
+        }
+        .play-btn-link:hover { background: var(--accent); color: #fff; border-color: var(--accent); transform: translateY(-3px); }
+
+        .view-count-badge {
+            position: absolute; top: -15px; right: -15px; background: #ff4500; color: #fff; 
+            font-family: 'Rubik Mono One', sans-serif; padding: 8px 14px; transform: rotate(12deg); 
+            z-index: 50; box-shadow: 5px 5px 0 #111; border: 2px solid #111; font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        /* NEW FUNKY REEL GRID */
+        .reels-zine-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+            max-width: 1300px;
+            margin: -5rem auto 10rem;
+            padding: 0 2rem;
+            perspective: 1000px;
+        }
+
+        .reel-zine-card {
+            background: #fff;
+            padding: 1.2rem;
+            border: 2px solid #111;
+            box-shadow: 15px 15px 0 rgba(0,0,0,0.1);
+            position: relative;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+        }
+
+        .reel-zine-card:nth-child(1) { transform: rotate(-3deg) translateY(-20px); }
+        .reel-zine-card:nth-child(2) { transform: rotate(2deg) translateY(30px); }
+        .reel-zine-card:nth-child(3) { transform: rotate(-1.5deg) translateY(-10px); }
+
+        .reel-zine-card:hover {
+            transform: rotate(0deg) scale(1.05) translateY(-20px) !important;
+            box-shadow: 30px 30px 0 rgba(0,0,0,0.15);
+            z-index: 100;
+        }
+
+        .reel-vid-wrapper {
+            width: 100%;
+            aspect-ratio: 9/16;
+            background: #111;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+
+        .reel-card-info {
+            padding: 1.5rem 0 0.5rem;
+        }
+
+        .reel-card-info h3 {
+            font-family: 'Rubik Mono One', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.2;
+            color: #111;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .reel-card-info p {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .zine-num-tag {
+            font-family: 'Rubik Mono One';
+            color: #eee;
+            font-size: 3rem;
+            position: absolute;
+            top: -2.5rem;
+            left: -1rem;
+            z-index: -1;
+            user-select: none;
+        }
+
+        @media (max-width: 1000px) {
+            .reels-zine-grid { grid-template-columns: 1fr; gap: 8rem; margin-top: 2rem; }
+            .reel-zine-card { transform: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar-pill">
+        <a href="index.html" class="pill-btn pill-logo" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">mr</a>
+        <div class="top-right-links">
+            <a href="index.html" class="pill-btn" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">← back home</a>
+        </div>
+    </nav>
+
+    <header class="zine-hero soft-bg-vibrant">
+        <!-- Floating Stickers -->
+        <div class="zine-sticker" style="top: 15%; right: 10%; font-size: 6rem; transform: rotate(15deg);">🎥</div>
+        <div class="zine-sticker" style="bottom: 10%; left: 5%; font-size: 5rem; transform: rotate(-10deg);">📢</div>
+        
+        <div style="text-align: center; max-width: 900px; position: relative; z-index: 5;" class="reveal-on-scroll">
+            <span style="font-family: 'DotGothic16', monospace; font-size: 1.2rem; color: #666; letter-spacing: 4px; text-transform: uppercase;">The Visual Operator</span>
+            <h1 class="zine-massive-text" style="color: #111; margin: 1rem 0; font-size: clamp(3rem, 10vw, 8rem);">Content<br><span class="zine-accent-highlight" style="font-size: 0.9em;">Producer.</span></h1>
+            <p style="font-family: 'Playfair Display', serif; font-size: 1.8rem; font-style: italic; color: #444; line-height: 1.3;">"Crafting high-octane narratives for personal brands and regional business powerhouses."</p>
+        </div>
+    </header>
+
+    <main>
+        
+        <!-- REELS ZINE GRID (01, 02, 03) -->
+        <div class="reels-zine-grid">
+            
+            <!-- 01: Retention -->
+            <div class="reel-zine-card reveal-on-scroll">
+                <div class="zine-num-tag">01</div>
+                <div class="zine-tape top-left" style="background: rgba(255, 100, 100, 0.45);"></div>
+                <div class="view-count-badge">3.8M VIEWS</div>
+                <div class="reel-vid-wrapper">
+                    <iframe src="https://www.instagram.com/reel/DQG8Zrhkjzh/embed" width="100%" height="100%" frameborder="0" scrolling="no" allowtransparency="true" allow="autoplay; encrypted-media"></iframe>
+                </div>
+                <div class="reel-card-info">
+                    <h3>Viral Retention↗</h3>
+                    <p>Capturing attention in the first 0.5s with high-octane editing.</p>
+                </div>
+                <div class="card-sticker" style="bottom: -20px; right: -20px; font-size: 3rem;">🔥</div>
+            </div>
+
+            <!-- 02: Growth -->
+            <div class="reel-zine-card reveal-on-scroll">
+                <div class="zine-num-tag">02</div>
+                <div class="zine-tape top-right" style="background: rgba(100, 255, 100, 0.45);"></div>
+                <div class="view-count-badge" style="background: #111;">500K VIEWS</div>
+                <div class="reel-vid-wrapper">
+                    <iframe src="https://www.instagram.com/reel/DWOUdXGkmoN/embed" width="100%" height="100%" frameborder="0" scrolling="no" allowtransparency="true" allow="autoplay; encrypted-media"></iframe>
+                </div>
+                <div class="reel-card-info">
+                    <h3>Growth Engine↗</h3>
+                    <p>Strategic content positioning driving organic authority.</p>
+                </div>
+                <div class="card-sticker" style="top: 50%; left: -30px; font-size: 2.5rem;">📈</div>
+            </div>
+
+            <!-- 03: Vibe -->
+            <div class="reel-zine-card reveal-on-scroll">
+                <div class="zine-num-tag">03</div>
+                <div class="zine-tape top-left" style="width: 120px; background: rgba(100, 100, 255, 0.45);"></div>
+                <div class="view-count-badge" style="background: #007bb5;">MY FAV</div>
+                <div class="reel-vid-wrapper">
+                    <iframe src="https://www.instagram.com/reel/DPquCBkkgWx/embed" width="100%" height="100%" frameborder="0" scrolling="no" allowtransparency="true" allow="autoplay; encrypted-media"></iframe>
+                </div>
+                <div class="reel-card-info">
+                    <h3>Personal Vibe↗</h3>
+                    <p>Cinematic aesthetics merged with personal storytelling.</p>
+                </div>
+                <div class="card-sticker" style="bottom: 10px; left: -20px; font-size: 3rem;">🌎</div>
+            </div>
+
+        </div>
+
+        <!-- SECTION 5: CONTENT FOR BRANDS -->
+        <div style="padding: 10rem 2rem 5rem; background: #fff; position: relative;">
+            <div style="text-align: center; margin-bottom: 8rem;">
+                <h2 class="zine-massive-text" style="color: #111; font-size: clamp(3rem, 8vw, 6rem);">CONTENT<br><span class="zine-accent-highlight">FOR BRANDS.</span></h2>
+                <div class="zine-sticker" style="top: -20px; left: 50%; transform: translateX(-50%) rotate(5deg); font-size: 2rem; background: var(--accent); color: white; padding: 5px 15px; font-family: 'Rubik Mono One';">FEATURED WORK</div>
+            </div>
+
+            <div class="reels-zine-grid" style="margin-bottom: 0;">
+                
+                <!-- Brand Video 01: I DARE -->
+                <div class="reel-zine-card reveal-on-scroll" onclick="window.open('https://www.youtube.com/watch?v=Bh5hIO8jQ3k', '_blank')" style="cursor: pointer;">
+                    <div class="zine-num-tag">04</div>
+                    <div class="zine-tape top-right" style="background: rgba(0,0,0,0.1);"></div>
+                    <div class="reel-vid-wrapper" style="position: relative; overflow: hidden;">
+                        <img src="https://img.youtube.com/vi/Bh5hIO8jQ3k/maxresdefault.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;" alt="I DARE Thumbnail">
+                        <div class="play-overlay" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.2); transition: background 0.3s;">
+                            <div style="width: 60px; height: 60px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                                <span style="font-size: 1.5rem; margin-left: 5px; color: #f00;">▶</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reel-card-info">
+                        <h3>I DARE↗</h3>
+                        <p>High-energy brand storytelling with punchy visual hooks.</p>
+                    </div>
+                </div>
+
+                <!-- Brand Video 02: Poptein -->
+                <div class="reel-zine-card reveal-on-scroll" onclick="window.open('https://www.youtube.com/watch?v=DWZAJRWk359', '_blank')" style="cursor: pointer;">
+                    <div class="zine-num-tag">05</div>
+                    <div class="zine-tape top-left" style="background: rgba(255, 215, 0, 0.3);"></div>
+                    <div class="reel-vid-wrapper" style="position: relative; overflow: hidden;">
+                        <img src="file:///Users/mannanrudia/.gemini/antigravity/brain/79cbb53e-6318-4bd6-879e-ef8f66b9dc38/media__1774904321583.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;" alt="Poptein Thumbnail">
+                        <div class="play-overlay" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.2); transition: background 0.3s;">
+                            <div style="width: 60px; height: 60px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                                <span style="font-size: 1.5rem; margin-left: 5px; color: #f00;">▶</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reel-card-info">
+                        <h3>POPTEIN↗</h3>
+                        <p>Dynamic product showcase for India's first protein popcorn.</p>
+                    </div>
+                    <div class="card-sticker" style="top: -15px; right: -15px; font-size: 2rem;">🍿</div>
+                </div>
+
+                <!-- Brand Video 03: UV RUN -->
+                <div class="reel-zine-card reveal-on-scroll" onclick="window.open('https://www.youtube.com/watch?v=TDnQMee_CV0', '_blank')" style="cursor: pointer;">
+                    <div class="zine-num-tag">06</div>
+                    <div class="zine-tape top-right" style="background: rgba(0, 150, 255, 0.2);"></div>
+                    <div class="reel-vid-wrapper" style="position: relative; overflow: hidden;">
+                        <img src="https://img.youtube.com/vi/TDnQMee_CV0/maxresdefault.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;" alt="UV RUN Thumbnail">
+                        <div class="play-overlay" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.2); transition: background 0.3s;">
+                            <div style="width: 60px; height: 60px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                                <span style="font-size: 1.5rem; margin-left: 5px; color: #f00;">▶</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reel-card-info">
+                        <h3>UV RUN↗</h3>
+                        <p>Cinematic brand film capturing the energy of the urban run.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- YouTube Modal for Business Gita -->
+        <div class="zine-split-container" style="z-index: 20;">
+            <div class="zine-half half-paper" style="flex: 1.2; justify-content: flex-end; padding-right: 10%;">
+                <div class="reveal-on-scroll" style="max-width: 600px; text-align: right;">
+                    <div style="font-family: 'Rubik Mono One'; color: var(--brand); font-size: 1.2rem; margin-bottom: 0.5rem; text-align: right;">YOUTUBE PRODUCTION</div>
+                    <h2 class="zine-massive-text" style="color: #111; font-size: clamp(3rem, 6vw, 6rem); text-shadow: none; line-height: 0.9;">BUSINESS<br><span class="zine-accent-highlight" style="color: #111;">GITA.</span></h2>
+                    
+                    <div style="margin-top: 1.5rem; text-align: right;">
+                        <span class="role-tag">Script Writer</span>
+                        <span class="role-tag">Editor</span>
+                        <span class="role-tag">Production</span>
+                    </div>
+
+                    <p style="font-size: 1.2rem; color: #444; line-height: 1.6; margin-top: 1.5rem; border-right: 5px solid #111; padding-right: 1.5rem;">A high-growth regional YouTube channel producing business insights in Telugu. Managing everything from ideation and script-writing to final production and high-retention edits.</p>
+                    <button onclick="window.open('https://www.youtube.com/watch?v=5SUWbByhrkE', '_blank')" class="play-btn-link" style="margin-top: 2rem; cursor: pointer;">▶ Open on YouTube</button>
+                </div>
+            </div>
+
+            <div class="zine-half soft-bg-vibrant" style="position: relative; display: flex; align-items: center; justify-content: flex-start; z-index: 10; clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%); padding-left: 5%;">
+                <div class="zine-element-card reveal-on-scroll" style="transform: scale(1.05) rotate(2deg); max-width: 550px; cursor: pointer; position: relative;" onclick="window.open('https://www.youtube.com/watch?v=5SUWbByhrkE', '_blank')">
+                    <div class="tape-deco" style="top: -20px; right: 20px; left: auto; transform: rotate(15deg);"></div>
+                    <div style="aspect-ratio: 16/9; width: 100%; background: #000; overflow: hidden; border-radius: 4px; position: relative;">
+                        <!-- Using high-res maxresdefault YouTube thumbnail -->
+                        <img src="https://img.youtube.com/vi/5SUWbByhrkE/maxresdefault.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;" alt="Business Gita YouTube Thumbnail">
+                        <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.2); transition: background 0.3s;" onmouseenter="this.style.background='rgba(0,0,0,0.5)'" onmouseleave="this.style.background='rgba(0,0,0,0.2)'">
+                            <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                                <span style="font-size: 2rem; margin-left: 5px; color: #f00;">▶</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="zine-card-caption" style="color: var(--brand);">Regional Telugu Content</span>
+                    <span class="sticker-float" style="top: 15%; left: -40px; font-size: 6rem;">📺</span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Permanent Navigation Footer -->
+        <div class="pagination-row">
+            <a href="short-film.html" class="page-btn">← Short Films</a>
+            <a href="content-strategies.html" class="page-btn">Strategy Case Studies →</a>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parde ke peeche Films | Mannan Rudia</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=DotGothic16&family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&family=Rubik+Mono+One&family=Outfit:wght@300;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Specific overrides for Zine Scrapbook Theme on this page */
+        body { background-color: #f4f3ee; overflow-x: hidden; }
+
+        /* The Hero Zine Page */
+        .zine-hero {
+            position: relative; width: 100%; height: auto; min-height: 90vh;
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden; padding-top: 5rem;
+        }
+        .zine-hero-text {
+            position: absolute; text-align: center; width: 100%; max-width: 1000px; padding: 0 2rem;
+        }
+        
+        .vid-frame {
+            position: relative; border: 15px solid #fff; border-bottom: 50px solid #fff; background: #fff;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5); transform: rotate(2deg); z-index: 20; 
+            width: 80%; max-width: 600px;
+        }
+        .vid-frame iframe { width: 100%; aspect-ratio: 16/9; border: none; background: #000; display: block; }
+        .vid-frame.vertical iframe { aspect-ratio: 9/16; }
+
+        .polaroid-caption { font-family: 'Shadows Into Light', cursive; font-size: 2rem; color: #111; position: absolute; bottom: -40px; left: 20px; text-transform: uppercase; font-weight: bold; }
+
+        .stkr { position: absolute; z-index: 30; filter: drop-shadow(0 10px 10px rgba(0,0,0,0.3)); pointer-events: none; }
+
+        .back-btn { 
+            display: inline-block; padding: 1.2rem 3.5rem; background: var(--accent); color: #fff; 
+            border: none; border-radius: 5px; font-weight: 900; font-family: var(--font-heading); 
+            text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s; 
+            text-decoration: none; box-shadow: 4px 4px 0 #111; border: 2px solid #111;
+        }
+        .back-btn:hover { background: #111; color: var(--accent); transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--accent); }
+
+        .play-btn-link { 
+            display: inline-block; padding: 1rem 2rem; background: #111; color: #fff; 
+            font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; 
+            text-decoration: none; border-radius: 4px; border: 2px solid #111;
+            transition: all 0.3s; margin-top: 1.5rem; z-index: 20; position: relative;
+        }
+        .play-btn-link:hover { background: var(--accent); color: #fff; border-color: var(--accent); transform: translateY(-3px); }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar-pill">
+        <a href="index.html" class="pill-btn pill-logo" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">mr</a>
+        <div class="top-right-links">
+            <a href="index.html" class="pill-btn" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">← return home</a>
+        </div>
+    </nav>
+
+    <!-- Zine Hero Block -->
+    <header class="zine-hero soft-bg-vibrant">
+        <!-- Floating Film Elements -->
+        <div class="zine-sticker" style="top: 15%; left: 10%; font-size: 8rem; filter: drop-shadow(5px 5px 0 var(--accent));">🎬</div>
+        <div class="zine-sticker" style="bottom: 15%; right: 10%; font-size: 6rem; transform: rotate(15deg); filter: grayscale(1) opacity(0.5); animation-duration: 4s;">🎞️</div>
+
+        <!-- Floating ticket -->
+        <div class="zine-floating-card reveal-on-scroll" style="position: absolute; top: 25%; right: 5%; transform: rotate(25deg) scale(0.8); z-index: 10;">
+            <div class="tape"></div>
+            <strong style="color:var(--accent); text-transform: uppercase; font-size: 1.2rem; display:block; margin-bottom: 0.5rem; font-family: 'Rubik Mono One'; ">Admit One</strong>
+            <p style="font-family: var(--font-body); font-size: 1rem; color: #666;">Date: ONGOING<br>Class: AESTHETIC</p>
+        </div>
+        
+        <div class="zine-hero-text reveal-on-scroll">
+            <h2 style="font-family: 'DotGothic16', monospace; font-size: clamp(1.5rem, 3vw, 2.5rem); color: #666; letter-spacing: 5px; margin-bottom: 1rem;">SHORT BRAND FILMS</h2>
+            <h1 class="zine-massive-text" style="color: #111; text-shadow: 0 5px 15px rgba(255,255,255,0.8); font-size: clamp(3rem, 7vw, 9rem); line-height: 1;">
+                Parde Ke Peeche<br><span class="zine-accent-highlight" style="font-size: clamp(4rem, 8vw, 10rem);">Films</span>
+            </h1>
+            <p style="font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.5vw, 2.2rem); font-style: italic; color: #444; margin-top: 2rem;">
+                "It is our baby, our own film production crew with the most passionate people pouring their lives into making films."
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECTION 1: PRONTO -->
+        <div class="zine-split-container" style="z-index: 10;">
+            <div class="zine-half half-paper">
+                <div class="reveal-on-scroll" style="max-width: 500px; padding-right: 2rem; text-align: right;">
+                    <div class="zine-sticker" style="top: -50px; left: -50px; font-size: 4rem; opacity: 0.6; transform: rotate(-45deg);">⚡</div>
+                    <h2 style="font-size: 3rem; font-family: var(--font-heading); font-weight: 900; line-height: 1.1; margin-bottom: 2rem; color: #111;">PRONTO —<br><em style="color:var(--accent); font-family: var(--font-serif); font-weight: normal;">The On-Demand Vision.</em></h2>
+                    <p style="font-size: 1.2rem; color: #444; line-height: 1.6; border-right: 5px solid var(--accent); padding-right: 1.5rem;">A high-octave brand film exploring the life and speed of modern home services. We built a narrative that feels as fast as the service itself.</p>
+                    <div style="margin-top: 1.5rem; font-family: 'Outfit', sans-serif; font-weight: 800; color: #111; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem;">
+                        Director, Assistant Writer <span style="background: var(--accent); color: #fff; padding: 2px 8px; margin-left: 10px;">Role</span>
+                    </div>
+                    <button onclick="window.open('https://www.youtube.com/watch?v=EzD7s6aDUeI', '_blank')" class="play-btn-link" style="margin-top: 1.5rem; cursor: pointer;">▶ Play on YouTube</button>
+                </div>
+            </div>
+
+            <div class="zine-half soft-bg-vibrant" style="position: relative; display: flex; align-items: center; justify-content: flex-start; z-index: 100; clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%); padding-left: 10%;">
+                <div class="zine-element-card reveal-on-scroll" style="transform: rotate(3deg); max-width: 500px; cursor: pointer; position: relative;" onclick="window.open('https://www.youtube.com/watch?v=EzD7s6aDUeI', '_blank')">
+                    <div class="tape-deco" style="top: -10px; left: -10px; transform: rotate(-25deg); left: 30%;"></div>
+                    <!-- Thumbnail with play overlay -->
+                    <div style="position: relative; border-radius: 4px; overflow: hidden;">
+                        <img src="file:///Users/mannanrudia/.gemini/antigravity/brain/d4bbecd1-4854-44a7-85d1-3ff9a1e6eacd/short_film_hero_1775057856674.png" alt="Pronto brand film thumbnail" class="zine-card-image">
+                        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; transition: background 0.3s;" onmouseenter="this.style.background='rgba(0,0,0,0.5)'" onmouseleave="this.style.background='rgba(0,0,0,0.3)'">
+                            <div style="width: 70px; height: 70px; background: rgba(255,255,255,0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 30px rgba(0,0,0,0.4);">
+                                <span style="font-size: 1.8rem; margin-left: 5px;">▶</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="zine-card-caption">First Short Film for Pronto</span>
+                    <span class="sticker-float" style="top: -20px; left: -20px;">🎬</span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- SECTION 2: PRATIBIMB -->
+        <div class="zine-split-container" style="z-index: 15;">
+            <div class="zine-half soft-bg-vibrant" style="justify-content: flex-end; padding-right: 10%; clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);">
+                <div class="zine-element-card reveal-on-scroll" style="transform: rotate(-4deg); max-width: 500px; cursor: pointer; position: relative;" onclick="window.open('https://www.youtube.com/watch?v=0sdAKiEZOGc', '_blank')">
+                    <div class="tape-deco" style="top: -10px; right: 20px; left: auto; transform: rotate(15deg);"></div>
+                    <div style="position: relative; border-radius: 4px; overflow: hidden;">
+                        <img src="file:///Users/mannanrudia/.gemini/antigravity/brain/d4bbecd1-4854-44a7-85d1-3ff9a1e6eacd/content_producer_final_shortfilm_style_1775058724595.png" alt="Pratibimb mirrors banner" class="zine-card-image">
+                        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; transition: background 0.3s;" onmouseenter="this.style.background='rgba(0,0,0,0.5)'" onmouseleave="this.style.background='rgba(0,0,0,0.3)'">
+                            <div style="width: 70px; height: 70px; background: rgba(255,255,255,0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 30px rgba(0,0,0,0.4);">
+                                <span style="font-size: 1.8rem; margin-left: 5px;">▶</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="zine-card-caption" style="color: var(--accent);">Mirror of Identity</span>
+                    <span class="sticker-float" style="bottom: -20px; right: -20px;">✨</span>
+                </div>
+            </div>
+
+            <div class="zine-half half-paper" style="flex: 1.2;">
+                <div class="reveal-on-scroll" style="max-width: 600px; padding-left: 4rem; text-align: left;">
+                    <h2 class="zine-massive-text" style="color: #111; font-size: clamp(3rem, 6vw, 6rem); text-shadow: none;">PRATIBIMB<br><span class="zine-accent-highlight">IDENTITY.</span></h2>
+                    <p style="font-size: 1.2rem; color: #444; line-height: 1.6; margin-top: 2rem; border-left: 5px solid var(--accent); padding-left: 1.5rem;">"Identity — Reflected." A highly intimate short film exploring themes surrounding transgender life, deep psychological nuance, and finding ground in chaos. Transformed from 'Unspoken' to a brand-centric visual journey.</p>
+                    <div style="margin-top: 1.5rem; font-family: 'Outfit', sans-serif; font-weight: 800; color: #111; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem;">
+                        <span style="background: var(--accent); color: #fff; padding: 2px 8px; margin-right: 10px;">Role</span> Assistant Director
+                    </div>
+                    <div style="text-align: left; margin-top: 2rem;">
+                        <button onclick="window.open('https://www.youtube.com/watch?v=0sdAKiEZOGc', '_blank')" class="play-btn-link">▶ Open on YouTube</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- SECTION 3: TRAVENZA -->
+        <div class="zine-split-container" style="z-index: 18;">
+            <div class="zine-half half-paper">
+                <div class="reveal-on-scroll" style="max-width: 500px; padding-right: 2rem; text-align: right;">
+                    <h2 class="zine-massive-text" style="color: #111; font-size: clamp(3rem, 6vw, 6rem); text-shadow: none;">TRAVENZA<br><span class="zine-accent-highlight">TRAVEL.</span></h2>
+                    <p style="font-size: 1.2rem; color: #444; line-height: 1.6; margin-top: 2rem; border-right: 5px solid var(--accent); padding-right: 1.5rem;">Intimate storytelling that moves travel marketing from generic destinations to shared emotional connections. We built this for the couples who see travel as a bridge to each other.</p>
+                    <div style="margin-top: 1.5rem; font-family: 'Outfit', sans-serif; font-weight: 800; color: #111; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem;">
+                        Actor <span style="background: var(--accent); color: #fff; padding: 2px 8px; margin-left: 10px;">Role</span>
+                    </div>
+                    <a href="https://www.instagram.com/reel/DUstkfBE7Gl/" target="_blank" class="play-btn-link" style="margin-top: 2rem;">▶ Watch Reel</a>
+                </div>
+            </div>
+
+            <div class="zine-half soft-bg-vibrant" style="position: relative; display: flex; align-items: center; justify-content: flex-start; z-index: 100; clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%); padding-left: 5%;">
+                <div class="zine-sticker" style="top: 10%; right: 10%; width: 150px;">
+                    <div class="brand-logo brand-logo-text" style="color:#111; font-family:'Playfair Display'; font-style:italic; font-weight:900; font-size:1.6rem; background:white; padding: 10px; border-radius: 8px;">Travenza</div>
+                </div>
+                <div class="zine-element-card reveal-on-scroll" style="transform: rotate(4deg); max-width: 400px; position: relative;">
+                    <div class="tape-deco" style="top: -15px; left: -10px; transform: rotate(-25deg);"></div>
+                    <div style="aspect-ratio: 9/16; width: 100%; background: #000; overflow: hidden; border-radius: 4px;">
+                        <iframe src="https://www.instagram.com/reel/DUstkfBE7Gl/embed" style="width: 100%; height: 100%; border: none;" scrolling="no"></iframe>
+                    </div>
+                    <span class="zine-card-caption">Intimate Couples Journey</span>
+                    <span class="sticker-float" style="bottom: -20px; right: -20px;">❤️</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: META SHOT -->
+        <div class="zine-split-container" style="z-index: 20;">
+            <div class="zine-half soft-bg-vibrant" style="justify-content: flex-end; padding-right: 10%; clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);">
+                <div class="zine-element-card reveal-on-scroll" style="transform: scale(1.1) rotate(-4deg); max-width: 400px; position: relative;">
+                    <div class="tape-deco" style="top: -20px; left: 20px; transform: rotate(-15deg);"></div>
+                    <div style="aspect-ratio: 9/16; width: 100%; background: #000; overflow: hidden; border-radius: 4px;">
+                        <iframe src="https://www.instagram.com/reel/DJq8F-dyUYR/embed" style="width: 100%; height: 100%; border: none;" scrolling="no"></iframe>
+                    </div>
+                    <span class="zine-card-caption">Brand Action</span>
+                    <span class="sticker-float" style="top: 15%; right: -40px; font-size: 6rem;">🎞️</span>
+                </div>
+            </div>
+
+            <div class="zine-half half-paper" style="flex: 1.2;">
+                <div class="reveal-on-scroll" style="max-width: 600px; padding-left: 4rem; text-align: left;">
+                    <h2 class="zine-massive-text" style="color: #111; font-size: clamp(3rem, 6vw, 6rem); text-shadow: none;">META<br><span class="zine-accent-highlight">SHOT.</span></h2>
+                    <p style="font-size: 1.2rem; color: #444; line-height: 1.6; margin-top: 2rem; border-left: 5px solid var(--accent); padding-left: 1.5rem;">Fast pacing, aggressive cuts, and high-energy editing specifically engineered to grab and hold attention. Transforming a product narrative into an absolute visual adrenaline rush.</p>
+                    <div style="margin-top: 1.5rem; font-family: 'Outfit', sans-serif; font-weight: 800; color: #111; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem; border-left: 5px solid var(--accent); padding-left: 1.5rem;">
+                        <span style="background: var(--accent); color: #fff; padding: 2px 8px; margin-right: 10px;">Role</span> Actor, Creative Director, Editor
+                    </div>
+                    <a href="https://www.instagram.com/reel/DJq8F-dyUYR/?igsh=MW11MmJtMnVydXM5eQ==" target="_blank" class="play-btn-link" style="margin-top: 2rem;">▶ Watch on Reels</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: SHORT FILM BTS -->
+        <div class="zine-split-container" style="z-index: 25;">
+            <div class="zine-half half-paper">
+                <div class="reveal-on-scroll" style="max-width: 500px; padding-right: 2rem; text-align: right;">
+                    <h2 class="zine-massive-text" style="color: #111; font-size: clamp(3rem, 6vw, 6rem); text-shadow: none;">FILM<br><span class="zine-accent-highlight">BTS.</span></h2>
+                    <p style="font-size: 1.2rem; color: #444; line-height: 1.6; margin-top: 2rem; border-right: 5px solid var(--accent); padding-right: 1.5rem;">Parde ke peeche — A raw look into the process, the grit, and the passion that goes into every frame. Our crew in action, building magic from scratch.</p>
+                    <div style="margin-top: 1.5rem; font-family: 'Outfit', sans-serif; font-weight: 800; color: #111; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem;">
+                        <span style="background:var(--accent); color:#fff; padding: 2px 8px; margin-right: 10px;">Behind the Scenes</span> Producer, Crew
+                    </div>
+                    <a href="https://www.instagram.com/reel/DT3CUR4khcE/" target="_blank" class="play-btn-link" style="margin-top: 2rem;">▶ View Process</a>
+                </div>
+            </div>
+
+            <div class="zine-half soft-bg-vibrant" style="position: relative; display: flex; align-items: center; justify-content: flex-start; z-index: 100; clip-path: polygon(5% 0, 100% 0, 100% 100%, 0% 100%); padding-left: 10%;">
+                <div class="zine-element-card reveal-on-scroll" style="transform: rotate(3deg); max-width: 400px; position: relative;">
+                    <div class="tape-deco" style="top: -15px; left: -10px; transform: rotate(-25deg);"></div>
+                    <div style="aspect-ratio: 9/16; width: 100%; background: #000; overflow: hidden; border-radius: 4px;">
+                        <iframe src="https://www.instagram.com/reel/DT3CUR4khcE/embed" style="width: 100%; height: 100%; border: none;" scrolling="no"></iframe>
+                    </div>
+                    <span class="zine-card-caption">Behind the Scenes grit</span>
+                    <span class="sticker-float" style="top: -30px; right: -30px;">🎬</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Permanent Bottom Navigation Flow -->
+        <div class="pagination-row">
+            <a href="index.html" class="page-btn">← Home Wall</a>
+            <a href="content-producer.html" class="page-btn">Content Producer →</a>
+        </div>
+
+    </main>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

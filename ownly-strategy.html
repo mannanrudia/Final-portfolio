@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ownly × Rapido — Case Study | Mannan Rudia</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Rubik+Mono+One&family=Outfit:wght@300;600;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root { --brand: #E91E8C; }
+        body { background: #f4f3ee; overflow-x: hidden; }
+        .cs-hero { position: relative; min-height: 90vh; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
+        .cs-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+        .cs-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(233,30,140,0.15) 60%, transparent 100%); }
+        .cs-hero-content { position: relative; z-index: 10; padding: 4rem; max-width: 900px; }
+        .cs-brand-label { font-family: 'Rubik Mono One', sans-serif; font-size: 0.9rem; color: var(--brand); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 1rem; display: block; }
+        .cs-title { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: clamp(3rem, 7vw, 7rem); color: #fff; line-height: 0.9; letter-spacing: -3px; margin-bottom: 1.5rem; }
+        .cs-title span { color: var(--brand); }
+        .cs-tagline { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.2rem, 2.5vw, 2rem); color: rgba(255,255,255,0.8); }
+        .cs-body { max-width: 1100px; margin: 0 auto; padding: 6rem 3rem; }
+        .cs-section { margin-bottom: 6rem; }
+        .cs-section-label { font-family: 'Rubik Mono One', sans-serif; font-size: 0.8rem; letter-spacing: 4px; color: var(--brand); text-transform: uppercase; margin-bottom: 0.8rem; display: block; }
+        .cs-section h2 { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: clamp(2rem, 4vw, 3.5rem); color: #111; line-height: 1; margin-bottom: 2rem; letter-spacing: -1px; }
+        .cs-section p { font-family: 'Outfit', sans-serif; font-size: 1.15rem; color: #444; line-height: 1.75; margin-bottom: 1.5rem; }
+        .cs-quote { background: #111; padding: 3rem 4rem; border-radius: 20px; border-left: 6px solid var(--brand); margin: 3rem 0; }
+        .cs-quote p { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.4rem, 2.5vw, 2rem); color: #fff; line-height: 1.4; margin: 0; }
+        .cs-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 3rem 0; }
+        .cs-pillar { background: #fff; border-radius: 16px; padding: 2.5rem 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.07); border-top: 4px solid var(--brand); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .cs-pillar:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(233,30,140,0.12); }
+        .cs-pillar .icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+        .cs-pillar h3 { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.3rem; color: #111; margin-bottom: 0.8rem; }
+        .cs-pillar p { font-size: 1rem; color: #555; line-height: 1.6; margin: 0; }
+        .cs-timeline { margin: 3rem 0; }
+        .cs-timeline-item { display: flex; gap: 2rem; margin-bottom: 2.5rem; align-items: flex-start; }
+        .cs-timeline-num { font-family: 'Rubik Mono One', sans-serif; font-size: 1.5rem; color: var(--brand); opacity: 0.8; flex-shrink: 0; width: 3rem; }
+        .cs-timeline-item h4 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.3rem; color: #111; margin-bottom: 0.5rem; }
+        .cs-timeline-item p { font-size: 1.05rem; color: #555; margin: 0; line-height: 1.6; }
+        .cs-compare { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.08); margin: 3rem 0; }
+        .cs-compare-row { display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 1.5rem 2rem; border-bottom: 1px solid #f0f0f0; }
+        .cs-compare-row:first-child { background: #111; }
+        .cs-compare-row:first-child span { color: #fff; font-weight: 900; font-family: 'Outfit', sans-serif; font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; }
+        .cs-compare-row span { font-family: 'Outfit', sans-serif; font-size: 1rem; color: #444; }
+        .cs-compare-row .winner { color: var(--brand); font-weight: 800; }
+        .cs-compare-row .loser { color: #bbb; }
+        .cs-manifesto { background: var(--brand); border-radius: 24px; padding: 4rem; text-align: center; }
+        .cs-manifesto h3 { font-family: 'Rubik Mono One', sans-serif; font-size: clamp(2rem, 5vw, 4rem); color: #fff; margin-bottom: 1rem; }
+        .cs-manifesto p { font-size: 1.2rem; color: rgba(255,255,255,0.85); max-width: 600px; margin: 0 auto; }
+        .cs-nav { display: flex; justify-content: space-between; align-items: center; border-top: 2px dashed #ccc; padding: 3rem 3rem 5rem; max-width: 1100px; margin: 0 auto; }
+    </style>
+</head>
+<body>
+    <nav class="navbar-pill">
+        <a href="index.html" class="pill-btn pill-logo" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">mr</a>
+        <div class="top-right-links">
+            <a href="content-strategies.html" class="pill-btn" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">← All Strategies</a>
+        </div>
+    </nav>
+
+    <header class="cs-hero">
+        <img src="file:///Users/mannanrudia/.gemini/antigravity/brain/79cbb53e-6318-4bd6-879e-ef8f66b9dc38/media__1774904321641.jpg" alt="Ownly × Rapido">
+        <div class="cs-hero-overlay"></div>
+        <div class="cs-hero-content reveal-on-scroll">
+            <span class="cs-brand-label">04 — Food Delivery · No Commission · Rapido</span>
+            <h1 class="cs-title">Ownly.<br><span>Nothing to Hide.</span></h1>
+            <p class="cs-tagline">"Hidden Costs: 0. Ownly to Enter."</p>
+        </div>
+    </header>
+
+    <div class="cs-body">
+        <!-- IMAGE FIRST: Campaign imagery at top -->
+        <div style="display: flex; gap: 3rem; align-items: flex-start; margin-bottom: 5rem; position: relative;">
+            <div style="flex: 1; min-width: 0; display: flex; justify-content: center; padding: 3rem 1rem 3rem 0;">
+                <div class="zine-element-card reveal-on-scroll" style="transform: rotate(-4deg); width: 100%;">
+                    <div class="tape-deco" style="right: 20px; left: auto; transform: rotate(15deg);"></div>
+                    <img src="file:///Users/mannanrudia/.gemini/antigravity/brain/79cbb53e-6318-4bd6-879e-ef8f66b9dc38/media__1774904321641.jpg" alt="Ownly App Design" class="zine-card-image">
+                    <span class="zine-card-caption">The Ownly Rider Presence</span>
+                    <span class="sticker-float" style="top: -30px; left: -20px;">🛵</span>
+                </div>
+            </div>
+            <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2rem; padding: 1rem 0 3rem;">
+                <div>
+                    <span class="cs-section-label">Campaign Imagery</span>
+                    <h2 style="font-family: 'Outfit',sans-serif; font-weight: 900; font-size: clamp(2rem,4vw,3rem); color: #111; line-height: 1.1; margin-bottom: 1rem; letter-spacing: -1px;">Radical<br>Visibility.</h2>
+                    <p style="font-size: 1.1rem; color: #444; line-height: 1.75;">High-vis pink. Claw machines. Glass box activations. We designed every touchpoint to be inherently photographable and impossible to scroll past.</p>
+                </div>
+                <div class="zine-element-card reveal-on-scroll" style="transform: rotate(3deg);">
+                    <div class="tape-deco" style="left: 20px; margin-left: 0; transform: rotate(-10deg);"></div>
+                    <img src="file:///Users/mannanrudia/.gemini/antigravity/brain/79cbb53e-6318-4bd6-879e-ef8f66b9dc38/media__1774904321641.jpg" alt="Ownly Campaign Collage" class="zine-card-image">
+                    <span class="zine-card-caption">Disruptive Storefront Strategy</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="cs-section reveal-on-scroll">
+            <span class="cs-section-label">The Problem</span>
+            <h2>Trust is Dead in<br><mark class="quirky-highlight">Food Delivery.</mark></h2>
+            <p class="reveal-on-scroll">Rapido was entering food delivery with a radical promise: zero commission for restaurants, no hidden charges for consumers. On paper, a game-changer. In reality? Nobody believed it.</p>
+            <div class="cs-full-img reveal-on-scroll">
+                <img src="file:///Users/mannanrudia/.gemini/antigravity/brain/79cbb53e-6318-4bd6-879e-ef8f66b9dc38/media__1774904321641.jpg" alt="Ownly Transparency Campaign Board">
+            </div>
+            <div class="cs-problem-quote reveal-on-scroll">
+                <p>"Indian consumers have been burned by Swiggy surge pricing and Zomato platform fees too many times to trust the word 'free' again."</p>
+            </div>
+            <p>The challenge wasn't product — it was trust. How do you make radical transparency your competitive moat, not just a tagline?</p>
+        </div>
+
+        <div class="cs-section reveal-on-scroll" style="position: relative;">
+            <div class="sticker-float" style="top: -20px; right: 20%; font-size: 4rem;">🔍</div>
+            <span class="cs-section-label">The Strategy</span>
+            <h2>Make <mark class="quirky-highlight-alt">Transparency</mark><br>the Campaign.</h2>
+            <p>Every competitor was hiding something. Rapido's only advantage was having <span class="quirky-highlight">nothing to hide.</span> So we turned <em>hiding nothing</em> into the entire creative platform.</p>
+            <div class="cs-pillars">
+                <div class="cs-pillar"><span class="icon">🪟</span><h3>Glass Box Identity</h3><p>"Nothing to Hide" built into the visual DNA. Glass boxes, clear pricing displays, see-through brand experiences. Make it literal.</p></div>
+                <div class="cs-pillar"><span class="icon">📋</span><h3>HIDDEN COSTS: 0</h3><p>Every piece of content led with the number zero where competitors show a fee. The absence of a charge as the hero feature.</p></div>
+                <div class="cs-pillar"><span class="icon">📱</span><h3>Challenger Playbook</h3><p>Week-by-week content calendar calling out the industry's hidden fee culture — and positioning Ownly as the honest alternative.</p></div>
+            </div>
+        </div>
+
+        <div class="cs-section reveal-on-scroll">
+            <span class="cs-section-label">The Positioning</span>
+            <h2>Ownly vs. The Industry.</h2>
+            <div class="cs-compare">
+                <div class="cs-compare-row"><span>Feature</span><span>Swiggy / Zomato</span><span>Ownly × Rapido</span></div>
+                <div class="cs-compare-row"><span>Restaurant Commission</span><span class="loser">25–30%</span><span class="winner">₹0</span></div>
+                <div class="cs-compare-row"><span>Surge Pricing</span><span class="loser">Yes (rain, peak hour)</span><span class="winner">Never</span></div>
+                <div class="cs-compare-row"><span>Platform Fee</span><span class="loser">₹2–10 per order</span><span class="winner">₹0</span></div>
+                <div class="cs-compare-row"><span>Brand Promise</span><span class="loser">Hidden in fine print</span><span class="winner">THE entire campaign</span></div>
+            </div>
+        </div>
+
+        <div class="cs-section reveal-on-scroll">
+            <span class="cs-section-label">The Execution</span>
+            <h2>Content That<br>Built Belief.</h2>
+            <div class="cs-timeline">
+                <div class="cs-timeline-item"><span class="cs-timeline-num">01</span><div><h4>Invite Ownly Campaign</h4><p>Referral-first launch — only invite friends to get access. Creates scarcity, drives organic word-of-mouth, makes early adopters feel like insiders.</p></div></div>
+                <div class="cs-timeline-item"><span class="cs-timeline-num">02</span><div><h4>Glass Box Activations</h4><p>Physical "glass box" brand experiences where consumers could literally see the pricing structure. No secrets. Theatre of transparency.</p></div></div>
+                <div class="cs-timeline-item"><span class="cs-timeline-num">03</span><div><h4>Pink Visibility Drive</h4><p>Rapido + Ownly uniforms in bold pink — high-visibility in public spaces. Every Rapido driver became a walking billboard for the launch.</p></div></div>
+                <div class="cs-timeline-item"><span class="cs-timeline-num">04</span><div><h4>Claw Machine Stunt</h4><p>"We Play Fair" claw machine — no rigged mechanics, transparent rules, every customer wins. A physical metaphor for the entire brand ethos.</p></div></div>
+            </div>
+        </div>
+
+        <div class="cs-manifesto reveal-on-scroll">
+            <h3>Nothing to Hide.<br>Ownly to Love.</h3>
+            <p>In a category built on dark patterns, the most radical thing a brand can do is be completely, aggressively honest. That's the Ownly play.</p>
+        </div>
+
+    </div>
+
+    <div class="cs-nav">
+        <a href="poptein-strategy.html" class="page-btn">← Poptein</a>
+        <a href="namma-carnival.html" class="page-btn" style="background: #111; color: #fff; border-color: #111;">Namma Carnival →</a>
+    </div>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from('.cs-hero-content', { y: 60, opacity: 0, duration: 1.4, ease: 'power3.out', delay: 0.3 });
+        gsap.utils.toArray('.cs-pillar').forEach((p, i) => { gsap.from(p, { scrollTrigger: { trigger: p, start: 'top 85%' }, y: 50, opacity: 0, duration: 0.7, delay: i * 0.12, ease: 'back.out(1.5)' }); });
+        gsap.utils.toArray('.cs-timeline-item').forEach((item, i) => { gsap.from(item, { scrollTrigger: { trigger: item, start: 'top 88%' }, x: -40, opacity: 0, duration: 0.6, delay: i * 0.1, ease: 'power3.out' }); });
+    </script>
+</body>
+</html>
