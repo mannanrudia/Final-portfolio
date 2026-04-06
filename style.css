@@ -334,12 +334,12 @@ a { text-decoration: none; color: inherit; }
 }
 .logo-track { 
     display: flex; gap: 5.4rem; 
-    animation: marquee 15s linear infinite; 
+    animation: marquee 25s linear infinite; 
     align-items: center; 
     width: max-content;
 }
 .brand-logo { 
-    height: 80px; 
+    height: 110px; 
     width: auto; 
     object-fit: contain;
     display: block; 
