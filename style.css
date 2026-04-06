@@ -332,11 +332,15 @@ a { text-decoration: none; color: inherit; }
     color: #444; letter-spacing: 1px; text-transform: capitalize;
     font-weight: 700;
 }
-.logo-track { display: flex; gap: 5rem; animation: marquee 6.5s linear infinite; align-items: center; }
+.logo-track { 
+    display: flex; gap: 5.4rem; 
+    animation: marquee 15s linear infinite; 
+    align-items: center; 
+    width: max-content;
+}
 .brand-logo { 
-    height: auto; 
+    height: 80px; 
     width: auto; 
-    max-height: 100px;
     object-fit: contain;
     display: block; 
     flex-shrink: 0; 
@@ -344,6 +348,11 @@ a { text-decoration: none; color: inherit; }
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .brand-logo:hover { transform: scale(1.1); z-index: 10; }
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
 .brand-logo-text {
     font-family: var(--font-heading);
     text-transform: uppercase;
