@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SportsYard — Case Study | Mannan Rudia</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Rubik+Mono+One&family=Outfit:wght@300;600;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
     <style>
         :root { --brand: #111111; --brand-accent: #fc8019; }
         body { background: #f4f3ee; overflow-x: hidden; }
@@ -13,41 +13,41 @@
         .cs-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: contrast(1.1); }
         .cs-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.4) 55%, rgba(0,0,0,0.1) 100%); }
         .cs-hero-content { position: relative; z-index: 10; padding: 4rem; max-width: 900px; }
-        .cs-brand-label { font-family: 'Rubik Mono One', sans-serif; font-size: 0.9rem; color: var(--brand-accent); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 1rem; display: block; }
-        .cs-title { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: clamp(3rem, 7vw, 7rem); color: #fff; line-height: 0.9; letter-spacing: -3px; margin-bottom: 1.5rem; }
+        .cs-brand-label { font-family: var(--font-accent); font-size: 0.9rem; color: var(--brand-accent); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 1rem; display: block; }
+        .cs-title { font-family: var(--font-body); font-weight: 900; font-size: clamp(3rem, 7vw, 7rem); color: #fff; line-height: 0.9; letter-spacing: -3px; margin-bottom: 1.5rem; }
         .cs-title span { color: var(--brand-accent); }
-        .cs-tagline { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.2rem, 2.5vw, 2rem); color: rgba(255,255,255,0.8); }
+        .cs-tagline { font-family: var(--font-quote); font-style: italic; font-size: clamp(1.2rem, 2.5vw, 2rem); color: rgba(255,255,255,0.8); }
         .cs-body { max-width: 1100px; margin: 0 auto; padding: 6rem 3rem; }
         .cs-section { margin-bottom: 6rem; }
-        .cs-section-label { font-family: 'Rubik Mono One', sans-serif; font-size: 0.8rem; letter-spacing: 4px; color: var(--brand-accent); text-transform: uppercase; margin-bottom: 0.8rem; display: block; }
-        .cs-section h2 { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: clamp(2rem, 4vw, 3.5rem); color: #111; line-height: 1; margin-bottom: 2rem; letter-spacing: -1px; }
-        .cs-section p { font-family: 'Outfit', sans-serif; font-size: 1.15rem; color: #444; line-height: 1.75; margin-bottom: 1.5rem; }
+        .cs-section-label { font-family: var(--font-accent); font-size: 0.8rem; letter-spacing: 4px; color: var(--brand-accent); text-transform: uppercase; margin-bottom: 0.8rem; display: block; }
+        .cs-section h2 { font-family: var(--font-body); font-weight: 900; font-size: clamp(2rem, 4vw, 3.5rem); color: #111; line-height: 1; margin-bottom: 2rem; letter-spacing: -1px; }
+        .cs-section p { font-family: var(--font-body); font-size: 1.15rem; color: #444; line-height: 1.75; margin-bottom: 1.5rem; }
         .cs-quote { background: #111; padding: 3rem 4rem; border-radius: 20px; border-left: 6px solid var(--brand-accent); margin: 3rem 0; }
-        .cs-quote p { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.4rem, 2.5vw, 2rem); color: #fff; line-height: 1.4; margin: 0; }
+        .cs-quote p { font-family: var(--font-quote); font-style: italic; font-size: clamp(1.4rem, 2.5vw, 2rem); color: #fff; line-height: 1.4; margin: 0; }
         .cs-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 3rem 0; }
         .cs-pillar { background: #fff; border-radius: 16px; padding: 2.5rem 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.07); border-top: 4px solid var(--brand-accent); transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .cs-pillar:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.14); }
         .cs-pillar .icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
-        .cs-pillar h3 { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.3rem; color: #111; margin-bottom: 0.8rem; }
+        .cs-pillar h3 { font-family: var(--font-body); font-weight: 900; font-size: 1.3rem; color: #111; margin-bottom: 0.8rem; }
         .cs-pillar p { font-size: 1rem; color: #555; line-height: 1.6; margin: 0; }
         .cs-timeline { margin: 3rem 0; }
         .cs-timeline-item { display: flex; gap: 2rem; margin-bottom: 2.5rem; align-items: flex-start; }
-        .cs-timeline-num { font-family: 'Rubik Mono One', sans-serif; font-size: 1.5rem; color: var(--brand-accent); opacity: 0.8; flex-shrink: 0; width: 3rem; }
-        .cs-timeline-item h4 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.3rem; color: #111; margin-bottom: 0.5rem; }
+        .cs-timeline-num { font-family: var(--font-accent); font-size: 1.5rem; color: var(--brand-accent); opacity: 0.8; flex-shrink: 0; width: 3rem; }
+        .cs-timeline-item h4 { font-family: var(--font-body); font-weight: 800; font-size: 1.3rem; color: #111; margin-bottom: 0.5rem; }
         .cs-timeline-item p { font-size: 1.05rem; color: #555; margin: 0; line-height: 1.6; }
         /* AZ Map */
         .az-map { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin: 3rem 0; }
         .az-item { background: #111; border-radius: 12px; padding: 1.5rem; text-align: center; transition: transform 0.3s, background 0.3s; }
         .az-item:hover { transform: translateY(-5px); background: var(--brand-accent); }
-        .az-item .az-letter { font-family: 'Rubik Mono One', sans-serif; font-size: 2rem; color: var(--brand-accent); display: block; line-height: 1; }
+        .az-item .az-letter { font-family: var(--font-accent); font-size: 2rem; color: var(--brand-accent); display: block; line-height: 1; }
         .az-item:hover .az-letter { color: #fff; }
-        .az-item .az-word { font-family: 'Outfit', sans-serif; font-size: 0.85rem; color: rgba(255,255,255,0.6); font-weight: 600; margin-top: 0.4rem; display: block; letter-spacing: 1px; text-transform: uppercase; }
+        .az-item .az-word { font-family: var(--font-body); font-size: 0.85rem; color: rgba(255,255,255,0.6); font-weight: 600; margin-top: 0.4rem; display: block; letter-spacing: 1px; text-transform: uppercase; }
         .cs-nav { display: flex; justify-content: space-between; align-items: center; border-top: 2px dashed #ccc; padding: 3rem 3rem 5rem; max-width: 1100px; margin: 0 auto; }
     </style>
 </head>
 <body>
     <nav class="navbar-pill">
-        <a href="index.html" class="pill-btn pill-logo" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">mr</a>
+        <a href="index.html#work" class="pill-btn pill-logo" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">mr</a>
         <div class="top-right-links">
             <a href="content-strategies.html" class="pill-btn" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">← All Strategies</a>
         </div>
@@ -68,7 +68,7 @@
         <div style="display: flex; gap: 4rem; align-items: center; margin-bottom: 5rem; position: relative;">
             <div style="flex: 1; min-width: 0;">
                 <span class="cs-section-label">Campaign Visual Identity</span>
-                <h2 style="font-family: 'Outfit',sans-serif; font-weight: 900; font-size: clamp(2rem,4vw,3rem); color: #111; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -1px;">Built for the<br>Grassroots Athlete.</h2>
+                <h2 style="font-family: var(--font-body); font-weight: 900; font-size: clamp(2rem,4vw,3rem); color: #111; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -1px;">Built for the<br>Grassroots Athlete.</h2>
                 <p style="font-size: 1.1rem; color: #444; line-height: 1.75;">Every visual was engineered to feel like it belonged on a regional sports ground — not in a boardroom. We made sports culture the aesthetic, not the afterthought.</p>
             </div>
             <div style="flex: 1.2; min-width: 0; display: flex; gap: 2rem; align-items: flex-start; padding: 3rem 1rem;">
@@ -156,5 +156,6 @@
         gsap.utils.toArray('.cs-timeline-item').forEach((item, i) => { gsap.from(item, { scrollTrigger: { trigger: item, start: 'top 88%' }, x: -40, opacity: 0, duration: 0.6, delay: i * 0.1, ease: 'power3.out' }); });
         gsap.utils.toArray('.az-item').forEach((item, i) => { gsap.from(item, { scrollTrigger: { trigger: '.az-map', start: 'top 80%' }, scale: 0, opacity: 0, duration: 0.5, delay: i * 0.06, ease: 'back.out(2)' }); });
     </script>
+    <script src="custom-cursor.js"></script>
 </body>
 </html>

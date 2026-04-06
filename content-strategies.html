@@ -6,7 +6,7 @@
     <title>Content Strategies | Mannan Rudia</title>
     <meta name="description" content="Brand content strategies crafted by Mannan Rudia — offline activations, AR campaigns, and 360° social media rollouts that actually move product.">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=DotGothic16&family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&family=Rubik+Mono+One&family=Outfit:wght@300;600;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
     <style>
         body { background-color: #f4f3ee; overflow-x: hidden; }
 
@@ -38,10 +38,19 @@
         a.brand-card::after {
             content: 'VIEW CASE STUDY →';
             position: absolute; bottom: 1.6rem; right: 2rem;
-            font-family: 'Rubik Mono One', sans-serif; font-size: 0.7rem;
+            font-family: var(--font-accent); font-size: 0.9rem; /* Increased size */
             color: var(--accent); opacity: 0; letter-spacing: 2px;
-            transition: opacity 0.3s ease, transform 0.3s ease;
+            transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease, color 0.3s ease;
             transform: translateY(4px);
+            /* Added box styling */
+            border: 2px solid var(--accent);
+            padding: 8px 16px;
+            border-radius: 6px;
+            background: #fff;
+            box-shadow: 3px 3px 0 var(--accent);
+        }
+        a.brand-card:hover::after {
+            opacity: 1; transform: translateY(0);
         }
         a.brand-card:hover::after { opacity: 1; transform: translateY(0); }
         a.brand-card:hover {
@@ -50,7 +59,7 @@
         }
 
         .brand-card-img-wrapper {
-            width: 100%; height: 380px; overflow: hidden; position: relative; background: #111;
+            width: 100%; height: 260px; overflow: hidden; position: relative; background: #111;
         }
         .brand-card-img-wrapper img {
             width: 100%; height: 100%; object-fit: cover;
@@ -62,7 +71,7 @@
         .brand-tag {
             position: absolute; top: 1.5rem; left: 1.5rem; z-index: 5;
             background: var(--accent); color: #fff;
-            font-family: 'Rubik Mono One', sans-serif; font-size: 0.85rem;
+            font-family: var(--font-accent); font-size: 0.85rem;
             padding: 0.4rem 1rem; border-radius: 30px;
             letter-spacing: 1px; text-transform: uppercase;
             box-shadow: 0 4px 12px rgba(252,128,25,0.4);
@@ -73,30 +82,30 @@
         /* Card number */
         .card-num {
             position: absolute; top: 1.5rem; right: 1.5rem; z-index: 5;
-            font-family: 'Rubik Mono One', sans-serif; font-size: 1rem;
+            font-family: var(--font-accent); font-size: 1rem;
             color: rgba(255,255,255,0.85); text-shadow: 0 2px 6px rgba(0,0,0,0.5);
         }
 
-        .brand-card-body { padding: 2.5rem 2.5rem 3.5rem; position: relative; }
+        .brand-card-body { padding: 1.8rem 2rem 2.5rem; position: relative; }
         .brand-card-body h3 {
-            font-family: 'Times New Roman', Times, serif; font-weight: 800; font-style: italic;
-            font-size: 2.4rem; color: #111; margin-bottom: 0.8rem; line-height: 1.1;
+            font-family: var(--font-heading); font-weight: 800; font-style: italic;
+            font-size: 2rem; color: #111; margin-bottom: 0.6rem; line-height: 1.1;
         }
         .brand-card-body .brand-sub {
-            font-family: 'Outfit', sans-serif; font-size: 1rem;
+            font-family: var(--font-body); font-size: 1rem;
             color: var(--accent); font-weight: 700;
             text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.2rem;
         }
         .brand-card-body p {
-            font-family: 'Outfit', sans-serif; font-size: 1.1rem;
-            color: #444; line-height: 1.65; margin-bottom: 1.5rem;
+            font-family: var(--font-body); font-size: 0.95rem;
+            color: #444; line-height: 1.6; margin-bottom: 1.2rem;
         }
 
         /* Strategy tags — animated in on hover */
         .strategy-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
         .stag {
             padding: 0.4rem 1rem; border-radius: 20px;
-            font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 700;
+            font-family: var(--font-body); font-size: 0.85rem; font-weight: 700;
             border: 1.5px solid rgba(0,0,0,0.12); color: #555; background: #f8f8f5;
             transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             transform: translateY(0);
@@ -131,12 +140,12 @@
             color: rgba(255,255,255,0.03); pointer-events: none;
         }
         .strat-quote-strip h2 {
-            font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.5rem);
+            font-family: var(--font-quote); font-size: clamp(2rem, 4vw, 3.5rem);
             font-style: italic; font-weight: 400; color: #fff;
             max-width: 900px; margin: 0 auto 1.5rem; line-height: 1.35;
         }
         .strat-quote-strip p {
-            font-family: 'Outfit', sans-serif; font-size: 1.2rem;
+            font-family: var(--font-body); font-size: 1.2rem;
             color: var(--accent); font-weight: 600; letter-spacing: 1px;
         }
 
@@ -148,12 +157,12 @@
         }
         .win-stat { color: #fff; }
         .win-stat .num {
-            font-family: 'Rubik Mono One', sans-serif;
+            font-family: var(--font-accent);
             font-size: clamp(2.5rem, 5vw, 4.5rem);
             display: block; line-height: 1;
         }
         .win-stat .label {
-            font-family: 'Outfit', sans-serif; font-size: 1rem;
+            font-family: var(--font-body); font-size: 1rem;
             font-weight: 600; opacity: 0.85; text-transform: uppercase;
             letter-spacing: 1px; margin-top: 0.4rem; display: block;
         }
@@ -188,10 +197,10 @@
 <body>
 
     <nav class="navbar-pill">
-        <a href="index.html" class="pill-btn pill-logo" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">mr</a>
+        <a href="index.html#work" class="pill-btn pill-logo" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">mr</a>
         <div class="top-right-links">
             <a href="creator-campaign.html" class="pill-btn" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">← Creator Campaign</a>
-            <a href="index.html" class="pill-btn" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">Home</a>
+            <a href="index.html#work" class="pill-btn" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">Home</a>
         </div>
     </nav>
 
@@ -203,16 +212,16 @@
 
         <div class="zine-floating-card " style="position: absolute; top: 12%; right: 4%; transform: rotate(10deg) scale(0.9); z-index: 10;">
             <div class="tape"></div>
-            <strong style="color:var(--accent); text-transform: uppercase; font-size: 1.2rem; display:block; margin-bottom: 0.5rem; font-family: 'Rubik Mono One';">STRATEGY VAULT</strong>
+            <strong style="color:var(--accent); text-transform: uppercase; font-size: 1.2rem; display:block; margin-bottom: 0.5rem; font-family: var(--font-accent);">STRATEGY VAULT</strong>
             <p style="font-family: var(--font-body); font-size: 1rem; color: #666;">Level: Brand Warfare<br>Mode: FULL STACK</p>
         </div>
 
         <div class="strat-hero-text ">
-            <h2 style="font-family: 'DotGothic16', monospace; font-size: clamp(1.2rem, 2.5vw, 2rem); color: #666; letter-spacing: 5px; margin-bottom: 1rem;">CAMPAIGN ARCHITECTURE</h2>
+            <h2 style="font-family: var(--font-accent); font-size: clamp(1.2rem, 2.5vw, 2rem); color: #666; letter-spacing: 5px; margin-bottom: 1rem;">CAMPAIGN ARCHITECTURE</h2>
             <h1 class="zine-massive-text" style="color: #111; text-shadow: 0 5px 15px rgba(255,255,255,0.8); font-size: clamp(3.5rem, 8vw, 8rem); line-height: 0.95;">
-                Content<br><span class="zine-accent-highlight" style="font-family: 'Times New Roman', Times, serif; font-style: italic; font-size: clamp(4rem, 9vw, 10rem);">Strategies</span>
+                Content<br><span class="zine-accent-highlight" style="font-family: var(--font-heading); font-style: italic; font-size: clamp(4rem, 9vw, 10rem);">Strategies</span>
             </h1>
-            <p style="font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 2.2vw, 2rem); font-style: italic; color: #444; margin-top: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+            <p style="font-family: var(--font-quote); font-size: clamp(1.3rem, 2.2vw, 2rem); font-style: italic; color: #444; margin-top: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto;">
                 "Turn a brand insight into a movement. Turn a movement into obsession."
             </p>
         </div>
@@ -227,7 +236,7 @@
     <main>
         <!-- ── 4 BRAND CARDS ── -->
         <section class="brand-cards-section">
-            <p style="text-align: center; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.8rem; color: #111; margin-bottom: 3.5rem; opacity: 0.85;">"Refresh the page to see magic." ✨</p>
+            <p style="text-align: center; font-family: var(--font-body); font-size: 1.1rem; color: #888; margin-bottom: 3.5rem;">4 brands. 4 strategies. One obsession.</p>
             <div class="brand-cards-grid">
 
                 <!-- 01 — NGL Hydration -->
@@ -340,7 +349,7 @@
         </section>
 
         <!-- ── WIN STAT BANNER ── -->
-        <div class="win-banner ">
+        <div class="win-banner">
             <div class="win-stat"><span class="num" data-target="4">4</span><span class="label">Brands Strategised</span></div>
             <div class="win-stat"><span class="num">₹7K</span><span class="label">On-Ground Revenue</span></div>
             <div class="win-stat"><span class="num">1st</span><span class="label">LIT School Challenge Won</span></div>
@@ -348,27 +357,29 @@
         </div>
 
         <!-- ── CLOSING QUOTE ── -->
-        <div class="zine-split-container" style="min-height: auto; padding: 6rem 4rem; z-index: 5; background: #f4f3ee;">
-            <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-                <div class="zine-floating-card " style="display: inline-block; transform: rotate(-1deg); max-width: 800px;">
-                    <div class="tape" style="left: 50%; margin-left: -60px;"></div>
-                    <h3 style="font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.5rem); font-style: italic; color: #111; line-height: 1.4; margin-bottom: 1rem;">
-                        "I don't pitch ideas that look good on slides.<br>I build ones that <span style="color: var(--accent);">actually move product."</span>
-                    </h3>
-                    <p style="font-family: 'Caveat', cursive; font-size: 1.4rem; color: #888;">— Mannan, somewhere between a whiteboard and a stadium</p>
-                </div>
+        <div style="padding: 6rem 4rem; background: #f4f3ee; text-align: center;">
+            <div style="display: inline-block; transform: rotate(-1deg); max-width: 800px; background: #fff; border-radius: 16px; padding: 3rem 4rem; box-shadow: 4px 4px 0 #111; border: 2px solid #111; position: relative;">
+                <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); width: 80px; height: 18px; background: rgba(255,75,43,0.4); border-radius: 4px;"></div>
+                <p style="font-family: var(--font-quote); font-size: clamp(1.6rem, 2.8vw, 2.4rem); font-style: italic; color: #111; line-height: 1.4; margin: 0 0 0.4rem 0; white-space: nowrap;">
+                    &ldquo;I don&rsquo;t pitch ideas that look good on slides.
+                </p>
+                <p style="font-family: var(--font-quote); font-size: clamp(1.6rem, 2.8vw, 2.4rem); font-style: italic; color: var(--accent); line-height: 1.4; margin: 0 0 1.5rem 0; white-space: nowrap;">
+                    I build ones that actually move product.&rdquo;
+                </p>
+                <p style="font-family: var(--font-body); font-size: 1rem; color: #888; margin: 0;">&mdash; Mannan, somewhere between a whiteboard and a stadium</p>
             </div>
         </div>
 
+
         <!-- ── MANNAN CORE: PERSONALITY BLURB ── -->
-        <div style="padding: 4rem 2rem 6rem; max-width: 1300px; margin: 0 auto; text-align: center;">
-            <p style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 2rem; font-weight: 500; color: #111; line-height: 1.1; margin-bottom: 0.5rem; letter-spacing: -0.02em;">
-                "I don’t optimize for the algorithm; I optimize for human connection."
+        <section style="min-height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 4rem 3rem;">
+            <p style="font-family: var(--font-quote); font-size: clamp(2.2rem, 3.8vw, 4.5rem); font-weight: 500; color: #111; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 0.6rem 0; max-width: 1200px; white-space: nowrap;">
+                &ldquo;I don&rsquo;t optimize for the algorithm; I optimize for human connection.&rdquo;
             </p>
-            <p style="font-family: 'Outfit', sans-serif; font-size: 0.95rem; font-weight: 500; color: #666; letter-spacing: 0.15em; text-transform: uppercase;">
-                Content Producer & Strategist — Bringing your vision to life.
+            <p style="font-family: var(--font-body); font-size: clamp(0.85rem, 1.4vw, 1.15rem); font-weight: 800; color: var(--accent); letter-spacing: 0.18em; text-transform: uppercase; margin: 0; white-space: nowrap;">
+                Content Producer &amp; Strategist &mdash; Bringing your vision to life.
             </p>
-        </div>
+        </section>
     </main>
 
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
@@ -446,5 +457,6 @@
         scale: 0.7, opacity: 0, duration: 0.6, stagger: 0.12, ease: 'back.out(1.7)'
     });
     </script>
+    <script src="custom-cursor.js"></script>
 </body>
 </html>

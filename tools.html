@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools & AI Workflow — Mannan Rudia</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <style>
+        :root { --brand: #fc8019; }
+        body { background: #f4f3ee; overflow-x: hidden; }
+
+        /* ── HERO ── */
+        .tools-hero {
+            min-height: 55vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; text-align: center;
+            padding: 6rem 2rem 4rem; position: relative;
+            background: linear-gradient(135deg, #111 0%, #1a1a2e 100%);
+        }
+        .tools-hero::after {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at center, rgba(252,128,25,0.12) 0%, transparent 70%);
+        }
+        .tools-label {
+            font-family: var(--font-accent); font-size: 1rem;
+            color: var(--brand); letter-spacing: 6px; text-transform: uppercase;
+            margin-bottom: 1.5rem; position: relative; z-index: 2;
+        }
+        .tools-title {
+            font-family: var(--font-heading); font-weight: 950;
+            font-size: clamp(4.5rem, 12vw, 11rem); color: #fff;
+            line-height: 0.85; letter-spacing: -5px; margin-bottom: 2rem;
+            position: relative; z-index: 2;
+            text-transform: uppercase;
+        }
+        .tools-title span { color: var(--brand); }
+        .tools-sub {
+            font-family: var(--font-quote); font-style: italic;
+            font-size: clamp(1.3rem, 2.5vw, 2.2rem); color: rgba(255,255,255,0.8);
+            max-width: 800px; position: relative; z-index: 2;
+            line-height: 1.3;
+        }
+
+        /* ── GRID SECTION ── */
+        .tools-body { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
+        .tools-section { margin-bottom: 5rem; }
+        .section-tag {
+            font-family: var(--font-accent); font-size: 0.85rem;
+            letter-spacing: 4px; color: var(--brand); text-transform: uppercase;
+            margin-bottom: 0.6rem; display: block;
+        }
+        .section-heading {
+            font-family: var(--font-heading); font-weight: 900;
+            font-size: clamp(2rem, 4vw, 3rem); color: #111;
+            line-height: 1.05; margin-bottom: 2.5rem; letter-spacing: -1px;
+        }
+
+        /* ── TOOL TABLE ── */
+        .tool-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .tool-card {
+            background: #fff; border: 2px solid #111; border-radius: 14px;
+            padding: 1.8rem 1.6rem; display: flex; gap: 1.2rem; align-items: flex-start;
+            box-shadow: 4px 4px 0 #111;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .tool-card:hover {
+            transform: translateY(-4px) rotate(-0.5deg);
+            box-shadow: 6px 8px 0 var(--brand);
+        }
+        .tool-icon {
+            width: 54px; height: 54px; flex-shrink: 0;
+            border-radius: 10px; object-fit: contain;
+            background: #f4f3ee; padding: 6px;
+        }
+        .tool-info h4 {
+            font-family: var(--font-heading); font-weight: 900;
+            font-size: 1.25rem; color: #111; margin-bottom: 0.4rem;
+        }
+        .tool-info p {
+            font-family: var(--font-body); font-size: 1.0rem;
+            color: #555; line-height: 1.6; margin: 0;
+        }
+        .tool-info .tool-highlight {
+            color: var(--brand); font-weight: 700;
+        }
+
+        /* ── WORKFLOW SECTION ── */
+        .workflow-timeline {
+            position: relative; padding-left: 3rem;
+        }
+        .workflow-timeline::before {
+            content: ''; position: absolute; left: 14px; top: 0; bottom: 0;
+            width: 3px; background: linear-gradient(to bottom, var(--brand), #111);
+            border-radius: 3px;
+        }
+        .wf-step {
+            position: relative; margin-bottom: 2.5rem;
+            padding-left: 1.5rem;
+        }
+        .wf-step::before {
+            content: ''; position: absolute; left: -2.28rem; top: 6px;
+            width: 14px; height: 14px; border-radius: 50%;
+            background: var(--brand); border: 3px solid #111;
+            box-shadow: 0 0 0 4px #f4f3ee;
+        }
+        .wf-step h4 {
+            font-family: var(--font-heading); font-weight: 900;
+            font-size: 1.3rem; color: #111; margin-bottom: 0.5rem;
+        }
+        .wf-step p {
+            font-family: var(--font-body); font-size: 1.05rem;
+            color: #555; line-height: 1.7; margin: 0;
+        }
+        .wf-step .hl {
+            color: var(--brand); font-weight: 700;
+            background: rgba(252,128,25,0.1); padding: 1px 5px;
+            border-radius: 4px;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            .tool-grid { grid-template-columns: 1fr; }
+        }
+
+        .tools-nav {
+            display: flex; justify-content: space-between;
+            border-top: 2px dashed #ccc; padding: 3rem 2rem 5rem;
+            max-width: 1100px; margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar-pill">
+        <a href="index.html#work" class="pill-btn pill-logo" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111; font-family: var(--font-accent);">mr</a>
+        <div class="top-right-links">
+            <a href="index.html#hero" class="pill-btn" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111; font-family: var(--font-heading);">← Back to Bio</a>
+            <a href="index.html#work" class="pill-btn" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111; font-family: var(--font-heading);">Home</a>
+        </div>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <header class="tools-hero">
+        <span class="tools-label">Creative Arsenal</span>
+        <h1 class="tools-title">Tools I<br><span>Use.</span></h1>
+        <p class="tools-sub">"The tool doesn't make the creator — but the right ones remove every excuse."</p>
+    </header>
+
+    <div class="tools-body">
+
+        <!-- ── PRODUCTION TOOLS ── -->
+        <div class="tools-section">
+            <span class="section-tag">Production Stack</span>
+            <h2 class="section-heading">The Creative<br>Toolkit.</h2>
+
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <img class="tool-icon" src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg" alt="Premiere Pro">
+                    <div class="tool-info">
+                        <h4>Premiere Pro</h4>
+                        <p>Editing, storytelling, <span class="tool-highlight">colour grading</span>, sound design. My primary command center for every video.</p>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <img class="tool-icon" src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_After_Effects_CC_icon.svg" alt="After Effects">
+                    <div class="tool-info">
+                        <h4>After Effects</h4>
+                        <p>For additional <span class="tool-highlight">visual refining</span>, motion graphics, and that extra cinematic polish.</p>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <img class="tool-icon" src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Adobe_Photoshop_Lightroom_CC_logo.svg" alt="Lightroom">
+                    <div class="tool-info">
+                        <h4>Lightroom</h4>
+                        <p>Where the <span class="tool-highlight">colour grading</span> obsession truly began. Every frame gets the treatment.</p>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <img class="tool-icon" src="LS.jpeg" alt="Lens Studio">
+                    <div class="tool-info">
+                        <h4>Lens Studio</h4>
+                        <p>Built Snapchat filters that hit <span class="tool-highlight">200+ million views</span>. Got into the art of colour grading as a kid through this.</p>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <img class="tool-icon" src="https://upload.wikimedia.org/wikipedia/en/b/bb/Canva_Logo.svg" alt="Canva">
+                    <div class="tool-info">
+                        <h4>Canva</h4>
+                        <p>Fuels the <span class="tool-highlight">creative art flow</span> — rapid design mockups, brand decks, and campaign PPTs.</p>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <img class="tool-icon" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Meta Dashboard">
+                    <div class="tool-info">
+                        <h4>Meta Dashboard & Google Ads</h4>
+                        <p>Helps <span class="tool-highlight">decipher data</span> — where people drop off, what converts, and how to improvise.</p>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <img class="tool-icon" src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram">
+                    <div class="tool-info">
+                        <h4>Instagram (Research)</h4>
+                        <p>Spam account for deep research. Found <span class="tool-highlight">Antigravity</span> this way and built this entire website from scratch.</p>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <img class="tool-icon" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg" alt="Notion">
+                    <div class="tool-info">
+                        <h4>Notion</h4>
+                        <p>My <span class="tool-highlight">reference vault</span>. Every idea, every inspo link, every project brief — saved and organized.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── AI WORKFLOW ── -->
+        <div class="tools-section">
+            <span class="section-tag">AI Workflow</span>
+            <h2 class="section-heading">My AI<br>Stack.</h2>
+
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <img class="tool-icon" src="https://www.gstatic.com/lamda/images/gemini_favicon_f069958c85030456e93de685481c559f160ea06b.png" alt="NotebookLM">
+                    <div class="tool-info">
+                        <h4>NotebookLM</h4>
+                        <p><span class="tool-highlight">Breakdown ideas</span>, bulletproof concepts, build PPTs, and debate every angle before committing.</p>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <img class="tool-icon" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Anthropic_logo.svg" alt="Claude">
+                    <div class="tool-info">
+                        <h4>Claude</h4>
+                        <p>Better than all LLMs. Helps me <span class="tool-highlight">brainstorm through creative blocks</span> and sharpen every script.</p>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <img class="tool-icon" src="https://www.gstatic.com/lamda/images/gemini_favicon_f069958c85030456e93de685481c559f160ea06b.png" alt="Google Antigravity">
+                    <div class="tool-info">
+                        <h4>Google Antigravity</h4>
+                        <p>Learnt to <span class="tool-highlight">build a fully coded website in 4 days</span> through this. You're literally on it right now.</p>
+                    </div>
+                </div>
+
+                <div class="tool-card" style="border-color: var(--brand);">
+                    <img class="tool-icon" src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Midjourney_Emblem.png" alt="Midjourney">
+                    <div class="tool-info">
+                        <h4>Midjourney & Nano Banana</h4>
+                        <p><span class="tool-highlight">Image generation</span> for visual concepts, moodboards, and rapid visual prototyping.</p>
+                    </div>
+                </div>
+
+                <div class="tool-card" style="grid-column: span 2; border-color: var(--brand);">
+                    <img class="tool-icon" src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Midjourney_Emblem.png" alt="Video AI">
+                    <div class="tool-info">
+                        <h4>Higgsfield & Kling</h4>
+                        <p><span class="tool-highlight">AI video generation</span>. When the script needs a visual that doesn't exist yet — these tools bridge imagination to reality.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── HOW I APPROACH A PROJECT ── -->
+        <div class="tools-section">
+            <span class="section-tag">The Process</span>
+            <h2 class="section-heading">How I Approach<br>a Project.</h2>
+
+            <div class="workflow-timeline">
+                <div class="wf-step">
+                    <h4>01 — Deep-Dive the Brief</h4>
+                    <p>Read through the brief thoroughly. Understand every angle, every constraint, every opportunity. Then close the laptop.</p>
+                </div>
+
+                <div class="wf-step">
+                    <h4>02 — Walk for Inspiration</h4>
+                    <p>Go out for a walk. Let the ideas breathe. Some of the best concepts come when you're not staring at a screen.</p>
+                </div>
+
+                <div class="wf-step">
+                    <h4>03 — Brainstorm & Bulletproof</h4>
+                    <p>If inspiration doesn't hit — <span class="hl">NotebookLM</span> and <span class="hl">Claude</span> become my brainstorm partners. Debate every idea, then ask both to <span class="hl">bulletproof</span> the concept until it's airtight.</p>
+                </div>
+
+                <div class="wf-step">
+                    <h4>04 — Find Inspo & Storyboard</h4>
+                    <p>Once the idea clicks — dive into <span class="hl">Instagram</span> and <span class="hl">YouTube</span> for reference. Build a visual storyboard. If I hit a wall, use <span class="hl">Nano Banana</span> to generate rough visual frames and unlock the flow.</p>
+                </div>
+
+                <div class="wf-step">
+                    <h4>05 — Script & Refine</h4>
+                    <p>Get into the flow of writing the script. Refine it using <span class="hl">Claude</span>. Ask it to generate a detailed <span class="hl">shot list</span> with all the data compiled — locations, angles, timing, transitions.</p>
+                </div>
+
+                <div class="wf-step">
+                    <h4>06 — Produce & Edit</h4>
+                    <p>Execute the shoot, then edit using <span class="hl">Premiere Pro</span> and <span class="hl">After Effects</span>. Generate any impossible-to-shoot footage using <span class="hl">Higgsfield</span>. Colour grade in <span class="hl">Lightroom</span>. Ship it.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- NAV -->
+    <div class="tools-nav">
+        <a href="index.html#hero" class="page-btn">← Back to Bio</a>
+        <a href="index.html#work" class="page-btn">Work Experience →</a>
+    </div>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        // Tool cards entrance
+        gsap.utils.toArray('.tool-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: { trigger: card, start: 'top 90%' },
+                y: 40, opacity: 0, rotation: () => gsap.utils.random(-3, 3),
+                duration: 0.6, delay: i * 0.06, ease: 'back.out(1.5)'
+            });
+        });
+        // Workflow steps entrance
+        gsap.utils.toArray('.wf-step').forEach((step, i) => {
+            gsap.from(step, {
+                scrollTrigger: { trigger: step, start: 'top 88%' },
+                x: -40, opacity: 0, duration: 0.7, delay: i * 0.1, ease: 'power3.out'
+            });
+        });
+    </script>
+    <script src="custom-cursor.js"></script>
+</body>
+</html>

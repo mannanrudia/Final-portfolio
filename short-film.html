@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parde ke peeche Films | Mannan Rudia</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=DotGothic16&family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&family=Rubik+Mono+One&family=Outfit:wght@300;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
     <style>
         /* Specific overrides for Zine Scrapbook Theme on this page */
         body { background-color: #f4f3ee; overflow-x: hidden; }
 
         /* The Hero Zine Page */
         .zine-hero {
-            position: relative; width: 100%; height: auto; min-height: 90vh;
+            position: relative; width: 100%; height: auto; min-height: 70vh;
             display: flex; align-items: center; justify-content: center;
             overflow: hidden; padding-top: 5rem;
         }
@@ -28,7 +28,7 @@
         .vid-frame iframe { width: 100%; aspect-ratio: 16/9; border: none; background: #000; display: block; }
         .vid-frame.vertical iframe { aspect-ratio: 9/16; }
 
-        .polaroid-caption { font-family: 'Shadows Into Light', cursive; font-size: 2rem; color: #111; position: absolute; bottom: -40px; left: 20px; text-transform: uppercase; font-weight: bold; }
+        .polaroid-caption { font-family: var(--font-quote); font-size: 2rem; color: #111; position: absolute; bottom: -40px; left: 20px; text-transform: uppercase; font-weight: bold; }
 
         .stkr { position: absolute; z-index: 30; filter: drop-shadow(0 10px 10px rgba(0,0,0,0.3)); pointer-events: none; }
 
@@ -52,9 +52,9 @@
 </head>
 <body>
     <nav class="navbar-pill">
-        <a href="index.html" class="pill-btn pill-logo" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">mr</a>
+        <a href="index.html#work" class="pill-btn pill-logo" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">mr</a>
         <div class="top-right-links">
-            <a href="index.html" class="pill-btn" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">← return home</a>
+            <a href="index.html#work" class="pill-btn" style="border: 2px solid #111; box-shadow: 3px 3px 0 #111;">← return home</a>
         </div>
     </nav>
 
@@ -67,32 +67,36 @@
         <!-- Floating ticket -->
         <div class="zine-floating-card reveal-on-scroll" style="position: absolute; top: 25%; right: 5%; transform: rotate(25deg) scale(0.8); z-index: 10;">
             <div class="tape"></div>
-            <strong style="color:var(--accent); text-transform: uppercase; font-size: 1.2rem; display:block; margin-bottom: 0.5rem; font-family: 'Rubik Mono One'; ">Admit One</strong>
+            <strong style="color:var(--accent); text-transform: uppercase; font-size: 1.2rem; display:block; margin-bottom: 0.5rem; font-family: var(--font-accent); ">Admit One</strong>
             <p style="font-family: var(--font-body); font-size: 1rem; color: #666;">Date: ONGOING<br>Class: AESTHETIC</p>
         </div>
         
         <div class="zine-hero-text reveal-on-scroll">
-            <h2 style="font-family: 'DotGothic16', monospace; font-size: clamp(1.5rem, 3vw, 2.5rem); color: #666; letter-spacing: 5px; margin-bottom: 1rem;">SHORT BRAND FILMS</h2>
-            <h1 class="zine-massive-text" style="color: #111; text-shadow: 0 5px 15px rgba(255,255,255,0.8); font-size: clamp(3rem, 7vw, 9rem); line-height: 1;">
-                Parde Ke Peeche<br><span class="zine-accent-highlight" style="font-size: clamp(4rem, 8vw, 10rem);">Films</span>
+            <h2 style="font-family: var(--font-accent); font-size: clamp(1.5rem, 3vw, 2.5rem); color: #666; letter-spacing: 5px; margin-bottom: 1rem;">SHORT BRAND FILMS</h2>
+            <h1 class="zine-massive-text" style="color: #111; text-shadow: 0 5px 15px rgba(255,255,255,0.8); font-size: clamp(2.6rem, 6vw, 7rem); line-height: 1;">
+                Parde Ke Peeche<br><span class="zine-accent-highlight" style="font-size: clamp(3.6rem, 7vw, 8rem);">Films</span>
             </h1>
-            <p style="font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.5vw, 2.2rem); font-style: italic; color: #444; margin-top: 2rem;">
+            <p style="font-family: var(--font-quote); font-size: clamp(1.4rem, 2.5vw, 2.2rem); font-style: italic; color: #444; margin-top: 2rem;">
                 "It is our baby, our own film production crew with the most passionate people pouring their lives into making films."
             </p>
         </div>
     </header>
 
     <main>
+        <!-- Clickable note -->
+        <div style="text-align: center; padding: 1.5rem 2rem 0; margin-bottom: -1rem;">
+            <span style="font-family: var(--font-accent); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); background: rgba(252,128,25,0.1); padding: 8px 20px; border-radius: 30px; border: 1.5px solid var(--accent);">✦ All links are clickable — tap to watch ✦</span>
+        </div>
         <!-- SECTION 1: PRONTO -->
-        <div class="zine-split-container" style="z-index: 10;">
+        <div class="zine-split-container" style="z-index: 10; min-height: 70vh;">
             <div class="zine-half half-paper">
                 <div class="reveal-on-scroll" style="max-width: 500px; padding-right: 2rem; text-align: right;">
                     <div class="zine-sticker" style="top: -50px; left: -50px; font-size: 4rem; opacity: 0.6; transform: rotate(-45deg);">⚡</div>
-                    <h2 style="font-size: 3rem; font-family: var(--font-heading); font-weight: 900; line-height: 1.1; margin-bottom: 2rem; color: #111;">PRONTO —<br><em style="color:var(--accent); font-family: var(--font-serif); font-weight: normal;">The On-Demand Vision.</em></h2>
-                    <p style="font-size: 1.2rem; color: #444; line-height: 1.6; border-right: 5px solid var(--accent); padding-right: 1.5rem;">A high-octave brand film exploring the life and speed of modern home services. We built a narrative that feels as fast as the service itself.</p>
-                    <div style="margin-top: 1.5rem; font-family: 'Outfit', sans-serif; font-weight: 800; color: #111; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem;">
+                    <h2 style="font-size: 2.6rem; font-family: var(--font-heading); font-weight: 900; line-height: 1.1; margin-bottom: 0.6rem; color: #111;">PRONTO —<br><em style="color:var(--accent); font-family: var(--font-quote); font-weight: normal;">The On-Demand Vision.</em></h2>
+                    <div style="margin-bottom: 1.5rem; font-family: var(--font-body); font-weight: 800; color: #111; letter-spacing: 1px; text-transform: uppercase; font-size: 1.05rem;">
                         Director, Assistant Writer <span style="background: var(--accent); color: #fff; padding: 2px 8px; margin-left: 10px;">Role</span>
                     </div>
+                    <p style="font-size: 1.1rem; color: #444; line-height: 1.6; border-right: 5px solid var(--accent); padding-right: 1.5rem;">A high-octave brand film exploring the life and speed of modern home services. We built a narrative that feels as fast as the service itself.</p>
                     <button onclick="window.open('https://www.youtube.com/watch?v=EzD7s6aDUeI', '_blank')" class="play-btn-link" style="margin-top: 1.5rem; cursor: pointer;">▶ Play on YouTube</button>
                 </div>
             </div>
@@ -117,7 +121,7 @@
 
 
         <!-- SECTION 2: PRATIBIMB -->
-        <div class="zine-split-container" style="z-index: 15;">
+        <div class="zine-split-container" style="z-index: 15; min-height: 70vh;">
             <div class="zine-half soft-bg-vibrant" style="justify-content: flex-end; padding-right: 10%; clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);">
                 <div class="zine-element-card reveal-on-scroll" style="transform: rotate(-4deg); max-width: 500px; cursor: pointer; position: relative;" onclick="window.open('https://www.youtube.com/watch?v=0sdAKiEZOGc', '_blank')">
                     <div class="tape-deco" style="top: -10px; right: 20px; left: auto; transform: rotate(15deg);"></div>
@@ -136,11 +140,11 @@
 
             <div class="zine-half half-paper" style="flex: 1.2;">
                 <div class="reveal-on-scroll" style="max-width: 600px; padding-left: 4rem; text-align: left;">
-                    <h2 class="zine-massive-text" style="color: #111; font-size: clamp(3rem, 6vw, 6rem); text-shadow: none;">PRATIBIMB<br><span class="zine-accent-highlight">IDENTITY.</span></h2>
-                    <p style="font-size: 1.2rem; color: #444; line-height: 1.6; margin-top: 2rem; border-left: 5px solid var(--accent); padding-left: 1.5rem;">"Identity — Reflected." A highly intimate short film exploring themes surrounding transgender life, deep psychological nuance, and finding ground in chaos. Transformed from 'Unspoken' to a brand-centric visual journey.</p>
-                    <div style="margin-top: 1.5rem; font-family: 'Outfit', sans-serif; font-weight: 800; color: #111; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem;">
+                    <h2 class="zine-massive-text" style="color: #111; font-size: clamp(2.6rem, 5vw, 5rem); text-shadow: none; margin-bottom: 0.6rem;">PRATIBIMB<br><span class="zine-accent-highlight">IDENTITY.</span></h2>
+                    <div style="margin-bottom: 1.5rem; font-family: var(--font-body); font-weight: 800; color: #111; letter-spacing: 1px; text-transform: uppercase; font-size: 1.05rem;">
                         <span style="background: var(--accent); color: #fff; padding: 2px 8px; margin-right: 10px;">Role</span> Assistant Director
                     </div>
+                    <p style="font-size: 1.1rem; color: #444; line-height: 1.6; border-left: 5px solid var(--accent); padding-left: 1.5rem;">"Identity — Reflected." A highly intimate short film exploring themes surrounding transgender life, deep psychological nuance, and finding ground in chaos. Transformed from 'Unspoken' to a brand-centric visual journey.</p>
                     <div style="text-align: left; margin-top: 2rem;">
                         <button onclick="window.open('https://www.youtube.com/watch?v=0sdAKiEZOGc', '_blank')" class="play-btn-link">▶ Open on YouTube</button>
                     </div>
@@ -150,21 +154,21 @@
 
 
         <!-- SECTION 3: TRAVENZA -->
-        <div class="zine-split-container" style="z-index: 18;">
+        <div class="zine-split-container" style="z-index: 18; min-height: 70vh;">
             <div class="zine-half half-paper">
                 <div class="reveal-on-scroll" style="max-width: 500px; padding-right: 2rem; text-align: right;">
-                    <h2 class="zine-massive-text" style="color: #111; font-size: clamp(3rem, 6vw, 6rem); text-shadow: none;">TRAVENZA<br><span class="zine-accent-highlight">TRAVEL.</span></h2>
-                    <p style="font-size: 1.2rem; color: #444; line-height: 1.6; margin-top: 2rem; border-right: 5px solid var(--accent); padding-right: 1.5rem;">Intimate storytelling that moves travel marketing from generic destinations to shared emotional connections. We built this for the couples who see travel as a bridge to each other.</p>
-                    <div style="margin-top: 1.5rem; font-family: 'Outfit', sans-serif; font-weight: 800; color: #111; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem;">
+                    <h2 class="zine-massive-text" style="color: #111; font-size: clamp(2.6rem, 5vw, 5rem); text-shadow: none; margin-bottom: 0.6rem;">TRAVENZA<br><span class="zine-accent-highlight">TRAVEL.</span></h2>
+                    <div style="margin-bottom: 1.5rem; font-family: var(--font-body); font-weight: 800; color: #111; letter-spacing: 1px; text-transform: uppercase; font-size: 1.05rem;">
                         Actor <span style="background: var(--accent); color: #fff; padding: 2px 8px; margin-left: 10px;">Role</span>
                     </div>
+                    <p style="font-size: 1.1rem; color: #444; line-height: 1.6; border-right: 5px solid var(--accent); padding-right: 1.5rem;">Intimate storytelling that moves travel marketing from generic destinations to shared emotional connections. We built this for the couples who see travel as a bridge to each other.</p>
                     <a href="https://www.instagram.com/reel/DUstkfBE7Gl/" target="_blank" class="play-btn-link" style="margin-top: 2rem;">▶ Watch Reel</a>
                 </div>
             </div>
 
             <div class="zine-half soft-bg-vibrant" style="position: relative; display: flex; align-items: center; justify-content: flex-start; z-index: 100; clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%); padding-left: 5%;">
                 <div class="zine-sticker" style="top: 10%; right: 10%; width: 150px;">
-                    <div class="brand-logo brand-logo-text" style="color:#111; font-family:'Playfair Display'; font-style:italic; font-weight:900; font-size:1.6rem; background:white; padding: 10px; border-radius: 8px;">Travenza</div>
+                    <div class="brand-logo brand-logo-text" style="color:#111; font-family: var(--font-quote); font-style:italic; font-weight:900; font-size:1.6rem; background:white; padding: 10px; border-radius: 8px;">Travenza</div>
                 </div>
                 <div class="zine-element-card reveal-on-scroll" style="transform: rotate(4deg); max-width: 400px; position: relative;">
                     <div class="tape-deco" style="top: -15px; left: -10px; transform: rotate(-25deg);"></div>
@@ -192,11 +196,11 @@
 
             <div class="zine-half half-paper" style="flex: 1.2;">
                 <div class="reveal-on-scroll" style="max-width: 600px; padding-left: 4rem; text-align: left;">
-                    <h2 class="zine-massive-text" style="color: #111; font-size: clamp(3rem, 6vw, 6rem); text-shadow: none;">META<br><span class="zine-accent-highlight">SHOT.</span></h2>
-                    <p style="font-size: 1.2rem; color: #444; line-height: 1.6; margin-top: 2rem; border-left: 5px solid var(--accent); padding-left: 1.5rem;">Fast pacing, aggressive cuts, and high-energy editing specifically engineered to grab and hold attention. Transforming a product narrative into an absolute visual adrenaline rush.</p>
-                    <div style="margin-top: 1.5rem; font-family: 'Outfit', sans-serif; font-weight: 800; color: #111; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem; border-left: 5px solid var(--accent); padding-left: 1.5rem;">
+                    <h2 class="zine-massive-text" style="color: #111; font-size: clamp(2.6rem, 5vw, 5rem); text-shadow: none; margin-bottom: 0.6rem;">META<br><span class="zine-accent-highlight">SHOT.</span></h2>
+                    <div style="margin-bottom: 1.5rem; font-family: var(--font-body); font-weight: 800; color: #111; letter-spacing: 1px; text-transform: uppercase; font-size: 1.05rem; border-left: 5px solid var(--accent); padding-left: 1.5rem;">
                         <span style="background: var(--accent); color: #fff; padding: 2px 8px; margin-right: 10px;">Role</span> Actor, Creative Director, Editor
                     </div>
+                    <p style="font-size: 1.1rem; color: #444; line-height: 1.6; border-left: 5px solid var(--accent); padding-left: 1.5rem;">Fast pacing, aggressive cuts, and high-energy editing specifically engineered to grab and hold attention. Transforming a product narrative into an absolute visual adrenaline rush.</p>
                     <a href="https://www.instagram.com/reel/DJq8F-dyUYR/?igsh=MW11MmJtMnVydXM5eQ==" target="_blank" class="play-btn-link" style="margin-top: 2rem;">▶ Watch on Reels</a>
                 </div>
             </div>
@@ -206,11 +210,11 @@
         <div class="zine-split-container" style="z-index: 25;">
             <div class="zine-half half-paper">
                 <div class="reveal-on-scroll" style="max-width: 500px; padding-right: 2rem; text-align: right;">
-                    <h2 class="zine-massive-text" style="color: #111; font-size: clamp(3rem, 6vw, 6rem); text-shadow: none;">FILM<br><span class="zine-accent-highlight">BTS.</span></h2>
-                    <p style="font-size: 1.2rem; color: #444; line-height: 1.6; margin-top: 2rem; border-right: 5px solid var(--accent); padding-right: 1.5rem;">Parde ke peeche — A raw look into the process, the grit, and the passion that goes into every frame. Our crew in action, building magic from scratch.</p>
-                    <div style="margin-top: 1.5rem; font-family: 'Outfit', sans-serif; font-weight: 800; color: #111; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem;">
+                    <h2 class="zine-massive-text" style="color: #111; font-size: clamp(2.6rem, 5vw, 5rem); text-shadow: none; margin-bottom: 0.6rem;">FILM<br><span class="zine-accent-highlight">BTS.</span></h2>
+                    <div style="margin-bottom: 1.5rem; font-family: var(--font-body); font-weight: 800; color: #111; letter-spacing: 1px; text-transform: uppercase; font-size: 1.05rem;">
                         <span style="background:var(--accent); color:#fff; padding: 2px 8px; margin-right: 10px;">Behind the Scenes</span> Producer, Crew
                     </div>
+                    <p style="font-size: 1.1rem; color: #444; line-height: 1.6; border-right: 5px solid var(--accent); padding-right: 1.5rem;">Parde ke peeche — A raw look into the process, the grit, and the passion that goes into every frame. Our crew in action, building magic from scratch.</p>
                     <a href="https://www.instagram.com/reel/DT3CUR4khcE/" target="_blank" class="play-btn-link" style="margin-top: 2rem;">▶ View Process</a>
                 </div>
             </div>
@@ -229,7 +233,7 @@
 
         <!-- Permanent Bottom Navigation Flow -->
         <div class="pagination-row">
-            <a href="index.html" class="page-btn">← Home Wall</a>
+            <a href="index.html#work" class="page-btn">← Home Wall</a>
             <a href="content-producer.html" class="page-btn">Content Producer →</a>
         </div>
 
@@ -239,5 +243,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
+    <script src="custom-cursor.js"></script>
 </body>
 </html>
