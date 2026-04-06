@@ -332,11 +332,11 @@ a { text-decoration: none; color: inherit; }
     color: #444; letter-spacing: 1px; text-transform: capitalize;
     font-weight: 700;
 }
-.logo-track { display: flex; gap: 6rem; animation: marquee 25s linear infinite; align-items: center; }
+.logo-track { display: flex; gap: 8rem; animation: marquee 20s linear infinite; align-items: center; }
 .brand-logo { 
     height: auto; 
     width: auto; 
-    max-height: 55px;
+    max-height: 80px;
     object-fit: scale-down;
     display: block; 
     flex-shrink: 0; 
