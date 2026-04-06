@@ -334,7 +334,7 @@ a { text-decoration: none; color: inherit; }
 }
 .logo-track { 
     display: flex; gap: 5.4rem; 
-    animation: marquee 60s linear infinite; 
+    animation: marquee 40s linear infinite; 
     align-items: center; 
     width: max-content;
 }
