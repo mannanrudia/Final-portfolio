@@ -332,19 +332,18 @@ a { text-decoration: none; color: inherit; }
     color: #444; letter-spacing: 1px; text-transform: capitalize;
     font-weight: 700;
 }
-.logo-track { display: flex; gap: 4rem; animation: marquee 10s linear infinite; align-items: center; }
+.logo-track { display: flex; gap: 4rem; animation: marquee 8s linear infinite; align-items: center; }
 .brand-logo { 
     height: auto; 
     width: auto; 
-    max-height: 110px;
+    max-height: 100px;
     object-fit: scale-down;
     display: block; 
     flex-shrink: 0; 
-    opacity: 1; 
+    opacity: 0.95; 
     transition: all 0.3s;
-    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.08));
 }
-.brand-logo:hover { transform: scale(1.05); }
+.brand-logo:hover { opacity: 1; transform: scale(1.1); }
 .brand-logo-text {
     font-family: var(--font-heading);
     text-transform: uppercase;
@@ -411,22 +410,11 @@ a { text-decoration: none; color: inherit; }
 .hobbies-section { padding: 6rem 4rem 15rem; text-align: center; background: linear-gradient(to bottom, #e6f7ff 0%, #ffffff 100%); border-top: none; position: relative;}
 .hobbies-header h2 { font-size: 4rem; margin-bottom: 0.8rem; color: #111; }
 .hobbies-header p { color: var(--accent); margin-bottom: 4rem; font-size: 1.3rem; }
-.hobbies-scatter { 
-    display: flex; 
-    justify-content: center; 
-    gap: 2.5rem; 
-    flex-wrap: nowrap; 
-    overflow-x: auto; 
-    padding: 2rem 0 6rem;
-    scrollbar-width: none;
-}
-.hobbies-scatter::-webkit-scrollbar { display: none; }
-
+.hobbies-scatter { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
 .hobby-polaroid {
     width: 250px; height: 320px; background: rgba(255,255,255,0.95); padding: 12px 12px 50px 12px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4); display: flex; flex-direction: column; align-items: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6); display: flex; flex-direction: column; align-items: center;
     transition: transform 0.4s; cursor: grab; position: relative; border-radius: 4px;
-    flex-shrink: 0;
 }
 .hobby-polaroid img { width: 100%; height: 255px; object-fit: cover; background: #333; margin-bottom: 8px; border-radius: 2px; flex-shrink: 0; }
 .hobby-polaroid .caption { 
@@ -444,12 +432,17 @@ a { text-decoration: none; color: inherit; }
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 35px;
+    height: 35px; /* Fits perfectly in the bottom white space */
 }
-/* Organic rotations on a single line */
-.hobby-polaroid:nth-child(odd) { transform: rotate(-2deg); }
-.hobby-polaroid:nth-child(even) { transform: rotate(1.5deg); }
-.hobby-polaroid:hover { transform: scale(1.1) rotate(0deg) !important; z-index: 100; box-shadow: 0 30px 60px rgba(0,0,0,0.6); }
+/* Specific minor organic rotations to keep it zine-like but clean */
+.hobby-polaroid:nth-child(1) { transform: rotate(-2deg) translateY(-110px); }
+.hobby-polaroid:nth-child(2) { transform: rotate(1deg) translateY(-110px); }
+.hobby-polaroid:nth-child(3) { transform: rotate(-1.5deg) translateY(-110px); }
+.hobby-polaroid:nth-child(4) { transform: rotate(2deg) translateY(-110px); }
+.hobby-polaroid:nth-child(5) { transform: rotate(-2deg) translateY(40px); }
+.hobby-polaroid:nth-child(6) { transform: rotate(1.5deg) translateY(40px); }
+.hobby-polaroid:nth-child(7) { transform: rotate(-1deg) translateY(40px); }
+.hobby-polaroid:hover { transform: scale(1.15) rotate(0deg) !important; z-index: 10; box-shadow: 0 30px 60px rgba(0,0,0,0.8); }
 
 /* FOOTER */
 .footer { position: relative; height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; }
