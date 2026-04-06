@@ -332,17 +332,25 @@ a { text-decoration: none; color: inherit; }
     color: #444; letter-spacing: 1px; text-transform: capitalize;
     font-weight: 700;
 }
-.logo-track { display: flex; gap: 4rem; animation: marquee 8s linear infinite; align-items: center; }
+.logo-track { display: flex; gap: 5rem; animation: marquee 12s linear infinite; align-items: center; }
 .brand-logo { 
     height: auto; 
     width: auto; 
-    max-height: 100px;
-    object-fit: scale-down;
+    object-fit: contain;
     display: block; 
     flex-shrink: 0; 
-    opacity: 0.95; 
     transition: all 0.3s;
 }
+
+/* Sizing Balance */
+.logo-square { max-height: 75px; max-width: 75px; }
+.logo-rectangle { max-height: 60px; max-width: 180px; }
+
+/* Visual Fixes */
+.bg-remove { mix-blend-mode: screen; filter: contrast(1.1) brightness(1.1); }
+.logo-zoom-scapia { transform: scale(1.4); } 
+.logo-zoom-metashot { transform: scale(1.6); }
+
 .brand-logo:hover { opacity: 1; transform: scale(1.1); }
 .brand-logo-text {
     font-family: var(--font-heading);
