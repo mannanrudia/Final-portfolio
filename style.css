@@ -325,25 +325,27 @@ a { text-decoration: none; color: inherit; }
 .strategy-content p { color: #444; font-size: 1.1rem; line-height: 1.6; }
 
 /* HORIZONTAL LOGO MARQUEE */
-.logo-marquee-section { padding: 4rem 0 3rem; background: linear-gradient(to bottom, #ffffff 0%, #f0f8ff 100%); border-top: none; }
+.logo-marquee-section { padding: 6rem 0 5rem; background: linear-gradient(to bottom, #ffffff 0%, #f9f9f9 100%); border-top: none; }
 .marquee-heading {
-    text-align: center; margin-bottom: 3.5rem;
-    font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.8rem;
+    text-align: center; margin-bottom: 4rem;
+    font-family: 'Playfair Display', serif; font-style: italic; font-size: 2rem;
     color: #444; letter-spacing: 1px; text-transform: capitalize;
     font-weight: 700;
 }
 .logo-container { width: 100%; overflow: hidden; display: flex; }
-.logo-track { display: flex; gap: 4rem; animation: marquee 10.5s linear infinite; align-items: center; }
-.brand-logo, .brand-logo-text, .brand-logo-img { 
-    height: 70px; 
-    min-width: 160px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
+.logo-track { display: flex; gap: 5rem; animation: marquee 15s linear infinite; align-items: center; }
+.brand-logo { 
+    height: 65px; 
+    width: auto; 
+    max-width: 180px;
+    object-fit: contain;
+    display: block; 
     flex-shrink: 0; 
-    opacity: 0.8; 
-    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0.75; 
+    transition: all 0.3s;
+    filter: grayscale(1) contrast(1.2);
 }
+.brand-logo:hover { opacity: 1; transform: scale(1.05); filter: grayscale(0); }
 .brand-logo-img img { 
     max-height: 100%; 
     max-width: 140px; 
