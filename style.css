@@ -332,7 +332,7 @@ a { text-decoration: none; color: inherit; }
     color: #444; letter-spacing: 1px; text-transform: capitalize;
     font-weight: 700;
 }
-.logo-track { display: flex; gap: 5.4rem; animation: marquee 12s linear infinite; align-items: center; }
+.logo-track { display: flex; gap: 5rem; animation: marquee 6.5s linear infinite; align-items: center; }
 .brand-logo { 
     height: auto; 
     width: auto; 
