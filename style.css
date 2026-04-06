@@ -332,28 +332,18 @@ a { text-decoration: none; color: inherit; }
     color: #444; letter-spacing: 1px; text-transform: capitalize;
     font-weight: 700;
 }
-.logo-container { width: 100%; overflow: hidden; display: flex; }
-.logo-track { display: flex; gap: 5rem; animation: marquee 15s linear infinite; align-items: center; }
+.logo-track { display: flex; gap: 6rem; animation: marquee 25s linear infinite; align-items: center; }
 .brand-logo { 
-    height: 65px; 
+    height: auto; 
     width: auto; 
-    max-width: 180px;
-    object-fit: contain;
+    max-height: 55px;
+    object-fit: scale-down;
     display: block; 
     flex-shrink: 0; 
     opacity: 0.75; 
     transition: all 0.3s;
-    filter: grayscale(1) contrast(1.2);
 }
-.brand-logo:hover { opacity: 1; transform: scale(1.05); filter: grayscale(0); }
-.brand-logo-img img { 
-    max-height: 100%; 
-    max-width: 140px; 
-    width: auto; 
-    height: auto; 
-    object-fit: contain; 
-    display: block;
-}
+.brand-logo:hover { opacity: 1; transform: scale(1.05); }
 .brand-logo-text {
     font-family: var(--font-heading);
     text-transform: uppercase;
