@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Only these two sections get the cursor
     const activeSections = document.querySelectorAll(".split-bio-container, .work-section");
 
-    // Clickable elements inside those sections
-    const clickableSelectors = "a, button, .project-card, .collage-item, .clickable";
+    // Clickable elements inside those sections (Excluding Board games and Profile image as requested)
+    const clickableSelectors = "a, button, .project-card, .collage-item:not(.board-game-box):not(.item-feature), .clickable";
 
     let animFrame;
 
