@@ -8,3 +8,9 @@ __pycache__/
 # Keep the scripts for now unless the user wants them gone.
 # But for a clean deploy, you could ignore some of the utility scripts if you want.
 # I'll keep it simple for now and just hide the OS junk.
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
