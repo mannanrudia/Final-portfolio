@@ -54,6 +54,31 @@
             letter-spacing: 1px;
         }
 
+        /* BRAND LOGO BADGE on cards */
+        .brand-logo-badge {
+            position: absolute;
+            top: 15px;
+            right: -15px;
+            z-index: 60;
+            background: #fff;
+            border: 2px solid #111;
+            border-radius: 10px;
+            padding: 5px;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.15);
+            transform: rotate(-5deg);
+            transition: transform 0.3s ease;
+        }
+        .brand-logo-badge img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            border-radius: 6px;
+            display: block;
+        }
+        .reel-zine-card:hover .brand-logo-badge {
+            transform: rotate(0deg) scale(1.1);
+        }
+
         /* NEW FUNKY REEL GRID */
         .reels-zine-grid {
             display: grid;
@@ -126,8 +151,27 @@
         }
 
         @media (max-width: 1000px) {
-            .reels-zine-grid { grid-template-columns: 1fr; gap: 8rem; margin-top: 2rem; }
+            .reels-zine-grid { grid-template-columns: 1fr; gap: 5rem; margin-top: 2rem; }
             .reel-zine-card { transform: none !important; }
+        }
+        @media (max-width: 768px) {
+            .zine-hero { padding: 7rem 1.2rem 3rem; min-height: auto; }
+            .zine-hero h1 { font-size: clamp(2.5rem, 12vw, 5rem) !important; }
+            .zine-hero p { font-size: 1.1rem !important; }
+            .reels-zine-grid { gap: 4rem; padding: 0 1rem; margin: 0 auto 4rem; }
+            .reel-card-info h3 { font-size: 0.9rem; }
+            .reel-card-info p { font-size: 0.85rem; }
+            .view-count-badge { font-size: 0.75rem; padding: 5px 10px; }
+            .brand-logo-badge { top: 10px; right: -10px; }
+            .brand-logo-badge img { width: 36px; height: 36px; }
+            .zine-split-container { flex-direction: column !important; }
+            .zine-half { width: 100% !important; clip-path: none !important; padding: 2rem 1.2rem !important; }
+            .zine-half .reveal-on-scroll { text-align: center !important; }
+            .zine-half .reveal-on-scroll p { border-right: none !important; padding-right: 0 !important; border-left: 3px solid #111 !important; padding-left: 1rem !important; text-align: left !important; }
+            .zine-element-card { max-width: 100% !important; transform: none !important; }
+            .role-tag { font-size: 0.7rem; padding: 3px 8px; }
+            div[style*="padding: 10rem 2rem 5rem"] { padding: 5rem 1.2rem 3rem !important; }
+            div[style*="margin-bottom: 8rem"] { margin-bottom: 3rem !important; }
         }
     </style>
 </head>
@@ -220,6 +264,7 @@
                 <div class="reel-zine-card reveal-on-scroll" onclick="window.open('https://www.youtube.com/watch?v=Bh5hIO8jQ3k', '_blank')" style="cursor: pointer;">
                     <div class="zine-num-tag">04</div>
                     <div class="zine-tape top-right" style="background: rgba(0,0,0,0.1);"></div>
+                    <div class="brand-logo-badge"><img src="IDare.jpeg" alt="I DARE Logo"></div>
                     <div class="reel-vid-wrapper" style="position: relative; overflow: hidden;">
                         <img src="https://img.youtube.com/vi/Bh5hIO8jQ3k/maxresdefault.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;" alt="I DARE Thumbnail">
                         <div class="play-overlay" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.2); transition: background 0.3s;">
@@ -238,6 +283,7 @@
                 <div class="reel-zine-card reveal-on-scroll" onclick="window.open('https://www.youtube.com/watch?v=DWZAJRWk359', '_blank')" style="cursor: pointer;">
                     <div class="zine-num-tag">05</div>
                     <div class="zine-tape top-left" style="background: rgba(255, 215, 0, 0.3);"></div>
+                    <div class="brand-logo-badge"><img src="poptein.jpeg" alt="Poptein Logo"></div>
                     <div class="reel-vid-wrapper" style="position: relative; overflow: hidden;">
                         <img src="media__1774904321583.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;" alt="Poptein Thumbnail">
                         <div class="play-overlay" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.2); transition: background 0.3s;">
@@ -257,6 +303,7 @@
                 <div class="reel-zine-card reveal-on-scroll" onclick="window.open('https://www.youtube.com/watch?v=TDnQMee_CV0', '_blank')" style="cursor: pointer;">
                     <div class="zine-num-tag">06</div>
                     <div class="zine-tape top-right" style="background: rgba(0, 150, 255, 0.2);"></div>
+                    <div class="brand-logo-badge"><img src="Logos/download (11).png" alt="UV Logo"></div>
                     <div class="reel-vid-wrapper" style="position: relative; overflow: hidden;">
                         <img src="https://img.youtube.com/vi/TDnQMee_CV0/maxresdefault.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;" alt="UV RUN Thumbnail">
                         <div class="play-overlay" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.2); transition: background 0.3s;">
@@ -269,6 +316,71 @@
                         <h3>UV RUN↗</h3>
                         <p>Cinematic brand film capturing the energy of the urban run.</p>
                     </div>
+                </div>
+
+            </div>
+
+            <!-- ROW 2: OBEN, SCAPIA, PARIS PANINI -->
+            <div class="reels-zine-grid" style="margin-top: 4rem; margin-bottom: 0;">
+                
+                <!-- Brand Video 04: OBEN -->
+                <div class="reel-zine-card reveal-on-scroll" onclick="window.open('https://youtu.be/GmccszMfxIY', '_blank')" style="cursor: pointer;">
+                    <div class="zine-num-tag">07</div>
+                    <div class="zine-tape top-left" style="background: rgba(255, 102, 0, 0.3);"></div>
+                    <div class="brand-logo-badge"><img src="Logos/oben_new.jpg" alt="Oben Logo"></div>
+                    <div class="reel-vid-wrapper" style="position: relative; overflow: hidden;">
+                        <img src="https://img.youtube.com/vi/GmccszMfxIY/maxresdefault.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;" alt="OBEN Thumbnail">
+                        <div class="play-overlay" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.2); transition: background 0.3s;">
+                            <div style="width: 60px; height: 60px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                                <span style="font-size: 1.5rem; margin-left: 5px; color: #f00;">▶</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reel-card-info">
+                        <h3>OBEN ELECTRIC↗</h3>
+                        <p>Showcasing the future of electric mobility through cinematic storytelling.</p>
+                    </div>
+                    <div class="card-sticker" style="bottom: -15px; right: -15px; font-size: 2.5rem;">⚡</div>
+                </div>
+
+                <!-- Brand Video 05: SCAPIA -->
+                <div class="reel-zine-card reveal-on-scroll" onclick="window.open('https://youtube.com/shorts/XA-9kMhLONk', '_blank')" style="cursor: pointer;">
+                    <div class="zine-num-tag">08</div>
+                    <div class="zine-tape top-right" style="background: rgba(26, 115, 232, 0.3);"></div>
+                    <div class="brand-logo-badge"><img src="Logos/scapia.jpg" alt="Scapia Logo"></div>
+                    <div class="reel-vid-wrapper" style="position: relative; overflow: hidden; aspect-ratio: 9/16;">
+                        <img src="https://img.youtube.com/vi/XA-9kMhLONk/maxresdefault.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;" alt="Scapia Thumbnail">
+                        <div class="play-overlay" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.2); transition: background 0.3s;">
+                            <div style="width: 60px; height: 60px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                                <span style="font-size: 1.5rem; margin-left: 5px; color: #f00;">▶</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reel-card-info">
+                        <h3>SCAPIA↗</h3>
+                        <p>Short-form content for travel finance done right.</p>
+                    </div>
+                    <div class="card-sticker" style="top: -15px; left: -15px; font-size: 2rem;">✈️</div>
+                </div>
+
+                <!-- Brand Video 06: PARIS PANINI -->
+                <div class="reel-zine-card reveal-on-scroll" onclick="window.open('https://youtube.com/shorts/jpBqTUtFZBQ', '_blank')" style="cursor: pointer;">
+                    <div class="zine-num-tag">09</div>
+                    <div class="zine-tape top-left" style="background: rgba(200, 150, 50, 0.3);"></div>
+                    <div class="brand-logo-badge"><img src="Logos/paris_panini.jpeg" alt="Paris Panini Logo"></div>
+                    <div class="reel-vid-wrapper" style="position: relative; overflow: hidden; aspect-ratio: 9/16;">
+                        <img src="https://img.youtube.com/vi/jpBqTUtFZBQ/maxresdefault.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;" alt="Paris Panini Thumbnail">
+                        <div class="play-overlay" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.2); transition: background 0.3s;">
+                            <div style="width: 60px; height: 60px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                                <span style="font-size: 1.5rem; margin-left: 5px; color: #f00;">▶</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reel-card-info">
+                        <h3>PARIS PANINI↗</h3>
+                        <p>Mouth-watering food content that builds brand craving.</p>
+                    </div>
+                    <div class="card-sticker" style="bottom: -10px; left: -15px; font-size: 2.5rem;">🥪</div>
                 </div>
 
             </div>

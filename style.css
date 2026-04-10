@@ -415,15 +415,35 @@ a { text-decoration: none; color: inherit; }
 }
 .testi-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); box-shadow: 0 8px 20px rgba(252,128,25,0.3); transform: translateY(-2px); }
 
-/* HOBBIES SECTION WITH REAL IMAGES - Extravagant Light Variant */
-.hobbies-section { padding: 6rem 4rem 15rem; text-align: center; background: linear-gradient(to bottom, #e6f7ff 0%, #ffffff 100%); border-top: none; position: relative;}
-.hobbies-header h2 { font-size: 4rem; margin-bottom: 0.8rem; color: #111; }
-.hobbies-header p { color: var(--accent); margin-bottom: 4rem; font-size: 1.3rem; }
-.hobbies-scatter { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
+/* HOBBIES SECTION WITH REAL IMAGES - Compact Horizontal Scroll */
+.hobbies-section { padding: 4rem 0 4rem; text-align: center; background: linear-gradient(to bottom, #e6f7ff 0%, #ffffff 100%); border-top: none; position: relative; overflow: hidden; }
+.hobbies-header { padding: 0 2rem; }
+.hobbies-header h2 { font-size: 3.5rem; margin-bottom: 0.8rem; color: #111; }
+.hobbies-header p { color: var(--accent); margin-bottom: 2.5rem; font-size: 1.3rem; }
+
+/* Horizontal scroll track */
+.hobbies-scroll-track {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 1rem 2rem 2rem;
+}
+.hobbies-scroll-track::-webkit-scrollbar { display: none; }
+
+.hobbies-scroll-inner {
+    display: flex;
+    gap: 1.8rem;
+    width: max-content;
+    padding: 0.5rem 0;
+}
+
 .hobby-polaroid {
-    width: 250px; height: 320px; background: rgba(255,255,255,0.95); padding: 12px 12px 50px 12px;
+    width: 200px; min-width: 200px; height: 270px; background: rgba(255,255,255,0.95); padding: 10px 10px 45px 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: flex; flex-direction: column; align-items: center;
     transition: transform 0.4s; cursor: grab; position: relative; border-radius: 4px; z-index: 1;
+    flex-shrink: 0;
 }
 
 /* Metrics Badge */
@@ -445,29 +465,29 @@ a { text-decoration: none; color: inherit; }
     letter-spacing: 0.1em;
 }
 
-.hobby-polaroid img { width: 100%; height: 255px; object-fit: cover; background: #333; margin-bottom: 8px; border-radius: 2px; flex-shrink: 0; }
+.hobby-polaroid img { width: 100%; height: 210px; object-fit: cover; background: #333; margin-bottom: 8px; border-radius: 2px; flex-shrink: 0; }
 .hobby-polaroid .caption { 
     position: absolute; 
     bottom: 8px; 
-    left: 12px; 
-    right: 12px;
+    left: 10px; 
+    right: 10px;
     text-align: center;
     color: #111; 
     font-weight: bold; 
     font-family: var(--font-quote); 
-    font-size: 1.1rem; 
+    font-size: 0.95rem; 
     text-transform: uppercase; 
     line-height: 1.1;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 35px; /* Fits perfectly in the bottom white space */
+    height: 30px;
 }
 /* Organic rotations only, no vertical offsets */
 .hobby-polaroid:nth-child(even) { transform: rotate(1.5deg); }
 .hobby-polaroid:nth-child(odd) { transform: rotate(-1.5deg); }
 
-.hobby-polaroid:hover { transform: scale(1.1) rotate(0deg) !important; z-index: 10; box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
+.hobby-polaroid:hover { transform: scale(1.08) rotate(0deg) !important; z-index: 10; box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
 
 /* FOOTER */
 .footer { position: relative; height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; }
@@ -988,7 +1008,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 @media (max-width: 1024px) {
-    .hobbies-scatter { flex-direction: column; align-items: center; }
+    .hobbies-scroll-inner { gap: 1.5rem; }
     .story-badge-container { position: relative; bottom: auto; right: auto; margin: 3rem auto; text-align: center; }
     .story-badge-text { text-align: center; font-size: 1.5rem; }
 }
@@ -1073,12 +1093,12 @@ body.custom-cursor-active, body.custom-cursor-active * {
 
     /* ── NAVBAR ── */
     .navbar-pill {
-        padding: 1rem 1.2rem;
+        padding: 1rem 1rem;
         flex-wrap: nowrap;
         align-items: center;
     }
     .top-right-links, .nav-links {
-        gap: 0.4rem;
+        gap: 0.35rem;
         flex-wrap: nowrap;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -1086,108 +1106,134 @@ body.custom-cursor-active, body.custom-cursor-active * {
     }
     .top-right-links::-webkit-scrollbar { display: none; }
     .pill-btn {
-        padding: 0.35rem 0.7rem;
-        font-size: 0.72rem;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.65rem;
         white-space: nowrap;
+        flex-shrink: 0;
     }
-    .pill-logo { font-size: 1rem; padding: 0.25rem 0.7rem; }
-    .audio-toggle-wrapper { bottom: 16px; left: 16px; }
-    .audio-toggle-pill { font-size: 0.85rem; padding: 0.6rem 1.2rem; }
+    .pill-logo { font-size: 0.9rem; padding: 0.2rem 0.6rem; }
+    .audio-toggle-wrapper { bottom: 14px; left: 14px; }
+    .audio-toggle-pill { font-size: 0.75rem; padding: 0.5rem 1rem; }
 
     /* ── PRE-HERO / SKY ── */
-    .pre-hero { height: 90vh; }
-    .font-canvas { font-size: clamp(3rem, 18vw, 6rem); letter-spacing: 2px; }
-    .absolute-top-left { font-size: clamp(1rem, 5vw, 1.8rem); letter-spacing: 4px; }
-    .text-cloud { font-size: 0.85rem; padding: 0.8rem 1.4rem; white-space: nowrap; }
-    .t-cloud-1 { top: 8%; left: 4%; }
+    .pre-hero { height: 85vh; }
+    .font-canvas { font-size: clamp(2.8rem, 16vw, 5rem); letter-spacing: 2px; }
+    .absolute-top-left { font-size: clamp(0.9rem, 4.5vw, 1.6rem); letter-spacing: 3px; }
+    .text-cloud { font-size: 0.8rem; padding: 0.7rem 1.2rem; white-space: nowrap; }
+    .t-cloud-1 { top: 8%; left: 3%; }
     .t-cloud-2 { top: 22%; right: 2%; }
-    .t-cloud-3 { top: 62%; left: 6%; }
+    .t-cloud-3 { top: 58%; left: 4%; }
     .hero-title-box { margin-top: -4rem; }
 
     /* ── BIO SPLIT ── */
-    .split-bio-container { padding: 4rem 1.2rem 6rem; }
+    .split-bio-container { padding: 3rem 1rem 5rem; }
     .split-bio-flex {
         flex-direction: column;
-        gap: 2.5rem;
-        margin-top: 10px;
+        gap: 2rem;
+        margin-top: 8px;
     }
     .split-bio-text, .split-bio-grid { max-width: 100%; flex: 1; margin: 0; }
-    .bio-header { font-size: clamp(2.5rem, 10vw, 4rem); letter-spacing: -1px; margin-bottom: 1.2rem; padding-bottom: 1.2rem; }
-    .bio-body p { font-size: 1rem; }
+    .bio-header { font-size: clamp(2.2rem, 9vw, 3.5rem); letter-spacing: -1px; margin-bottom: 1rem; padding-bottom: 1rem; }
+    .bio-body p { font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.2rem; }
 
     /* ── COLLAGE GRID ── */
     .collage-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 0.8rem;
+        gap: 0.6rem;
     }
     .collage-item { border-radius: 8px; }
     .item-feature { grid-column: span 1; grid-row: span 1; }
     .board-game-box { aspect-ratio: 1; }
     .board-game-box:hover .games-inside { transform: none; opacity: 0; }
 
+    /* ── METRICS BOX ── */
+    .metrics-box {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 0.8rem !important;
+    }
+    .metric-item {
+        padding: 0.8rem 1rem !important;
+        transform: none !important;
+    }
+    .metric-item div:first-child {
+        font-size: 1.3rem !important;
+    }
+    .metric-item div:last-child {
+        font-size: 0.7rem !important;
+    }
+
     /* ── PERSONALITY BLURB ── */
     section[style*="min-height: 30vh"] {
-        padding: 2rem 1rem !important;
+        padding: 1.8rem 1rem !important;
+        min-height: auto !important;
     }
     section[style*="min-height: 30vh"] p:first-child {
-        font-size: clamp(1rem, 4.5vw, 1.5rem) !important;
+        font-size: clamp(0.95rem, 4.2vw, 1.4rem) !important;
         white-space: normal !important;
         text-align: center;
+        line-height: 1.4 !important;
     }
     section[style*="min-height: 30vh"] p:last-child {
-        font-size: clamp(0.65rem, 2.8vw, 0.9rem) !important;
+        font-size: clamp(0.6rem, 2.5vw, 0.85rem) !important;
         white-space: normal !important;
         text-align: center;
-        letter-spacing: 0.08em !important;
+        letter-spacing: 0.06em !important;
     }
 
     /* ── LOGO MARQUEE ── */
-    .logo-marquee-section { padding: 3rem 0; }
-    .marquee-heading { font-size: 1.3rem; margin-bottom: 2rem; }
-    .brand-logo { height: 70px; }
-    .logo-track { gap: 3rem; }
-    .brand-name-tag { font-size: 1rem; }
+    .logo-marquee-section { padding: 2.5rem 0; }
+    .marquee-heading { font-size: 1.1rem; margin-bottom: 1.5rem; padding: 0 1rem; }
+    .brand-logo { height: 60px; }
+    .logo-track { gap: 2.5rem; }
+    .brand-name-tag { font-size: 0.9rem; }
 
     /* ── WORK SECTION ── */
-    .work-section { padding: 5rem 1.2rem 3rem; }
-    .work-header h2 { font-size: 2.5rem; }
-    .work-header p { font-size: 1rem; margin-bottom: 3rem; }
+    .work-section { padding: 4rem 1rem 3rem; }
+    .work-header h2 { font-size: 2.2rem; }
+    .work-header p { font-size: 0.95rem; margin-bottom: 2.5rem; }
     .projects-grid {
         grid-template-columns: 1fr;
-        gap: 3.5rem;
-        padding: 1rem 0;
+        gap: 3rem;
+        padding: 0.5rem 0;
     }
     .project-card:nth-child(1),
     .project-card:nth-child(2),
     .project-card:nth-child(3) { transform: none; }
-    .card-image-wrapper { height: 260px; }
-
-    /* ── TESTIMONIALS ── */
-    .testimonials { padding: 4rem 1.2rem; }
-    .testi-layout {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-    .testi-photo-grid { max-width: 260px; margin: 0 auto; }
-    .testi-text { font-size: clamp(1.2rem, 4vw, 1.6rem); }
-    .testi-bigquote { font-size: 5rem; }
+    .card-image-wrapper { height: 240px; }
+    .card-info h3 { font-size: 0.9rem; }
 
     /* ── HOBBIES ── */
-    .hobbies-section { padding: 4rem 1.2rem 8rem; }
-    .hobbies-header h2 { font-size: 2.5rem; }
-    .hobbies-scatter { gap: 1.5rem; justify-content: center; }
-    .hobby-polaroid { width: 180px; height: 240px; padding: 8px 8px 40px; }
-    .hobby-polaroid img { height: 185px; }
-    .hobby-polaroid .caption { font-size: 0.85rem; }
+    .hobbies-section { padding: 3rem 0 3rem; }
+    .hobbies-header h2 { font-size: 2.2rem; }
+    .hobbies-header p { font-size: 1rem; margin-bottom: 1.5rem; }
+    .hobbies-scroll-track { padding: 0.5rem 1rem 1.5rem; }
+    .hobby-polaroid { width: 160px; min-width: 160px; height: 220px; padding: 8px 8px 38px; }
+    .hobby-polaroid img { height: 165px; }
+    .hobby-polaroid .caption { font-size: 0.75rem; height: 26px; bottom: 6px; }
+    .hobby-badge { font-size: 0.6rem; padding: 3px 8px; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { padding: 3rem 1rem; }
+    .testi-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    .testi-photo-grid { max-width: 240px; margin: 0 auto; }
+    .testi-text { font-size: clamp(1.1rem, 3.5vw, 1.5rem); }
+    .testi-bigquote { font-size: 4rem; }
 
     /* ── CATCH-ME / CONTACT ── */
-    .catch-me-section { padding: 4rem 1.2rem; }
+    .catch-me-section { padding: 3rem 1rem; }
     .catch-me-container { flex-direction: column; gap: 2rem; }
-    .sticky-playground { height: 300px; width: 100%; }
+    .sticky-playground { height: 280px; width: 100%; }
+    .jumping-note { width: 150px; height: 150px; padding: 1.5rem 1rem; }
+    .sticky-note-text { font-size: 1.3rem; }
     .contact-hub { text-align: center; }
-    .hub-heading { font-size: clamp(2rem, 9vw, 3.5rem); letter-spacing: -2px; }
+    .hub-heading { font-size: clamp(1.8rem, 8vw, 3rem); letter-spacing: -2px; }
+    .hub-sub { font-size: 1.1rem; margin-bottom: 2rem; }
     .hub-links { max-width: 100%; margin: 0 auto; }
-    .hub-btn { font-size: 0.9rem; padding: 1rem 1.8rem; }
+    .hub-btn { font-size: 0.85rem; padding: 0.9rem 1.5rem; }
     .hand-drawn-arrow { display: none; }
 
     /* ── FOOTER ── */
@@ -1196,11 +1242,11 @@ body.custom-cursor-active, body.custom-cursor-active * {
     /* ── ZINE HERO (work pages) ── */
     .zine-hero, .strat-hero {
         min-height: auto;
-        padding: 7rem 1.2rem 3rem;
+        padding: 6rem 1rem 2.5rem;
         flex-direction: column;
     }
     .zine-hero-text, .strat-hero-text { text-align: center; padding: 0; }
-    .zine-massive-text { font-size: clamp(3rem, 12vw, 6rem) !important; }
+    .zine-massive-text { font-size: clamp(2.5rem, 11vw, 5rem) !important; }
     .zine-sticker { display: none; }
 
     /* ── ZINE SPLIT LAYOUT (work pages) ── */
@@ -1211,7 +1257,7 @@ body.custom-cursor-active, body.custom-cursor-active * {
     .zine-half {
         width: 100% !important;
         clip-path: none !important;
-        padding: 2.5rem 1.2rem !important;
+        padding: 2rem 1rem !important;
         justify-content: center !important;
     }
     .zine-half .reveal-on-scroll {
@@ -1225,68 +1271,127 @@ body.custom-cursor-active, body.custom-cursor-active * {
     .vid-frame.vertical { width: 80% !important; margin: 0 auto; }
 
     /* ── BRAND CARDS (content-strategies) ── */
-    .brand-cards-section { padding: 3rem 1.2rem; }
+    .brand-cards-section { padding: 2.5rem 1rem; }
     .brand-cards-grid {
         grid-template-columns: 1fr !important;
-        gap: 2rem !important;
+        gap: 1.5rem !important;
     }
 
     /* ── STRATEGY VISUAL STACK ── */
-    .strategies-container { flex-direction: column !important; gap: 3rem !important; }
-    .strategy-visual-stack { height: 320px !important; order: -1; width: 100% !important; }
-    .strat-polaroid { width: 190px !important; }
+    .strategies-container { flex-direction: column !important; gap: 2.5rem !important; }
+    .strategy-visual-stack { height: 300px !important; order: -1; width: 100% !important; }
+    .strat-polaroid { width: 180px !important; }
 
     /* ── TOOLS PAGE ── */
-    .tools-hero { padding: 5rem 1.2rem 3rem; }
+    .tools-hero { padding: 5rem 1rem 2.5rem; }
     .tools-title { letter-spacing: -3px; }
     .tool-grid { grid-template-columns: 1fr !important; }
-    .tool-card { padding: 1.2rem 1rem; }
+    .tool-card { padding: 1rem 0.8rem; }
     .tool-card[style*="grid-column: span 2"] { grid-column: span 1 !important; }
-    .tools-nav { flex-direction: column; gap: 1rem; align-items: center; }
+    .tools-nav { flex-direction: column; gap: 0.8rem; align-items: center; }
 
     /* ── PAGE NAV BUTTONS ── */
-    .pagination-row { flex-direction: column; gap: 1.5rem; align-items: center; }
-    .page-btn { font-size: 1rem; padding: 1rem 2rem; width: 100%; text-align: center; }
+    .pagination-row { flex-direction: column; gap: 1.2rem; align-items: center; margin-top: 3rem; padding-top: 2rem; }
+    .page-btn { font-size: 0.9rem; padding: 0.9rem 1.8rem; width: 100%; text-align: center; letter-spacing: 1px; }
 
     /* ── NAMMA CARNIVAL ── */
-    .swiggy-container { padding: 3rem 1.2rem; }
+    .swiggy-container { padding: 2.5rem 1rem; }
     .interactive-split {
         flex-direction: column !important;
-        gap: 2rem !important;
+        gap: 1.5rem !important;
     }
     .sticky-media-side {
         position: relative !important;
         top: auto !important;
-        height: 260px;
+        height: 240px;
         width: 100%;
     }
-    .scrolling-text-side { padding: 2rem 0; }
-    .scrolling-text-side h2 { font-size: clamp(2rem, 8vw, 3.5rem); }
+    .scrolling-text-side { padding: 1.5rem 0; }
+    .scrolling-text-side h2 { font-size: clamp(1.8rem, 7vw, 3rem); }
 
     /* ── OVERLAP IMAGE LAYOUT ── */
-    .overlap-image-layout { flex-direction: column; margin: 4rem 0; }
+    .overlap-image-layout { flex-direction: column; margin: 3rem 0; }
     .overlap-image { width: 100%; }
-    .overlap-text { width: 100%; margin-left: 0; margin-top: -2rem; padding: 2rem; }
+    .overlap-text { width: 100%; margin-left: 0; margin-top: -1.5rem; padding: 1.5rem; }
+    .overlap-text h2 { font-size: clamp(1.5rem, 5vw, 2.5rem); }
+}
+
+/* ==========================================================
+   TABLET — iPad range (769px to 1024px)
+   ========================================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .navbar-pill { padding: 1.5rem 2rem; }
+    .pill-btn { font-size: 0.8rem; padding: 0.4rem 0.9rem; }
+    
+    .split-bio-flex { gap: 2.5rem; }
+    .split-bio-text { flex: 1.3; max-width: 420px; }
+    .split-bio-grid { flex: 1; max-width: 380px; }
+    .bio-header { font-size: clamp(3rem, 5vw, 4.5rem); }
+    .bio-body p { font-size: 1.15rem; }
+    
+    .projects-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .project-card:nth-child(3) { grid-column: 1 / -1; max-width: 50%; margin: 0 auto; }
+    .card-image-wrapper { height: 280px; }
+    
+    .hobbies-section { padding: 4rem 0; }
+    .hobby-polaroid { width: 180px; min-width: 180px; height: 250px; }
+    .hobby-polaroid img { height: 195px; }
+    
+    .catch-me-container { gap: 2.5rem; }
+    .sticky-playground { height: 380px; }
+    
+    .work-section { padding: 6rem 2rem 4rem; }
+    .work-header h2 { font-size: 3rem; }
+    
+    .zine-split-container { flex-direction: column !important; }
+    .zine-half { width: 100% !important; clip-path: none !important; padding: 2.5rem 2rem !important; }
 }
 
 /* ==========================================================
    SMALL MOBILE — max-width 480px
    ========================================================== */
 @media (max-width: 480px) {
-    .font-canvas { font-size: clamp(2.5rem, 20vw, 5rem); }
-    .bio-header { font-size: clamp(2rem, 12vw, 3rem); }
+    .font-canvas { font-size: clamp(2.2rem, 18vw, 4rem); }
+    .absolute-top-left { font-size: clamp(0.8rem, 4vw, 1.3rem); letter-spacing: 2px; }
+    .bio-header { font-size: clamp(1.8rem, 10vw, 2.8rem); line-height: 0.95; }
+    .bio-body p { font-size: 0.9rem; }
     .text-cloud { display: none; } /* too cluttered at tiny sizes */
-    .t-cloud-3 { display: flex; font-size: 0.75rem; padding: 0.6rem 1rem; } /* keep one */
-    .projects-grid { gap: 2.5rem; }
-    .card-image-wrapper { height: 220px; }
-    .hobby-polaroid { width: 150px; height: 210px; }
-    .hobby-polaroid img { height: 160px; }
-    .hub-btn { padding: 0.9rem 1.2rem; gap: 0.6rem; }
-    .zine-massive-text { font-size: clamp(2.4rem, 11vw, 5rem) !important; }
-    .page-btn { font-size: 0.9rem; letter-spacing: 1px; }
-    .tool-icon { width: 42px; height: 42px; }
-    .collage-grid { gap: 0.6rem; }
-    .workflow-timeline { padding-left: 2rem; }
-    .strat-p1, .strat-p2, .strat-p3 { width: 160px !important; }
-    .strategy-visual-stack { height: 260px !important; }
+    .t-cloud-3 { display: flex; font-size: 0.7rem; padding: 0.5rem 0.8rem; }
+    .projects-grid { gap: 2.2rem; }
+    .card-image-wrapper { height: 200px; }
+    .card-info h3 { font-size: 0.85rem; }
+    .hobby-polaroid { width: 140px; min-width: 140px; height: 195px; padding: 6px 6px 32px; }
+    .hobby-polaroid img { height: 148px; }
+    .hobby-polaroid .caption { font-size: 0.65rem; height: 22px; bottom: 5px; }
+    .hub-btn { padding: 0.8rem 1rem; gap: 0.5rem; font-size: 0.8rem; }
+    .zine-massive-text { font-size: clamp(2rem, 10vw, 4rem) !important; }
+    .page-btn { font-size: 0.8rem; letter-spacing: 0.5px; padding: 0.8rem 1.2rem; }
+    .tool-icon { width: 38px; height: 38px; }
+    .collage-grid { gap: 0.5rem; }
+    .workflow-timeline { padding-left: 1.5rem; }
+    .strat-p1, .strat-p2, .strat-p3 { width: 150px !important; }
+    .strategy-visual-stack { height: 240px !important; }
+    
+    .metric-item div:first-child { font-size: 1.1rem !important; }
+    .metric-item div:last-child { font-size: 0.6rem !important; }
+    
+    /* Contact section tighter */
+    .sticky-playground { height: 250px; }
+    .jumping-note { width: 130px; height: 130px; padding: 1.2rem 0.8rem; }
+    .sticky-note-text { font-size: 1.1rem; }
+    .hub-heading { font-size: clamp(1.6rem, 8vw, 2.5rem); }
+}
+
+/* ==========================================================
+   VERY SMALL MOBILE — max-width 360px
+   ========================================================== */
+@media (max-width: 360px) {
+    .font-canvas { font-size: clamp(2rem, 20vw, 3.5rem); }
+    .bio-header { font-size: clamp(1.6rem, 11vw, 2.4rem); }
+    .pill-btn { padding: 0.25rem 0.5rem; font-size: 0.6rem; }
+    .pill-logo { font-size: 0.8rem; }
+    .hobby-polaroid { width: 130px; min-width: 130px; height: 185px; }
+    .hobby-polaroid img { height: 140px; }
+    .work-header h2 { font-size: 1.8rem; }
+    .hobbies-header h2 { font-size: 1.8rem; }
 }
